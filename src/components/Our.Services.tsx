@@ -57,6 +57,9 @@ const services = [
 const OurServices = () => {
   return (
     <Box
+      position={"relative"}
+      zIndex={"120"}
+      bgcolor={"#ffffff"}
       width={"100%"}
       display={"flex"}
       justifyContent={"center"}
@@ -81,23 +84,24 @@ const OurServices = () => {
         </Typography>
       </Box>
       <Box
-        width={"70%"}
+        width={"60%"}
         display={"flex"}
         flexWrap={"wrap"}
-        alignItems={"center"}
+        // alignItems={"center"}
         justifyContent={"center"}
         // bgcolor={"red"}
-        gap={"20px"}
+        gap={"10px"}
       >
         {services.map((service) => (
           <Box
             key={service.id}
-            width={"346.66px"}
-            height={"357px"}
+            width={"320px"}
+            // height={"357px"}
             display={"flex"}
             flexDirection={"column"}
             gap={"20px"}
             padding={"40px"}
+            // bgcolor={"red"}
           >
             <Box display={"flex"} justifyContent={"center"}>
               {service.icon}

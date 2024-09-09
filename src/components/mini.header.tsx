@@ -13,9 +13,9 @@ const miniheader = () => {
       alignItems={"center"}
       justifyContent={"center"}
       bgcolor={"#262a2b"}
-      padding={"0 20px 0 20px"}
+      // padding={"0 1%"}
     >
-      <Box width={"100%"} display={"flex"} justifyContent={"space-between"}>
+      <Box width={"98%"} display={"flex"} justifyContent={"space-between"}>
         <Box display={"flex"} gap={"28px"}>
           <Typography
             display={"flex"}
