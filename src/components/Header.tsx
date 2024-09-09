@@ -1,243 +1,389 @@
 "use client";
-import React, { useState, MouseEvent } from "react";
-import { Box, Typography, Menu, MenuItem } from "@mui/material";
+import React, { useState, MouseEvent, useEffect } from "react";
+import { Box, Typography, MenuItem } from "@mui/material";
 import Image from "next/image";
 import HeaderLogo from "../assets/header-main-logo.png";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
-
-// Define the type for the anchor element
-type AnchorEl = (EventTarget & HTMLElement) | null;
+import Link from "next/link";
 
 const Header: React.FC = () => {
-  const [serviceAnchorEl, setServiceAnchorEl] = useState<AnchorEl>(null);
-  const [aboutAnchorEl, setAboutAnchorEl] = useState<AnchorEl>(null);
-  const [supportAnchorEl, setSupportAnchorEl] = useState<AnchorEl>(null);
+  const [isSticky, setIsSticky] = useState(false);
 
-  // Open and close dropdown handlers
-  const handleOpenMenu =
-    (setAnchorEl: React.Dispatch<React.SetStateAction<AnchorEl>>) =>
-    (event: MouseEvent<HTMLElement>) => {
-      setAnchorEl(event.currentTarget);
+  // State to handle hover for dropdown menus
+  const [hoveredMenu, setHoveredMenu] = useState<string | null>(null);
+
+  const handleMouseEnter = (menu: string) => {
+    setHoveredMenu(menu);
+  };
+
+  const handleMouseLeave = () => {
+    setHoveredMenu(null);
+  };
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 45) {
+        setIsSticky(true);
+      } else {
+        setIsSticky(false);
+      }
     };
 
-  const handleCloseMenu =
-    (setAnchorEl: React.Dispatch<React.SetStateAction<AnchorEl>>) => () => {
-      setAnchorEl(null);
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
     };
+  }, []);
 
   return (
     <Box
       sx={{
+        position: isSticky ? "fixed" : "relative",
+        top: 0,
+        zIndex: 1000,
         width: "100%",
-
         height: "141px",
         backgroundColor: "#ffffff",
-        padding: "0 20px",
+        // padding: "0 1%",
         display: "flex",
         alignItems: "center",
-        justifyContent: "space-between",
+        justifyContent: "center",
         boxShadow: "0px 4px 12px rgba(0, 0, 0, 0.1)",
         borderBottom: "1px solid #d8d8d8",
       }}
     >
-      {/* Left Side Image */}
-      <Box sx={{ display: "flex", alignItems: "center" }}>
-        <Image
-          src={HeaderLogo} // Make sure your image is in the public/images folder
-          alt="Logo"
-          width={270}
-          height={68}
-        />
-      </Box>
-
-      {/* Right Side Navigation */}
       <Box
         sx={{
+          width: "98%",
           display: "flex",
           alignItems: "center",
-          gap: "20px",
-          height: "100%",
-          // bgcolor: "red",
+          justifyContent: "space-between",
         }}
       >
-        {/* Our Service with dropdown */}
-        <Box
-          sx={{
-            position: "relative",
-            display: "flex",
-            alignItems: "center",
-            borderBottom: "1px solid #ffffff",
-            padding: "0 20px 0 20px",
-            height: "100%",
-            "&:hover": {
-              borderBottom: "1px solid green",
-            },
-          }}
-          onMouseEnter={handleOpenMenu(setServiceAnchorEl)}
-          onMouseLeave={handleCloseMenu(setServiceAnchorEl)}
-        >
-          <Typography
-            sx={{
-              cursor: "pointer",
-              fontSize: "12px",
-              display: "flex",
-              fontWeight: "bold",
-              alignItems: "center",
-              color: "#262A2B",
-            }}
-          >
-            OUR SERVICES
-            <ArrowDropDownIcon sx={{ width: "1em", height: "1em" }} />
-          </Typography>
-          <Menu
-            anchorEl={serviceAnchorEl}
-            open={Boolean(serviceAnchorEl)}
-            onClose={handleCloseMenu(setServiceAnchorEl)}
-            MenuListProps={{
-              onMouseEnter: handleOpenMenu(setServiceAnchorEl),
-              onMouseLeave: handleCloseMenu(setServiceAnchorEl),
-            }}
-            sx={{ mt: "40px" }}
-          >
-            <MenuItem onClick={handleCloseMenu(setServiceAnchorEl)}>
-              Service 1
-            </MenuItem>
-            <MenuItem onClick={handleCloseMenu(setServiceAnchorEl)}>
-              Service 2
-            </MenuItem>
-            <MenuItem onClick={handleCloseMenu(setServiceAnchorEl)}>
-              Service 3
-            </MenuItem>
-          </Menu>
+        <Box sx={{ display: "flex", alignItems: "center" }}>
+          <Link href={"/"} passHref style={{ textDecoration: "none" }}>
+            <Image src={HeaderLogo} alt="Logo" width={270} height={68} />
+          </Link>
         </Box>
 
-        {/* About with dropdown */}
         <Box
           sx={{
-            position: "relative",
             display: "flex",
             alignItems: "center",
+            gap: "20px",
             height: "100%",
-            borderBottom: "1px solid #ffffff",
-            padding: "0 20px 0 20px",
-
-            "&:hover": {
-              borderBottom: "1px solid green",
-            },
-          }}
-          onMouseEnter={handleOpenMenu(setAboutAnchorEl)}
-          onMouseLeave={handleCloseMenu(setAboutAnchorEl)}
-        >
-          <Typography
-            sx={{
-              cursor: "pointer",
-              fontSize: "12px",
-              display: "flex",
-              fontWeight: "bold",
-              alignItems: "center",
-              color: "#262A2B",
-            }}
-          >
-            ABOUT
-            <ArrowDropDownIcon />
-          </Typography>
-          <Menu
-            anchorEl={aboutAnchorEl}
-            open={Boolean(aboutAnchorEl)}
-            onClose={handleCloseMenu(setAboutAnchorEl)}
-            MenuListProps={{
-              onMouseEnter: handleOpenMenu(setAboutAnchorEl),
-              onMouseLeave: handleCloseMenu(setAboutAnchorEl),
-            }}
-            sx={{ mt: "40px" }}
-          >
-            <MenuItem onClick={handleCloseMenu(setAboutAnchorEl)}>
-              About Us
-            </MenuItem>
-            <MenuItem onClick={handleCloseMenu(setAboutAnchorEl)}>
-              Our Team
-            </MenuItem>
-          </Menu>
-        </Box>
-
-        {/* Contact (No Dropdown) */}
-        <Box
-          sx={{
-            position: "relative",
-            display: "flex",
-            alignItems: "center",
-            height: "100%",
-            borderBottom: "1px solid #ffffff",
-            padding: "0 20px 0 20px",
-
-            "&:hover": {
-              borderBottom: "1px solid green",
-            },
           }}
         >
-          <Typography
+          {/* OUR SERVICES */}
+          <Box
             sx={{
-              cursor: "pointer",
-              fontSize: "12px",
+              position: "relative",
               display: "flex",
-
-              fontWeight: "bold",
               alignItems: "center",
-              color: "#262A2B",
+              borderBottom: "1px solid #ffffff",
+              padding: "0 20px",
+              height: "100%",
+              "&:hover": {
+                borderBottom: "1px solid green",
+              },
             }}
+            onMouseEnter={() => handleMouseEnter("ourServices")}
+            onMouseLeave={handleMouseLeave}
           >
-            CONTACT
-          </Typography>
-        </Box>
+            <Link href="/services" passHref style={{ textDecoration: "none" }}>
+              <Typography
+                sx={{
+                  cursor: "pointer",
+                  fontSize: "12px",
+                  display: "flex",
+                  fontWeight: "bold",
+                  alignItems: "center",
+                  color: "#262A2B",
+                }}
+              >
+                OUR SERVICES
+                <ArrowDropDownIcon sx={{ width: "1em", height: "1em" }} />
+              </Typography>
+            </Link>
+            {hoveredMenu === "ourServices" && (
+              <Box
+                sx={{
+                  position: "absolute",
+                  top: "101%",
+                  left: 0,
+                  backgroundColor: "#e2e2e2",
+                  boxShadow: "0px 4px 12px rgba(0, 0, 0, 0.1)",
+                  zIndex: 10,
+                  minWidth: "150px",
+                }}
+              >
+                <MenuItem
+                  sx={{
+                    fontWeight: "500",
+                    textDecoration: "none",
+                    cursor: "pointer",
+                    color: "#006838",
+                    fontSize: "13px",
+                    padding: "13px 20px",
+                  }}
+                >
+                  IT OUTSOURCING
+                </MenuItem>
+                <MenuItem
+                  sx={{
+                    fontWeight: "500",
+                    textDecoration: "none",
+                    cursor: "pointer",
+                    color: "#006838",
+                    fontSize: "13px",
+                    padding: "13px 20px",
+                  }}
+                >
+                  BREAK / FIX
+                </MenuItem>
+                <MenuItem
+                  sx={{
+                    fontWeight: "500",
+                    textDecoration: "none",
+                    cursor: "pointer",
+                    color: "#006838",
+                    fontSize: "13px",
+                    padding: "13px 20px",
+                  }}
+                >
+                  HELP DESK
+                </MenuItem>
+                <MenuItem
+                  sx={{
+                    fontWeight: "500",
+                    textDecoration: "none",
+                    cursor: "pointer",
+                    color: "#006838",
+                    fontSize: "13px",
+                    padding: "13px 20px",
+                  }}
+                >
+                  CLOUD SERVICES
+                </MenuItem>
+                <MenuItem
+                  sx={{
+                    fontWeight: "500",
+                    textDecoration: "none",
+                    cursor: "pointer",
+                    color: "#006838",
+                    fontSize: "13px",
+                    padding: "13px 20px",
+                  }}
+                >
+                  MANAGED SECURITY
+                </MenuItem>
+                <MenuItem
+                  sx={{
+                    fontWeight: "500",
+                    textDecoration: "none",
+                    cursor: "pointer",
+                    color: "#006838",
+                    fontSize: "13px",
+                    padding: "13px 20px",
+                  }}
+                >
+                  DISASTER RECOVERY
+                </MenuItem>
+                <MenuItem
+                  sx={{
+                    fontWeight: "500",
+                    textDecoration: "none",
+                    cursor: "pointer",
+                    color: "#006838",
+                    fontSize: "13px",
+                    padding: "13px 20px",
+                  }}
+                >
+                  FREE IT ASSESSMENT
+                </MenuItem>
+              </Box>
+            )}
+          </Box>
 
-        {/* Support with dropdown */}
-        <Box
-          sx={{
-            position: "relative",
-            display: "flex",
-            alignItems: "center",
-            height: "100%",
-            borderBottom: "1px solid #ffffff",
-            padding: "0 20px 0 20px",
-
-            "&:hover": {
-              borderBottom: "1px solid green",
-            },
-          }}
-          onMouseEnter={handleOpenMenu(setSupportAnchorEl)}
-          onMouseLeave={handleCloseMenu(setSupportAnchorEl)}
-        >
-          <Typography
+          {/* ABOUT */}
+          <Box
             sx={{
-              cursor: "pointer",
-              fontSize: "12px",
+              position: "relative",
               display: "flex",
-
-              fontWeight: "bold",
               alignItems: "center",
-              color: "#262A2B",
+              height: "100%",
+              borderBottom: "1px solid #ffffff",
+              padding: "0 20px",
+              "&:hover": {
+                borderBottom: "1px solid green",
+              },
+            }}
+            onMouseEnter={() => handleMouseEnter("about")}
+            onMouseLeave={handleMouseLeave}
+          >
+            <Link href="/about" passHref style={{ textDecoration: "none" }}>
+              <Typography
+                sx={{
+                  cursor: "pointer",
+                  fontSize: "12px",
+                  display: "flex",
+                  fontWeight: "bold",
+                  alignItems: "center",
+                  color: "#262A2B",
+                }}
+              >
+                ABOUT
+                <ArrowDropDownIcon />
+              </Typography>
+            </Link>
+            {hoveredMenu === "about" && (
+              <Box
+                sx={{
+                  position: "absolute",
+                  top: "101%",
+                  left: 0,
+                  backgroundColor: "#e2e2e2",
+                  boxShadow: "0px 4px 12px rgba(0, 0, 0, 0.1)",
+                  zIndex: 10,
+                  minWidth: "150px",
+                }}
+              >
+                <MenuItem
+                  sx={{
+                    fontWeight: "500",
+                    textDecoration: "none",
+                    cursor: "pointer",
+                    color: "#006838",
+                    fontSize: "13px",
+                    padding: "13px 20px",
+                  }}
+                >
+                  ABOUT
+                </MenuItem>
+                <MenuItem
+                  sx={{
+                    fontWeight: "500",
+                    textDecoration: "none",
+                    cursor: "pointer",
+                    color: "#006838",
+                    fontSize: "13px",
+                    padding: "13px 20px",
+                  }}
+                >
+                  WHY US
+                </MenuItem>
+                <MenuItem
+                  sx={{
+                    fontWeight: "500",
+                    textDecoration: "none",
+                    cursor: "pointer",
+                    color: "#006838",
+                    fontSize: "13px",
+                    padding: "13px 20px",
+                  }}
+                >
+                  TESTIMONIALS
+                </MenuItem>
+              </Box>
+            )}
+          </Box>
+
+          {/* CONTACT */}
+          <Box
+            sx={{
+              position: "relative",
+              display: "flex",
+              alignItems: "center",
+              height: "100%",
+              borderBottom: "1px solid #ffffff",
+              padding: "0 20px",
+              "&:hover": {
+                borderBottom: "1px solid green",
+              },
             }}
           >
-            SUPPORT
-            <ArrowDropDownIcon />
-          </Typography>
-          <Menu
-            anchorEl={supportAnchorEl}
-            open={Boolean(supportAnchorEl)}
-            onClose={handleCloseMenu(setSupportAnchorEl)}
-            MenuListProps={{
-              onMouseEnter: handleOpenMenu(setSupportAnchorEl),
-              onMouseLeave: handleCloseMenu(setSupportAnchorEl),
+            <Typography
+              sx={{
+                cursor: "pointer",
+                fontSize: "12px",
+                display: "flex",
+                fontWeight: "bold",
+                alignItems: "center",
+                color: "#262A2B",
+              }}
+            >
+              CONTACT
+            </Typography>
+          </Box>
+
+          {/* SUPPORT */}
+          <Box
+            sx={{
+              position: "relative",
+              display: "flex",
+              alignItems: "center",
+              height: "100%",
+              borderBottom: "1px solid #ffffff",
+              padding: "0 20px",
+              "&:hover": {
+                borderBottom: "1px solid green",
+              },
             }}
-            sx={{ mt: "40px" }}
+            onMouseEnter={() => handleMouseEnter("support")}
+            onMouseLeave={handleMouseLeave}
           >
-            <MenuItem onClick={handleCloseMenu(setSupportAnchorEl)}>
-              Support 1
-            </MenuItem>
-            <MenuItem onClick={handleCloseMenu(setSupportAnchorEl)}>
-              Support 2
-            </MenuItem>
-          </Menu>
+            <Typography
+              sx={{
+                cursor: "pointer",
+                fontSize: "12px",
+                display: "flex",
+                fontWeight: "bold",
+                alignItems: "center",
+                color: "#262A2B",
+              }}
+            >
+              SUPPORT
+              <ArrowDropDownIcon />
+            </Typography>
+            {hoveredMenu === "support" && (
+              <Box
+                sx={{
+                  position: "absolute",
+                  top: "101%",
+                  left: 0,
+                  backgroundColor: "#e2e2e2",
+                  boxShadow: "0px 4px 12px rgba(0, 0, 0, 0.1)",
+                  zIndex: 10,
+                  minWidth: "150px",
+                }}
+              >
+                <MenuItem
+                  sx={{
+                    fontWeight: "500",
+                    textDecoration: "none",
+                    cursor: "pointer",
+                    color: "#006838",
+                    fontSize: "13px",
+                    padding: "13px 20px",
+                  }}
+                >
+                  CUSTOMER LOGIN
+                </MenuItem>
+                <MenuItem
+                  sx={{
+                    fontWeight: "500",
+                    textDecoration: "none",
+                    cursor: "pointer",
+                    color: "#006838",
+                    fontSize: "13px",
+                    padding: "13px 20px",
+                  }}
+                >
+                  REMOTE SUPPORT
+                </MenuItem>
+              </Box>
+            )}
+          </Box>
         </Box>
       </Box>
     </Box>

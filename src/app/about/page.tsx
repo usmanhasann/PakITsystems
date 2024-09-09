@@ -10,17 +10,13 @@ import Breakfix from "@/components/Break_fix";
 import FreeItAssessment from "@/components/FreeItAssessment";
 import Companyimages from "@/components/Company-images";
 
-export default function Home() {
+export default function about() {
   return (
     <>
       <Miniheader />
       <Header />
       <Homesection />
-      <ITOutsourcingBreakFix />
-      <Breakfix />
       <FreeItAssessment />
-      <OurServices />
-      <OurClientsSays />
       <Companyimages />
       <Footer />
     </>
