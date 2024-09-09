@@ -1,73 +1,247 @@
 "use client";
-import * as React from "react";
-import AppBar from "@mui/material/AppBar";
-import Box from "@mui/material/Box";
-import Toolbar from "@mui/material/Toolbar";
-import Typography from "@mui/material/Typography";
-import IconButton from "@mui/material/IconButton";
-// import MenuIcon from "@mui/icons-material/Menu";
-import AccountCircle from "@mui/icons-material/AccountCircle";
-// import Switch from "@mui/material/Switch";
-// import FormControlLabel from "@mui/material/FormControlLabel";
-// import FormGroup from "@mui/material/FormGroup";
-import MenuItem from "@mui/material/MenuItem";
-import Menu from "@mui/material/Menu";
+import React, { useState, MouseEvent } from "react";
+import { Box, Typography, Menu, MenuItem } from "@mui/material";
+import Image from "next/image";
+import HeaderLogo from "../assets/header-main-logo.png";
+import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 
-export default function MenuAppBar() {
-  // const [auth, setAuth] = React.useState(true);
-  const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
+// Define the type for the anchor element
+type AnchorEl = (EventTarget & HTMLElement) | null;
 
-  // const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-  //   setAuth(event.target.checked);
-  // };
+const Header: React.FC = () => {
+  const [serviceAnchorEl, setServiceAnchorEl] = useState<AnchorEl>(null);
+  const [aboutAnchorEl, setAboutAnchorEl] = useState<AnchorEl>(null);
+  const [supportAnchorEl, setSupportAnchorEl] = useState<AnchorEl>(null);
 
-  const handleMenu = (event: React.MouseEvent<HTMLElement>) => {
-    setAnchorEl(event.currentTarget);
-  };
+  // Open and close dropdown handlers
+  const handleOpenMenu =
+    (setAnchorEl: React.Dispatch<React.SetStateAction<AnchorEl>>) =>
+    (event: MouseEvent<HTMLElement>) => {
+      setAnchorEl(event.currentTarget);
+    };
 
-  const handleClose = () => {
-    setAnchorEl(null);
-  };
+  const handleCloseMenu =
+    (setAnchorEl: React.Dispatch<React.SetStateAction<AnchorEl>>) => () => {
+      setAnchorEl(null);
+    };
 
   return (
-    <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static">
-        <Toolbar>
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            Photos
+    <Box
+      sx={{
+        width: "100%",
+
+        height: "141px",
+        backgroundColor: "#ffffff",
+        padding: "0 20px",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "space-between",
+        boxShadow: "0px 4px 12px rgba(0, 0, 0, 0.1)",
+        borderBottom: "1px solid #d8d8d8",
+      }}
+    >
+      {/* Left Side Image */}
+      <Box sx={{ display: "flex", alignItems: "center" }}>
+        <Image
+          src={HeaderLogo} // Make sure your image is in the public/images folder
+          alt="Logo"
+          width={270}
+          height={68}
+        />
+      </Box>
+
+      {/* Right Side Navigation */}
+      <Box
+        sx={{
+          display: "flex",
+          alignItems: "center",
+          gap: "20px",
+          height: "100%",
+          // bgcolor: "red",
+        }}
+      >
+        {/* Our Service with dropdown */}
+        <Box
+          sx={{
+            position: "relative",
+            display: "flex",
+            alignItems: "center",
+            borderBottom: "1px solid #ffffff",
+            padding: "0 20px 0 20px",
+            height: "100%",
+            "&:hover": {
+              borderBottom: "1px solid green",
+            },
+          }}
+          onMouseEnter={handleOpenMenu(setServiceAnchorEl)}
+          onMouseLeave={handleCloseMenu(setServiceAnchorEl)}
+        >
+          <Typography
+            sx={{
+              cursor: "pointer",
+              fontSize: "12px",
+              display: "flex",
+              fontWeight: "bold",
+              alignItems: "center",
+              color: "#262A2B",
+            }}
+          >
+            OUR SERVICES
+            <ArrowDropDownIcon sx={{ width: "1em", height: "1em" }} />
           </Typography>
-          <div>
-            <IconButton
-              size="large"
-              aria-label="account of current user"
-              aria-controls="menu-appbar"
-              aria-haspopup="true"
-              onClick={handleMenu}
-              color="inherit"
-            >
-              <AccountCircle />
-            </IconButton>
-            <Menu
-              id="menu-appbar"
-              anchorEl={anchorEl}
-              anchorOrigin={{
-                vertical: "top",
-                horizontal: "right",
-              }}
-              keepMounted
-              transformOrigin={{
-                vertical: "top",
-                horizontal: "right",
-              }}
-              open={Boolean(anchorEl)}
-              onClose={handleClose}
-            >
-              <MenuItem onClick={handleClose}>Profile</MenuItem>
-              <MenuItem onClick={handleClose}>My account</MenuItem>
-            </Menu>
-          </div>
-        </Toolbar>
-      </AppBar>
+          <Menu
+            anchorEl={serviceAnchorEl}
+            open={Boolean(serviceAnchorEl)}
+            onClose={handleCloseMenu(setServiceAnchorEl)}
+            MenuListProps={{
+              onMouseEnter: handleOpenMenu(setServiceAnchorEl),
+              onMouseLeave: handleCloseMenu(setServiceAnchorEl),
+            }}
+            sx={{ mt: "40px" }}
+          >
+            <MenuItem onClick={handleCloseMenu(setServiceAnchorEl)}>
+              Service 1
+            </MenuItem>
+            <MenuItem onClick={handleCloseMenu(setServiceAnchorEl)}>
+              Service 2
+            </MenuItem>
+            <MenuItem onClick={handleCloseMenu(setServiceAnchorEl)}>
+              Service 3
+            </MenuItem>
+          </Menu>
+        </Box>
+
+        {/* About with dropdown */}
+        <Box
+          sx={{
+            position: "relative",
+            display: "flex",
+            alignItems: "center",
+            height: "100%",
+            borderBottom: "1px solid #ffffff",
+            padding: "0 20px 0 20px",
+
+            "&:hover": {
+              borderBottom: "1px solid green",
+            },
+          }}
+          onMouseEnter={handleOpenMenu(setAboutAnchorEl)}
+          onMouseLeave={handleCloseMenu(setAboutAnchorEl)}
+        >
+          <Typography
+            sx={{
+              cursor: "pointer",
+              fontSize: "12px",
+              display: "flex",
+              fontWeight: "bold",
+              alignItems: "center",
+              color: "#262A2B",
+            }}
+          >
+            ABOUT
+            <ArrowDropDownIcon />
+          </Typography>
+          <Menu
+            anchorEl={aboutAnchorEl}
+            open={Boolean(aboutAnchorEl)}
+            onClose={handleCloseMenu(setAboutAnchorEl)}
+            MenuListProps={{
+              onMouseEnter: handleOpenMenu(setAboutAnchorEl),
+              onMouseLeave: handleCloseMenu(setAboutAnchorEl),
+            }}
+            sx={{ mt: "40px" }}
+          >
+            <MenuItem onClick={handleCloseMenu(setAboutAnchorEl)}>
+              About Us
+            </MenuItem>
+            <MenuItem onClick={handleCloseMenu(setAboutAnchorEl)}>
+              Our Team
+            </MenuItem>
+          </Menu>
+        </Box>
+
+        {/* Contact (No Dropdown) */}
+        <Box
+          sx={{
+            position: "relative",
+            display: "flex",
+            alignItems: "center",
+            height: "100%",
+            borderBottom: "1px solid #ffffff",
+            padding: "0 20px 0 20px",
+
+            "&:hover": {
+              borderBottom: "1px solid green",
+            },
+          }}
+        >
+          <Typography
+            sx={{
+              cursor: "pointer",
+              fontSize: "12px",
+              display: "flex",
+
+              fontWeight: "bold",
+              alignItems: "center",
+              color: "#262A2B",
+            }}
+          >
+            CONTACT
+          </Typography>
+        </Box>
+
+        {/* Support with dropdown */}
+        <Box
+          sx={{
+            position: "relative",
+            display: "flex",
+            alignItems: "center",
+            height: "100%",
+            borderBottom: "1px solid #ffffff",
+            padding: "0 20px 0 20px",
+
+            "&:hover": {
+              borderBottom: "1px solid green",
+            },
+          }}
+          onMouseEnter={handleOpenMenu(setSupportAnchorEl)}
+          onMouseLeave={handleCloseMenu(setSupportAnchorEl)}
+        >
+          <Typography
+            sx={{
+              cursor: "pointer",
+              fontSize: "12px",
+              display: "flex",
+
+              fontWeight: "bold",
+              alignItems: "center",
+              color: "#262A2B",
+            }}
+          >
+            SUPPORT
+            <ArrowDropDownIcon />
+          </Typography>
+          <Menu
+            anchorEl={supportAnchorEl}
+            open={Boolean(supportAnchorEl)}
+            onClose={handleCloseMenu(setSupportAnchorEl)}
+            MenuListProps={{
+              onMouseEnter: handleOpenMenu(setSupportAnchorEl),
+              onMouseLeave: handleCloseMenu(setSupportAnchorEl),
+            }}
+            sx={{ mt: "40px" }}
+          >
+            <MenuItem onClick={handleCloseMenu(setSupportAnchorEl)}>
+              Support 1
+            </MenuItem>
+            <MenuItem onClick={handleCloseMenu(setSupportAnchorEl)}>
+              Support 2
+            </MenuItem>
+          </Menu>
+        </Box>
+      </Box>
     </Box>
   );
-}
+};
+
+export default Header;
