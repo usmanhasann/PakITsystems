@@ -1,19 +1,22 @@
-// styles/theme.ts
+"use client";
 import { createTheme } from "@mui/material/styles";
 
 const theme = createTheme({
-  typography: {
-    fontFamily: "Montserrat, Arial, sans-serif",
-    // Customize specific typography variants if needed
-    h1: {
-      fontFamily: "Montserrat, Arial, sans-serif",
+  palette: {
+    primary: {
+      main: "#3644af",
     },
-    h2: {
-      fontFamily: "Montserrat, Arial, sans-serif",
+    secondary: {
+      main: "#dc004e",
     },
-    // You can customize other typography variants as needed
+
+    background: {
+      default: "#f4f4f4",
+    },
   },
-  // Other theme settings if needed
+  typography: {
+    fontFamily: "'Montserrat', sans-serif",
+  },
 });
 
 export default theme;

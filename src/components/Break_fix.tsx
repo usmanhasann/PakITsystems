@@ -1,7 +1,7 @@
 import { Box, Typography, Button } from "@mui/material";
 import React from "react";
 import Image from "next/image";
-import BlackLaptop from "@/assets/Black-laptop-image.png";
+import BlackLaptop from "@/assets/laptop-image.png";
 
 const Break_fix = () => {
   return (
@@ -65,7 +65,7 @@ const Break_fix = () => {
             letterSpacing: "1px",
             boxShadow: " 0px 0px 20px 0px rgba(0, 0, 0, 0.5)",
             padding: "15px",
-            bgcolor: "#61ce70 !important",
+            bgcolor: "#3644af !important",
             color: "#ffffff",
           }}
         >

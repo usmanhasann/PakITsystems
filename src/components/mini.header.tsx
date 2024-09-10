@@ -24,31 +24,51 @@ const miniheader = () => {
             fontSize={"12px"}
             fontWeight={"300"}
             color={"#ffffff"}
+            sx={{
+              cursor: "pointer",
+              "&:hover": {
+                "& .icon": {
+                  fill: "#fff",
+                  fontSize: "16px",
+                },
+              },
+            }}
           >
             {" "}
             <PhoneEnabledIcon
+              className="icon"
               sx={{
-                fill: "rgba(35, 164, 85, 0.86)",
-                width: "14px",
-                height: "14px",
+                fill: "#3644af",
+                fontSize: "16px",
               }}
             />
-            (301) 363-2823 - Washington DC Metro Area
+            +1 (972) 693-8786 - 2180 Nottoway Dr Hanover, MD 21076
           </Typography>
-          <Typography
+          {/* <Typography
             display={"flex"}
             gap={"10px"}
             alignItems={"center"}
             fontSize={"12px"}
             fontWeight={"300"}
             color={"#ffffff"}
+            sx={{
+              cursor: "pointer",
+
+              "&:hover": {
+                "& .icon": {
+                  fill: "#fff",
+                  fontSize: "16px",
+                },
+              },
+            }}
           >
             {" "}
             <PhoneEnabledIcon
-              sx={{ color: "rgba(35, 164, 85, 0.86)", fontSize: "14px" }}
+              className="icon"
+              sx={{ color: "#3644af", fontSize: "16px" }}
             />
             (407) 537-9425 - Florida
-          </Typography>
+          </Typography> */}
         </Box>
         <Box display={"flex"}>
           <Box
@@ -61,11 +81,14 @@ const miniheader = () => {
             sx={{
               cursor: "pointer",
               "&:hover": {
-                bgcolor: "#006838",
+                bgcolor: "#3644af",
+                "& .icon": {
+                  fill: "#fff", // Hover par icon ka color white ho jayega
+                },
               },
             }}
           >
-            <FaFacebookF style={{ color: "#61ce70" }} />
+            <FaFacebookF className="icon" style={{ color: "#3644af" }} />
           </Box>
           <Box
             height={"44.8px"}
@@ -77,12 +100,15 @@ const miniheader = () => {
             sx={{
               cursor: "pointer",
               "&:hover": {
-                bgcolor: "#006838",
+                bgcolor: "#3644af",
+                "& .icon": {
+                  fill: "#fff",
+                },
               },
             }}
           >
             {" "}
-            <FaTwitter style={{ color: "#61ce70" }} />{" "}
+            <FaTwitter className="icon" style={{ color: "#3644af" }} />{" "}
           </Box>
         </Box>
       </Box>

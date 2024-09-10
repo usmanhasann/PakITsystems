@@ -4,20 +4,44 @@ import React from "react";
 import { Box, Typography } from "@mui/material";
 import HomeMainImage from "../assets/HomePageMainImage.jpeg";
 import OurServicesImage from "@/assets/OurServicesImage.jpeg";
+import AboutImage from "@/assets/AboutMainImage.jpeg";
+import ContactImage from "@/assets/ContactMainImage.jpeg";
+import { usePathname } from "next/navigation";
 
 const Homesection: React.FC = () => {
+  const pathname = usePathname();
+
+  const content = {
+    "/": {
+      image: HomeMainImage.src,
+      text: "Because your technology should JUST WORK",
+    },
+    "/services": {
+      image: OurServicesImage.src,
+      text: "Our services",
+    },
+    "/about": {
+      image: AboutImage.src,
+      text: " ",
+    },
+    "/contact": {
+      image: ContactImage.src,
+      text: "",
+    },
+  };
+  const currentContent = content[pathname] || content["/"];
   return (
     <Box width="100%" height="58vh" position={"relative"}>
       <Box
         // position={"fixed"}
         width="100%"
-        height="58vh"
+        height="60vh"
         display="flex"
         alignItems="center"
         justifyContent="center"
         sx={{
           position: "fixed",
-          backgroundImage: `url(${HomeMainImage.src})`,
+          backgroundImage: `url(${currentContent.image})`,
           backgroundSize: "cover",
           backgroundRepeat: "no-repeat",
           backgroundPosition: "center center",
@@ -58,21 +82,10 @@ const Homesection: React.FC = () => {
             style={{
               fontSize: "55px",
               color: "#ffffff",
-              fontWeight: "700",
+              fontWeight: "600",
             }}
           >
-            Because your technology should
-          </Typography>
-
-          <Typography
-            component="span"
-            style={{
-              fontSize: "55px",
-              color: "#61ce70",
-              fontWeight: "700",
-            }}
-          >
-            JUST WORK
+            {currentContent.text}
           </Typography>
         </Box>
       </Box>

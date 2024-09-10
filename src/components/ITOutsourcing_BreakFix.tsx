@@ -65,7 +65,7 @@ const ITOutsourcingBreakFix = () => {
               letterSpacing: "1px",
               boxShadow: " 0px 0px 20px 0px rgba(0, 0, 0, 0.5)",
               padding: "15px",
-              bgcolor: "#61ce70 !important",
+              bgcolor: "#3644af !important",
               color: "#ffffff",
             }}
           >
