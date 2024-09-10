@@ -12,42 +12,42 @@ import {
 const services = [
   {
     id: 1,
-    icon: <SettingsSuggestIcon sx={{ fontSize: "50px", color: "#006838" }} />,
+    icon: <SettingsSuggestIcon sx={{ fontSize: "50px", color: "#3644af" }} />,
     title: "IT OUTSOURCING",
     description:
       "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quasi quis doloremque odit assumenda eos amet dolor at! Voluptas ab sapiente, dignissimos reiciendis eius ipsam sed cumque, rem et autem officiis?",
   },
   {
     id: 2,
-    icon: <FaWrench style={{ fontSize: "50px", color: "#006838" }} />,
+    icon: <FaWrench style={{ fontSize: "50px", color: "#3644af" }} />,
     title: "BREAK / FIX",
     description:
       "Providing efficient maintenance services to keep your systems up and running at all times. Trust us with your infrastructure management.",
   },
   {
     id: 3,
-    icon: <FaPhone style={{ fontSize: "50px", color: "#006838" }} />,
+    icon: <FaPhone style={{ fontSize: "50px", color: "#3644af" }} />,
     title: "HELPDESK",
     description:
       "24/7 technical support to resolve any issues swiftly. Our expert team is always here to help whenever you need assistance.",
   },
   {
     id: 4,
-    icon: <FaCloud style={{ fontSize: "50px", color: "#006838" }} />,
+    icon: <FaCloud style={{ fontSize: "50px", color: "#3644af" }} />,
     title: "CLOUD SERVICES",
     description:
       "Cloud storage and computing solutions tailored to your business needs. Secure and scalable options for modern businesses.",
   },
   {
     id: 5,
-    icon: <FaCloudDownloadAlt style={{ fontSize: "50px", color: "#006838" }} />,
+    icon: <FaCloudDownloadAlt style={{ fontSize: "50px", color: "#3644af" }} />,
     title: "DISASTER RECOVERY",
     description:
       "Effortless deployment of software solutions, ensuring that everything works smoothly across all devices and platforms.",
   },
   {
     id: 6,
-    icon: <FaLock style={{ fontSize: "50px", color: "#006838" }} />,
+    icon: <FaLock style={{ fontSize: "50px", color: "#3644af" }} />,
     title: "MANAGED SECURITY",
     description:
       "Advanced security measures to safeguard your data and systems. Protect your business from emerging threats.",
@@ -84,7 +84,7 @@ const OurServices = () => {
         </Typography>
       </Box>
       <Box
-        width={"60%"}
+        width={"75%"}
         display={"flex"}
         flexWrap={"wrap"}
         // alignItems={"center"}

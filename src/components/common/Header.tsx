@@ -1,8 +1,8 @@
 "use client";
 import React, { useState, MouseEvent, useEffect } from "react";
-import { Box, Typography, MenuItem } from "@mui/material";
+import { Box, Typography, MenuItem, AppBar, Toolbar } from "@mui/material";
 import Image from "next/image";
-import HeaderLogo from "../assets/header-main-logo.png";
+import HeaderLogo from "@/assets/pakitsystem-main-Logo.png";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 import Link from "next/link";
 
@@ -36,7 +36,7 @@ const Header: React.FC = () => {
   }, []);
 
   return (
-    <Box
+    <AppBar
       sx={{
         position: isSticky ? "fixed" : "relative",
         top: 0,
@@ -52,17 +52,22 @@ const Header: React.FC = () => {
         borderBottom: "1px solid #d8d8d8",
       }}
     >
-      <Box
+      <Toolbar
         sx={{
           width: "98%",
           display: "flex",
           alignItems: "center",
           justifyContent: "space-between",
+          height: "100%",
         }}
       >
         <Box sx={{ display: "flex", alignItems: "center" }}>
           <Link href={"/"} passHref style={{ textDecoration: "none" }}>
-            <Image src={HeaderLogo} alt="Logo" width={270} height={68} />
+            <Image
+              src={HeaderLogo}
+              alt="Logo"
+              style={{ width: "auto", height: "68px" }}
+            />
           </Link>
         </Box>
 
@@ -72,6 +77,7 @@ const Header: React.FC = () => {
             alignItems: "center",
             gap: "20px",
             height: "100%",
+            // bgcolor: "aquamarine",
           }}
         >
           {/* OUR SERVICES */}
@@ -83,8 +89,9 @@ const Header: React.FC = () => {
               borderBottom: "1px solid #ffffff",
               padding: "0 20px",
               height: "100%",
+              // bgcolor: "red",
               "&:hover": {
-                borderBottom: "1px solid green",
+                borderBottom: "1px solid #3644af",
               },
             }}
             onMouseEnter={() => handleMouseEnter("ourServices")}
@@ -122,9 +129,14 @@ const Header: React.FC = () => {
                     fontWeight: "500",
                     textDecoration: "none",
                     cursor: "pointer",
-                    color: "#006838",
+                    color: "#3644af",
                     fontSize: "13px",
                     padding: "13px 20px",
+                    "&:hover": {
+                      bgcolor: "#3644af",
+                      color: "#fff",
+                      transition: "0.5s",
+                    },
                   }}
                 >
                   IT OUTSOURCING
@@ -134,9 +146,14 @@ const Header: React.FC = () => {
                     fontWeight: "500",
                     textDecoration: "none",
                     cursor: "pointer",
-                    color: "#006838",
+                    color: "#3644af",
                     fontSize: "13px",
                     padding: "13px 20px",
+                    "&:hover": {
+                      bgcolor: "#3644af",
+                      color: "#fff",
+                      transition: "0.5s",
+                    },
                   }}
                 >
                   BREAK / FIX
@@ -146,9 +163,14 @@ const Header: React.FC = () => {
                     fontWeight: "500",
                     textDecoration: "none",
                     cursor: "pointer",
-                    color: "#006838",
+                    color: "#3644af",
                     fontSize: "13px",
                     padding: "13px 20px",
+                    "&:hover": {
+                      bgcolor: "#3644af",
+                      color: "#fff",
+                      transition: "0.5s",
+                    },
                   }}
                 >
                   HELP DESK
@@ -158,9 +180,14 @@ const Header: React.FC = () => {
                     fontWeight: "500",
                     textDecoration: "none",
                     cursor: "pointer",
-                    color: "#006838",
+                    color: "#3644af",
                     fontSize: "13px",
                     padding: "13px 20px",
+                    "&:hover": {
+                      bgcolor: "#3644af",
+                      color: "#fff",
+                      transition: "0.5s",
+                    },
                   }}
                 >
                   CLOUD SERVICES
@@ -170,9 +197,14 @@ const Header: React.FC = () => {
                     fontWeight: "500",
                     textDecoration: "none",
                     cursor: "pointer",
-                    color: "#006838",
+                    color: "#3644af",
                     fontSize: "13px",
                     padding: "13px 20px",
+                    "&:hover": {
+                      bgcolor: "#3644af",
+                      color: "#fff",
+                      transition: "0.5s",
+                    },
                   }}
                 >
                   MANAGED SECURITY
@@ -182,9 +214,14 @@ const Header: React.FC = () => {
                     fontWeight: "500",
                     textDecoration: "none",
                     cursor: "pointer",
-                    color: "#006838",
+                    color: "#3644af",
                     fontSize: "13px",
                     padding: "13px 20px",
+                    "&:hover": {
+                      bgcolor: "#3644af",
+                      color: "#fff",
+                      transition: "0.5s",
+                    },
                   }}
                 >
                   DISASTER RECOVERY
@@ -194,9 +231,14 @@ const Header: React.FC = () => {
                     fontWeight: "500",
                     textDecoration: "none",
                     cursor: "pointer",
-                    color: "#006838",
+                    color: "#3644af",
                     fontSize: "13px",
                     padding: "13px 20px",
+                    "&:hover": {
+                      bgcolor: "#3644af",
+                      color: "#fff",
+                      transition: "0.5s",
+                    },
                   }}
                 >
                   FREE IT ASSESSMENT
@@ -215,7 +257,7 @@ const Header: React.FC = () => {
               borderBottom: "1px solid #ffffff",
               padding: "0 20px",
               "&:hover": {
-                borderBottom: "1px solid green",
+                borderBottom: "1px solid #3644af",
               },
             }}
             onMouseEnter={() => handleMouseEnter("about")}
@@ -253,9 +295,14 @@ const Header: React.FC = () => {
                     fontWeight: "500",
                     textDecoration: "none",
                     cursor: "pointer",
-                    color: "#006838",
+                    color: "#3644af",
                     fontSize: "13px",
                     padding: "13px 20px",
+                    "&:hover": {
+                      bgcolor: "#3644af",
+                      color: "#fff",
+                      transition: "0.5s",
+                    },
                   }}
                 >
                   ABOUT
@@ -265,9 +312,14 @@ const Header: React.FC = () => {
                     fontWeight: "500",
                     textDecoration: "none",
                     cursor: "pointer",
-                    color: "#006838",
+                    color: "#3644af",
                     fontSize: "13px",
                     padding: "13px 20px",
+                    "&:hover": {
+                      bgcolor: "#3644af",
+                      color: "#fff",
+                      transition: "0.5s",
+                    },
                   }}
                 >
                   WHY US
@@ -277,9 +329,14 @@ const Header: React.FC = () => {
                     fontWeight: "500",
                     textDecoration: "none",
                     cursor: "pointer",
-                    color: "#006838",
+                    color: "#3644af",
                     fontSize: "13px",
                     padding: "13px 20px",
+                    "&:hover": {
+                      bgcolor: "#3644af",
+                      color: "#fff",
+                      transition: "0.5s",
+                    },
                   }}
                 >
                   TESTIMONIALS
@@ -298,22 +355,24 @@ const Header: React.FC = () => {
               borderBottom: "1px solid #ffffff",
               padding: "0 20px",
               "&:hover": {
-                borderBottom: "1px solid green",
+                borderBottom: "1px solid #3644af",
               },
             }}
           >
-            <Typography
-              sx={{
-                cursor: "pointer",
-                fontSize: "12px",
-                display: "flex",
-                fontWeight: "bold",
-                alignItems: "center",
-                color: "#262A2B",
-              }}
-            >
-              CONTACT
-            </Typography>
+            <Link href="/contact" passHref style={{ textDecoration: "none" }}>
+              <Typography
+                sx={{
+                  cursor: "pointer",
+                  fontSize: "12px",
+                  display: "flex",
+                  fontWeight: "bold",
+                  alignItems: "center",
+                  color: "#262A2B",
+                }}
+              >
+                CONTACT
+              </Typography>
+            </Link>
           </Box>
 
           {/* SUPPORT */}
@@ -326,7 +385,7 @@ const Header: React.FC = () => {
               borderBottom: "1px solid #ffffff",
               padding: "0 20px",
               "&:hover": {
-                borderBottom: "1px solid green",
+                borderBottom: "1px solid #3644af",
               },
             }}
             onMouseEnter={() => handleMouseEnter("support")}
@@ -362,9 +421,14 @@ const Header: React.FC = () => {
                     fontWeight: "500",
                     textDecoration: "none",
                     cursor: "pointer",
-                    color: "#006838",
+                    color: "#3644af",
                     fontSize: "13px",
                     padding: "13px 20px",
+                    "&:hover": {
+                      bgcolor: "#3644af",
+                      color: "#fff",
+                      transition: "0.5s",
+                    },
                   }}
                 >
                   CUSTOMER LOGIN
@@ -374,9 +438,14 @@ const Header: React.FC = () => {
                     fontWeight: "500",
                     textDecoration: "none",
                     cursor: "pointer",
-                    color: "#006838",
+                    color: "#3644af",
                     fontSize: "13px",
                     padding: "13px 20px",
+                    "&:hover": {
+                      bgcolor: "#3644af",
+                      color: "#fff",
+                      transition: "0.5s",
+                    },
                   }}
                 >
                   REMOTE SUPPORT
@@ -385,8 +454,8 @@ const Header: React.FC = () => {
             )}
           </Box>
         </Box>
-      </Box>
-    </Box>
+      </Toolbar>
+    </AppBar>
   );
 };
 

@@ -2,7 +2,7 @@ import { Box, Typography, Button } from "@mui/material";
 import React from "react";
 import Image from "next/image";
 import BlackLaptop from "@/assets/Black-laptop-image.png";
-import WhiteShirt from "@/assets/WhiteShirt2.png";
+import WhiteShirt from "@/assets/whiteshirtpng_bg.png";
 const FreeItAssessment = () => {
   return (
     <Box
@@ -13,7 +13,7 @@ const FreeItAssessment = () => {
       display={"flex"}
       sx={{
         backgroundColor: "transparent",
-        backgroundImage: "linear-gradient(80deg, #61ce70 0%, #006838 100%)",
+        backgroundImage: "linear-gradient(80deg, #3658af 0%, #3644af 100%)",
       }}
     >
       <Box
@@ -60,13 +60,13 @@ const FreeItAssessment = () => {
         <Button
           sx={{
             fontSize: "13px",
-            fontWeight: "400",
+            fontWeight: "500",
             lineHeight: "1.4em",
             letterSpacing: "1px",
             boxShadow: " 0px 0px 20px 0px rgba(0, 0, 0, 0.5)",
             padding: "15px",
             bgcolor: "#ffffff !important",
-            color: "#61ce70",
+            color: "#3644af",
           }}
         >
           REQUEST NOW

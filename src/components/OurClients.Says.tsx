@@ -93,7 +93,7 @@ const OurClientsSays = () => {
                 padding={"40px 20px"}
               >
                 <Typography
-                  color={"#006838"}
+                  color={"#3644af"}
                   fontSize={"80px"}
                   textAlign={"center"}
                   margin={"0"}
@@ -153,7 +153,8 @@ const OurClientsSays = () => {
                 letterSpacing: "1.3px",
                 padding: "15px",
                 boxShadow: "0px 0px 20px 0px rgba(0, 0, 0, 0.5)",
-                bgcolor: "#61ce70 !important",
+                bgcolor: "#3644af !important",
+                color: "#fff",
               }}
             >
               SEE WHAT OTHER CUSTOMER HAVE TO SAY

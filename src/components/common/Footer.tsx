@@ -201,7 +201,7 @@ export const Footer = () => {
                 fontWeight: "600",
                 textTransform: "uppercase",
                 color: "#ffffff",
-                backgroundColor: "#006838",
+                backgroundColor: "#3444af",
                 borderRadius: "5px",
                 padding: "15px 35px",
               }}
@@ -251,7 +251,7 @@ export const Footer = () => {
                 bgcolor: "#61ce7000",
                 borderStyle: "solid",
                 borderWidth: "1px",
-                borderColor: "#61ce70",
+                borderColor: "#fff",
                 padding: "7px",
                 color: "#ffffff",
                 fontStyle: "italic",
