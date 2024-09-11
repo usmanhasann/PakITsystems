@@ -83,7 +83,7 @@ const miniheader = () => {
               "&:hover": {
                 bgcolor: "#3644af",
                 "& .icon": {
-                  fill: "#fff", // Hover par icon ka color white ho jayega
+                  fill: "#fff",
                 },
               },
             }}

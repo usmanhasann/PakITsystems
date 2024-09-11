@@ -66,13 +66,14 @@ const OurServices = () => {
       alignItems={"center"}
       flexDirection={"column"}
       gap={"50px"}
-      padding={"150px 0 50px 0"}
+      padding={"100px 0 50px 0"}
     >
       <Box
         width={"100%"}
         display={"flex"}
         alignItems={"center"}
         justifyContent={"center"}
+        // bgcolor={"green"}
       >
         <Typography
           fontSize={"52px"}
@@ -84,13 +85,18 @@ const OurServices = () => {
         </Typography>
       </Box>
       <Box
-        width={"75%"}
+        width={"1100px"}
         display={"flex"}
         flexWrap={"wrap"}
         // alignItems={"center"}
         justifyContent={"center"}
-        // bgcolor={"red"}
+        // bgcolor={"aqua"}
         gap={"10px"}
+        sx={{
+          "@media (max-width:1120px)": {
+            width: "95%",
+          },
+        }}
       >
         {services.map((service) => (
           <Box
@@ -101,7 +107,16 @@ const OurServices = () => {
             flexDirection={"column"}
             gap={"20px"}
             padding={"40px"}
-            // bgcolor={"red"}
+            // bgcolor={"yellow"}
+            sx={{
+              "@media (max-width:684px)": {
+                width: "340px",
+              },
+              "@media (max-width:450px)": {
+                width: "100%",
+                padding: "20px",
+              },
+            }}
           >
             <Box display={"flex"} justifyContent={"center"}>
               {service.icon}

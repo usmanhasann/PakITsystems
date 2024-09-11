@@ -14,8 +14,20 @@ const Companyimages = () => {
       justifyContent={"center"}
       borderTop={"1px solid #61ce70"}
       padding={"50px 0"}
+      sx={{
+        "@media(max-width:768px)": {
+          display: "none",
+        },
+      }}
     >
-      <Box width={"55.5%"}>
+      <Box
+        width={"55.5%"}
+        sx={{
+          "@media(max-width:1024px)": {
+            width: "70%",
+          },
+        }}
+      >
         <Image
           src={CompanyNamesImg}
           alt="Company Names Image"

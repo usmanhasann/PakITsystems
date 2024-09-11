@@ -1,7 +1,8 @@
 "use client";
 import { Box, Button, Typography } from "@mui/material";
 import React from "react";
-import Logo from "@/assets/footer logo.jpg";
+import Logo from "@/assets/pakitsystem-main-Logo.svg";
+
 import Image from "next/image";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import { FaFacebookF } from "react-icons/fa";
@@ -56,16 +57,29 @@ export const Footer = () => {
           bgcolor={"black"}
           alignItems={"center"}
           padding={"50px 0"}
+          sx={{
+            "@media (max-width:1024px)": {
+              width: "80%",
+              padding: "50 0",
+              flexDirection: "column",
+              alignItems: "flex-start",
+              gap: "20px",
+            },
+          }}
         >
           <Box
-            display={"inline-block"}
-            // width={"67"}
-            // height={"67px"}
+            display={"flex"}
+            width={"201px"}
+            height={"0"}
             padding={"10px"}
             fontSize={"15px"}
             fontFamily={"sans-serif"}
           >
-            <Image src={Logo} alt="webLogo" />
+            <Image
+              src={Logo}
+              alt="webLogo"
+              style={{ width: "100%", height: "auto" }}
+            />
           </Box>
           <Box padding={"10px"}>
             <Typography
@@ -74,6 +88,11 @@ export const Footer = () => {
               fontFamily={"sans-serif"}
               //   padding={"15px"}
               fontStyle={"italic"}
+              sx={{
+                "@media (max-width:620px)": {
+                  fontSize: "18px",
+                },
+              }}
             >
               Because your technology should just work
             </Typography>
@@ -81,19 +100,39 @@ export const Footer = () => {
         </Box>
 
         <Box
-          bgcolor={"black"}
-          //   padding={"25px 25px 50px 25px"}
+          // bgcolor={"red"}
           display={"flex"}
-          justifyContent={"center"}
+          justifyContent={"flex-start"}
           width={"71%"}
           gap={"20px"}
           padding={"25px 0 70px 0"}
+          sx={{
+            "@media (max-width:1024px)": {
+              width: "80%",
+              gap: "20",
+              flexWrap: "wrap",
+            },
+            "@media (max-width:768px)": {
+              width: "90%",
+              gap: "20",
+              flexWrap: "wrap",
+            },
+          }}
         >
           <Box
             display={"flex"}
             flexDirection={"column"}
             gap={"10px"}
             width={"275px"}
+            // bgcolor={"green"}
+            sx={{
+              "@media (max-width:1024px)": {
+                width: "auto",
+              },
+              "@media (max-width:768px)": {
+                width: "200px",
+              },
+            }}
           >
             <Typography
               paddingLeft={"5px"}
@@ -127,6 +166,15 @@ export const Footer = () => {
             flexDirection={"column"}
             gap={"10px"}
             width={"275px"}
+            // bgcolor={"green"}
+            sx={{
+              "@media (max-width:1024px)": {
+                width: "auto",
+              },
+              "@media (max-width:768px)": {
+                width: "200px",
+              },
+            }}
           >
             <Typography
               paddingLeft={"5px"}
@@ -160,6 +208,15 @@ export const Footer = () => {
             flexDirection={"column"}
             gap={"10px"}
             width={"275px"}
+            // bgcolor={"green"}
+            sx={{
+              "@media (max-width:1024px)": {
+                width: "auto",
+              },
+              "@media (max-width:768px)": {
+                width: "200px",
+              },
+            }}
           >
             <Typography
               paddingLeft={"5px"}
@@ -194,6 +251,11 @@ export const Footer = () => {
             display={"flex"}
             alignItems={"flex-start"}
             justifyContent={"flex-end"}
+            sx={{
+              "@media (max-width:1024px)": {
+                width: "auto",
+              },
+            }}
           >
             <Button
               sx={{
@@ -204,6 +266,7 @@ export const Footer = () => {
                 backgroundColor: "#3444af",
                 borderRadius: "5px",
                 padding: "15px 35px",
+                whiteSpace: "pre",
               }}
             >
               Contact us

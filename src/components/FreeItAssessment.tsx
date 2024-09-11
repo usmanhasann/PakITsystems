@@ -14,19 +14,29 @@ const FreeItAssessment = () => {
       sx={{
         backgroundColor: "transparent",
         backgroundImage: "linear-gradient(80deg, #3658af 0%, #3644af 100%)",
+        "@media (max-width:768px)": {
+          flexDirection: "column",
+          padding: "2.5%",
+        },
       }}
     >
       <Box
         width={"50%"}
-        height={"522.91px"}
+        height={"auto"}
         display={"flex"}
         alignItems={"center"}
         justifyContent={"center"}
+        padding={"0 2.5%"}
+        sx={{
+          "@media (max-width:768px)": {
+            display: "none",
+          },
+        }}
       >
         <Image
           src={WhiteShirt}
           alt="White Shirt Image"
-          style={{ width: "auto", height: "100%" }}
+          style={{ width: "100%", height: "auto" }}
         />
       </Box>
       <Box
@@ -36,14 +46,41 @@ const FreeItAssessment = () => {
         justifyContent={"center"}
         alignItems={"flex-start"}
         gap={"20px"}
+        padding={"0 20px 0 0 "}
+        sx={{
+          "@media(max-width:768px)": {
+            width: "80%",
+            padding: "0 2.5%",
+          },
+          "@media(max-width:490px)": {
+            width: "100%",
+          },
+        }}
       >
         <Typography
-          variant="h1"
-          fontSize={"65px"}
-          fontWeight={"bold"}
-          color="#ffffff"
-          lineHeight={"1.4em"}
-          // marginBottom={"20px"}
+          sx={{
+            variant: "h1",
+            fontSize: "65px",
+            fontWeight: "bold",
+            color: "#ffffff",
+            lineHeight: "1.4em",
+            // marginBottom={"20px"}
+            "@media(max-width:1390px)": {
+              fontSize: "50px",
+            },
+            "@media(max-width:1150px)": {
+              fontSize: "44px",
+            },
+            "@media(max-width:935px)": {
+              fontSize: "38px",
+            },
+            "@media(max-width:815px)": {
+              fontSize: "34px",
+            },
+            "@media(max-width:400px)": {
+              fontSize: "30px",
+            },
+          }}
         >
           Free IT Assessment
         </Typography>
