@@ -32,7 +32,7 @@ export const ContactUsform = () => {
         alignItems={"center"}
         justifyContent={"center"}
         gap={"20px"}
-        bgcolor={"#f7f7f7"}
+        // bgcolor={"#f7f7f7"}
       >
         <Typography
           textAlign={"center"}
@@ -41,6 +41,14 @@ export const ContactUsform = () => {
           fontWeight={"bold"}
           fontStyle={"normal"}
           paddingBottom={"20px"}
+          sx={{
+            "@media (max-width:768px)": {
+              fontSize: "30px",
+            },
+            "@media (max-width:350px)": {
+              fontSize: "26px",
+            },
+          }}
         >
           Our Service Areas
         </Typography>
@@ -52,6 +60,14 @@ export const ContactUsform = () => {
           display={"flex"}
           flexDirection={"column"}
           gap={"10px"}
+          sx={{
+            "@media (max-width:768px)": {
+              width: "50%",
+            },
+            "@media (max-width:500px)": {
+              width: "90%",
+            },
+          }}
         >
           <Typography
             textAlign={"center"}
@@ -59,6 +75,11 @@ export const ContactUsform = () => {
             color="#000"
             fontWeight={"800"}
             textTransform={"uppercase"}
+            sx={{
+              "@media (max-width:768px)": {
+                fontSize: "18px",
+              },
+            }}
           >
             WASHINGTON DC METRO AREA
           </Typography>
@@ -69,18 +90,40 @@ export const ContactUsform = () => {
             fontWeight={"normal"}
             letterSpacing={"1px"}
             textTransform={"uppercase"}
+            sx={{
+              "@media (max-width:768px)": {
+                fontSize: "26px",
+              },
+            }}
           >
             301.363.2823
           </Typography>
         </Box>
 
-        <Box display={"flex"} flexDirection={"column"} gap={"10px"}>
+        <Box
+          display={"flex"}
+          flexDirection={"column"}
+          gap={"10px"}
+          sx={{
+            "@media (max-width:768px)": {
+              width: "50%",
+            },
+            "@media (max-width:500px)": {
+              width: "90%",
+            },
+          }}
+        >
           <Typography
             textAlign={"center"}
             fontSize={"20px"}
             color="#000"
             fontWeight={"800"}
             textTransform={"uppercase"}
+            sx={{
+              "@media (max-width:768px)": {
+                fontSize: "18px",
+              },
+            }}
           >
             FLORIDA
           </Typography>
@@ -91,6 +134,11 @@ export const ContactUsform = () => {
             fontWeight={"normal"}
             letterSpacing={"1px"}
             textTransform={"uppercase"}
+            sx={{
+              "@media (max-width:768px)": {
+                fontSize: "26px",
+              },
+            }}
           >
             407.537.9425
           </Typography>
@@ -113,8 +161,29 @@ export const ContactUsform = () => {
           display={"flex"}
           flexDirection={"column"}
           gap={"20px"}
+          sx={{
+            "@media (max-width:768px)": {
+              padding: "0 2.5%",
+            },
+          }}
         >
-          <Typography color={"#3444af"} fontSize={"60px"} fontWeight={"600"}>
+          <Typography
+            color={"#3444af"}
+            fontSize={"60px"}
+            fontWeight={"600"}
+            textAlign={"center"}
+            sx={{
+              "@media (max-width:1024px)": {
+                fontSize: "50px",
+              },
+              "@media (max-width:768px)": {
+                fontSize: "44px",
+              },
+              "@media (max-width:500px)": {
+                fontSize: "36px",
+              },
+            }}
+          >
             Call us now!{" "}
           </Typography>
 
@@ -123,6 +192,17 @@ export const ContactUsform = () => {
             color={"#000000"}
             fontWeight={"bold"}
             textAlign={"center"}
+            sx={{
+              "@media (max-width:1024px)": {
+                fontSize: "20px",
+              },
+              "@media (max-width:768px)": {
+                fontSize: "18px",
+              },
+              "@media (max-width:500px)": {
+                fontSize: "16px",
+              },
+            }}
           >
             Otherwise, fill in the form below and we will get back to you right
             away.
@@ -198,7 +278,7 @@ export const ContactUsform = () => {
             width={"61%"}
             bgcolor={"white"}
             // padding={"40px"}
-            gap={"20px"}
+            gap={"15px"}
             display={"flex"}
             flexDirection={"column"}
             sx={{
@@ -252,7 +332,7 @@ export const ContactUsform = () => {
                       color: "#1E1E1E",
                     },
                     "&.Mui-focused fieldset": {
-                      border: "1px solid #69727d",
+                      border: "1px solid #797f86",
                       transition: "0.9s",
                     },
                   },
@@ -304,7 +384,7 @@ export const ContactUsform = () => {
                 placeholder="Phone Number"
                 autoComplete="off"
                 margin="normal"
-                type="text"
+                type="number"
                 sx={{
                   bgcolor: "#f2f2f2",
                   border: "1px solid #f2f2f2",
@@ -518,7 +598,7 @@ export const ContactUsform = () => {
                 placeholder="Zip Code"
                 autoComplete="off"
                 margin="normal"
-                type="text"
+                type="number"
                 sx={{
                   bgcolor: "#f2f2f2",
                   border: "1px solid #f2f2f2",

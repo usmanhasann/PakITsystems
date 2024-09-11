@@ -16,7 +16,7 @@ const FreeItAssessment = () => {
         backgroundImage: "linear-gradient(80deg, #3658af 0%, #3644af 100%)",
         "@media (max-width:768px)": {
           flexDirection: "column",
-          padding: "2.5%",
+          padding: "10% 2.5%",
         },
       }}
     >
