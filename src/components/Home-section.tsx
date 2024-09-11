@@ -29,7 +29,8 @@ const Homesection: React.FC = () => {
       text: "",
     },
   };
-  const currentContent = content[pathname] || content["/"];
+  const currentContent =
+    content[pathname as keyof typeof content] || content["/"];
   return (
     <Box width="100%" height="58vh" position={"relative"}>
       <Box

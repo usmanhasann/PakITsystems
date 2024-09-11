@@ -1,4 +1,8 @@
-import { Box, Grid2, Typography } from "@mui/material";
+import {
+  Box,
+  // Grid2,
+  Typography,
+} from "@mui/material";
 import React from "react";
 import SettingsSuggestIcon from "@mui/icons-material/SettingsSuggest";
 import {

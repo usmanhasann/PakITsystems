@@ -1,5 +1,9 @@
 "use client";
-import React, { useState, MouseEvent, useEffect } from "react";
+import React, {
+  useState,
+  // MouseEvent,
+  useEffect,
+} from "react";
 import {
   Box,
   Typography,

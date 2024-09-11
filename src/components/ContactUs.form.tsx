@@ -1,5 +1,5 @@
 "use client";
-import dynamic from "next/dynamic";
+// import dynamic from "next/dynamic";
 
 import { FaFacebookF } from "react-icons/fa";
 import TwitterIcon from "@mui/icons-material/Twitter";
@@ -12,9 +12,9 @@ import TelegramIcon from "@mui/icons-material/Telegram";
 //   ssr: false,
 // });
 export const ContactUsform = () => {
-  const handleCaptchaChange = (value: string | null) => {
-    console.log("Captcha value:", value);
-  };
+  // const handleCaptchaChange = (value: string | null) => {
+  //   console.log("Captcha value:", value);
+  // };
   return (
     <Box
       width={"100%"}
