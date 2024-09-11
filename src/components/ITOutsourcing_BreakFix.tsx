@@ -12,14 +12,20 @@ const ITOutsourcingBreakFix = () => {
       zIndex={"100"}
       bgcolor={"#ffffff"}
       position={"relative"}
+      padding={"40px 0"}
     >
       <Box
         width={"100%"}
         display={"flex"}
         alignItems={"center"}
         justifyContent={"center"}
+        sx={{
+          "@media (max-width:768px)": {
+            flexDirection: "column",
+          },
+        }}
       >
-        <Box width={"50%"} padding={"0 2.5% 0 2.5%"}>
+        <Box width={"100%"} padding={"0 2.5% 0 2.5%"}>
           <Image
             src={ItImage}
             alt="It outsourcing image"
@@ -30,19 +36,33 @@ const ITOutsourcingBreakFix = () => {
           />
         </Box>
         <Box
-          width={"50%"}
+          width={"100%"}
           padding={"0 10% 0 0"}
           display={"flex"}
           flexDirection={"column"}
           //   justifyContent={"flex-start"}
           gap={"20px"}
           alignItems={"flex-start"}
+          sx={{
+            "@media (max-width:786px)": {
+              padding: "0 2.5%",
+            },
+          }}
         >
           <Typography
             color="#000000"
             fontSize={"52px"}
             lineHeight={"70px"}
             fontWeight={"bold"}
+            whiteSpace={"pre"}
+            sx={{
+              "@media (max-width:1000px)": {
+                fontSize: "40px",
+              },
+              "@media (max-width:450px)": {
+                fontSize: "34px",
+              },
+            }}
           >
             IT Outsourcing
           </Typography>

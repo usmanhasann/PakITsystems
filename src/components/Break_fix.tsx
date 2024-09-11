@@ -18,22 +18,45 @@ const Break_fix = () => {
       sx={{
         backgroundColor: "transparent",
         backgroundImage: "linear-gradient(7deg, #d6d6d6 76%, #ffffff 76%)",
+
+        "@media (max-width:1150px)": {
+          padding: "150px 0 120px",
+        },
+        "@media (max-width:768px)": {
+          flexDirection: "column-reverse",
+          backgroundImage: "linear-gradient(7deg, #ffffff 76%, #ffffff 76%)",
+        },
       }}
     >
       <Box
         width={"50%"}
-        padding={"200px 0 200px 200px"}
+        padding={"100px 0 100px 200px"}
         display={"flex"}
         flexDirection={"column"}
-        //   justifyContent={"flex-start"}
+        justifyContent={"center"}
         gap={"20px"}
         alignItems={"flex-start"}
+        sx={{
+          "@media (max-width:1150px)": {
+            padding: "0px  0 0 2.5%",
+            // alignItems: "center",
+            justifyContent: "center",
+          },
+          "@media (max-width:768px)": {
+            width: "100%",
+          },
+        }}
       >
         <Typography
           color="#000000"
           fontSize={"52px"}
           lineHeight={"70px"}
           fontWeight={"bold"}
+          sx={{
+            "@media (max-width:768px)": {
+              fontSize: "40px",
+            },
+          }}
         >
           Break / Fix
         </Typography>
@@ -72,12 +95,47 @@ const Break_fix = () => {
           LEARN WORK
         </Button>
       </Box>
-      <Box width={"50%"} height={"645px"}>
-        <Image
-          src={BlackLaptop}
-          alt="Black Laptop Image"
-          style={{ width: "100%", height: "100%" }}
-        />
+      <Box
+        width={"50%"}
+        height={"auto"}
+        sx={{
+          "@media (max-width:950px)": {
+            height: "400px",
+            width: "50%",
+          },
+
+          "@media (max-width:768px)": {
+            width: "100%",
+            display: "flex",
+            justifyContent: "flex-end",
+          },
+          "@media (max-width:400px)": {
+            width: "100%",
+            height: "330px",
+          },
+        }}
+      >
+        <Box
+          sx={{
+            width: "100%",
+            height: "100%",
+            display: "block",
+            "@media (max-width:768px)": {
+              width: "384px", // Adjust width at 768px breakpoint
+            },
+            "@media (max-width:400px)": {
+              width: "100%",
+              height: "300px",
+            },
+          }}
+        >
+          <Image
+            src={BlackLaptop}
+            alt="Black Laptop Image"
+            className="Laptop-image"
+            style={{ width: "100%", height: "100%" }}
+          />
+        </Box>
       </Box>
     </Box>
   );

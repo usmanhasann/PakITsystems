@@ -54,12 +54,23 @@ const OurClientsSays = () => {
           // bgcolor={"aqua"}
           alignItems={"center"}
           justifyContent={"center"}
+          sx={{
+            "@media (max-width:350px)": {
+              width: "100%",
+              padding: "0 2.5%",
+            },
+          }}
         >
           <Box
             display={"flex"}
             flexDirection={"column"}
             gap={"20px"}
             paddingBottom={"40px"}
+            sx={{
+              "@media (max-width:768px)": {
+                padding: "30px 3%",
+              },
+            }}
           >
             <Typography
               variant="h1"
@@ -67,6 +78,15 @@ const OurClientsSays = () => {
               textAlign={"center"}
               fontSize={"52px"}
               fontWeight={"bold"}
+              whiteSpace={"pre"}
+              sx={{
+                "@media (max-width:1024px)": {
+                  fontSize: "44px",
+                },
+                "@media (max-width:768px)": {
+                  fontSize: "36px",
+                },
+              }}
             >
               Our Clients Say
             </Typography>
@@ -81,16 +101,53 @@ const OurClientsSays = () => {
               #Marketing
             </Typography>
           </Box>
-          <Box display={"flex"} gap={"20px"} width={"55%"}>
+          <Box
+            display={"flex"}
+            gap={"20px"}
+            width={"55%"}
+            // bgcolor={"red"}
+            sx={{
+              "@media (max-width:1420px)": {
+                width: "70%",
+              },
+              "@media (max-width:1024px)": {
+                width: "80%",
+              },
+              "@media (max-width:924px)": {
+                width: "95%",
+              },
+              "@media (max-width:768px)": {
+                flexWrap: "wrap",
+                alignItems: "center",
+                justifyContent: "center",
+              },
+            }}
+          >
             {clientsData.map((clientsData, index) => (
               <Box
                 boxShadow={"0px 0px 10px 0px #c1c1c1"}
+                // bgcolor={"green"}
                 key={index}
                 width={"33.333%"}
                 display={"flex"}
                 flexDirection={"column"}
                 gap={"20px"}
                 padding={"40px 20px"}
+                sx={{
+                  "@media (max-width:1420px)": {
+                    padding: "40px 15px",
+                    gap: "10px",
+                  },
+                  "@media (max-width:768px)": {
+                    width: "250px",
+                  },
+                  "@media (max-width:547px)": {
+                    width: "260px",
+                  },
+                  "@media (max-width:300px)": {
+                    width: "100%",
+                  },
+                }}
               >
                 <Typography
                   color={"#3644af"}
@@ -155,6 +212,12 @@ const OurClientsSays = () => {
                 boxShadow: "0px 0px 20px 0px rgba(0, 0, 0, 0.5)",
                 bgcolor: "#3644af !important",
                 color: "#fff",
+
+                "@media (max-width:350px)": {
+                  fontSize: "10px",
+                  padding: "12px",
+                  letterSpacing: "0.5px",
+                },
               }}
             >
               SEE WHAT OTHER CUSTOMER HAVE TO SAY

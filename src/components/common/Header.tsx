@@ -1,6 +1,15 @@
 "use client";
 import React, { useState, MouseEvent, useEffect } from "react";
-import { Box, Typography, MenuItem, AppBar, Toolbar } from "@mui/material";
+import {
+  Box,
+  Typography,
+  MenuItem,
+  AppBar,
+  Toolbar,
+  IconButton,
+} from "@mui/material";
+import MenuIcon from "@mui/icons-material/Menu";
+import CloseIcon from "@mui/icons-material/Close";
 import Image from "next/image";
 import HeaderLogo from "@/assets/pakitsystem-main-Logo.png";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
@@ -8,7 +17,19 @@ import Link from "next/link";
 
 const Header: React.FC = () => {
   const [isSticky, setIsSticky] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+  const [isNavOpen, setIsNavOpen] = useState(false);
 
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 800);
+    };
+    window.addEventListener("resize", handleResize);
+    handleResize(); // Set initial value
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
   // State to handle hover for dropdown menus
   const [hoveredMenu, setHoveredMenu] = useState<string | null>(null);
 
@@ -35,6 +56,10 @@ const Header: React.FC = () => {
     };
   }, []);
 
+  const toggleNavMenu = () => {
+    setIsNavOpen((prev) => !prev);
+  };
+
   return (
     <AppBar
       sx={{
@@ -59,25 +84,57 @@ const Header: React.FC = () => {
           alignItems: "center",
           justifyContent: "space-between",
           height: "100%",
+          "@media (max-width:800px)": {
+            width: "100%",
+          },
         }}
       >
-        <Box sx={{ display: "flex", alignItems: "center" }}>
+        <Box
+          sx={{
+            width: "201px",
+            display: "flex",
+            alignItems: "center",
+
+            "@media (max-width:850px)": {
+              width: "180px",
+            },
+            "@media (max-width:600px)": {
+              width: "160px",
+              height: "68%",
+            },
+          }}
+        >
           <Link href={"/"} passHref style={{ textDecoration: "none" }}>
             <Image
               src={HeaderLogo}
               alt="Logo"
-              style={{ width: "auto", height: "68px" }}
+              className="header-logo"
+              style={{ width: "100%", height: "100%" }}
             />
           </Link>
         </Box>
 
         <Box
           sx={{
-            display: "flex",
+            display: isMobile && !isNavOpen ? "none" : "flex",
             alignItems: "center",
             gap: "20px",
             height: "100%",
-            // bgcolor: "aquamarine",
+            "@media (max-width: 800px)": {
+              display: isNavOpen ? "flex" : "none", // Nav menu shows as a block on mobile when open
+              flexDirection: "column",
+              position: "absolute",
+              top: "100%",
+              right: 0,
+              backgroundColor: "#ffffff",
+              height: "auto",
+              width: "100%",
+              zIndex: 999,
+              padding: "20px",
+              boxShadow: "0px 4px 12px rgba(0, 0, 0, 0.1)",
+              gap: "20px",
+              alignItems: "flex-start",
+            },
           }}
         >
           {/* OUR SERVICES */}
@@ -454,6 +511,18 @@ const Header: React.FC = () => {
             )}
           </Box>
         </Box>
+        {isMobile && (
+          <IconButton
+            onClick={toggleNavMenu}
+            sx={{ width: "30px", height: "30px" }}
+          >
+            {isNavOpen ? (
+              <CloseIcon sx={{ width: "30px", height: "30px" }} />
+            ) : (
+              <MenuIcon sx={{ width: "30px", height: "30px" }} />
+            )}
+          </IconButton>
+        )}
       </Toolbar>
     </AppBar>
   );
