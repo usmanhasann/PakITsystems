@@ -97,8 +97,8 @@ const OurClientsSays = () => {
               fontSize={"16px"}
               fontWeight={"400"}
             >
-              "The best marketing of all is happy clients" - Susan Stripling
-              #Marketing
+              &quot;The best marketing of all is happy clients&quot; - Susan
+              Stripling #Marketing
             </Typography>
           </Box>
           <Box
