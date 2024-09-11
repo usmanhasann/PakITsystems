@@ -19,7 +19,7 @@ const Aboutcontenttext = () => {
         gap={"29px"}
       >
         <Typography display={"flex"} color="#a3a3a3">
-          HMB TECT is a family owned and operated computer services business
+          PAKIT SYSTEM is a family owned and operated computer services business
           serving the Washington DC metropolitan area since 2004. Our
           technicians are Microsoft certified and are held to the highest
           standards of service and integrity.

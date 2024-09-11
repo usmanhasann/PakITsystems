@@ -79,6 +79,9 @@ const Header: React.FC = () => {
         justifyContent: "center",
         boxShadow: "0px 4px 12px rgba(0, 0, 0, 0.1)",
         borderBottom: "1px solid #d8d8d8",
+        "@media (max-width:450px)": {
+          position: "fixed",
+        },
       }}
     >
       <Toolbar

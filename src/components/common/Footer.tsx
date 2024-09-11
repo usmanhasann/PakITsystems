@@ -7,6 +7,7 @@ import Image from "next/image";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import { FaFacebookF } from "react-icons/fa";
 import { FaTwitter } from "react-icons/fa";
+import Link from "next/link";
 
 const serviceData = [
   { ServiceName: "IT Outsourcing" },
@@ -116,6 +117,9 @@ export const Footer = () => {
               width: "90%",
               gap: "20",
               flexWrap: "wrap",
+            },
+            "@media (max-width:500px)": {
+              flexDirection: "column",
             },
           }}
         >
@@ -255,22 +259,31 @@ export const Footer = () => {
               "@media (max-width:1024px)": {
                 width: "auto",
               },
+              "@media (max-width:500px)": {
+                justifyContent: "flex-start",
+              },
             }}
           >
-            <Button
-              sx={{
-                fontSize: "14px",
-                fontWeight: "600",
-                textTransform: "uppercase",
-                color: "#ffffff",
-                backgroundColor: "#3444af",
-                borderRadius: "5px",
-                padding: "15px 35px",
-                whiteSpace: "pre",
-              }}
-            >
-              Contact us
-            </Button>
+            <Link href={"/contact"}>
+              <Button
+                sx={{
+                  fontSize: "14px",
+                  fontWeight: "600",
+                  textTransform: "uppercase",
+                  color: "#ffffff",
+                  backgroundColor: "#3444af",
+                  borderRadius: "5px",
+                  padding: "15px 35px",
+                  whiteSpace: "pre",
+                  "@media (max-width:420px)": {
+                    fontSize: "12px",
+                    padding: "12px 28px",
+                  },
+                }}
+              >
+                Contact us
+              </Button>
+            </Link>
           </Box>
         </Box>
       </Box>
@@ -283,6 +296,12 @@ export const Footer = () => {
         display={"flex"}
         alignItems={"center"}
         justifyContent={"center"}
+        sx={{
+          "@media (max-width:786px)": {
+            height: "auto",
+            padding: "10px 0",
+          },
+        }}
       >
         <Box
           width={"71%"}
@@ -291,6 +310,17 @@ export const Footer = () => {
           display={"flex"}
           alignItems={"center"}
           justifyContent={"space-between"}
+          sx={{
+            "@media (max-width:1024px)": {
+              width: "80%",
+            },
+            "@media (max-width:786px)": {
+              width: "90%",
+              flexWrap: "wrap",
+              gap: "20px",
+              height: "auto",
+            },
+          }}
         >
           <Box>
             <Typography
@@ -299,14 +329,14 @@ export const Footer = () => {
               fontWeight={"300"}
               fontStyle={"normal"}
             >
-              HMBTECH © 2024 All Rights Reserved{" "}
+              PAKIT SYSTEM © 2024 All Rights Reserved{" "}
             </Typography>
           </Box>
           <Box display={"flex"} alignItems={"center"} gap={"20px"}>
             <FaFacebookF style={{ color: "#ffffff63" }} />
             <FaTwitter style={{ color: "#ffffff63" }} />
           </Box>
-          <Box>
+          <Box height={"auto"}>
             <Button
               sx={{
                 fontSize: "12px",
