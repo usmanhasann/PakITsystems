@@ -1,8 +1,8 @@
+"use client";
 import { Box, Typography } from "@mui/material";
 import React from "react";
 import PhoneEnabledIcon from "@mui/icons-material/PhoneEnabled";
-import { FaFacebookF } from "react-icons/fa";
-import { FaTwitter } from "react-icons/fa";
+import { FaFacebookF, FaTwitter } from "react-icons/fa";
 
 const miniheader = () => {
   return (
@@ -13,10 +13,19 @@ const miniheader = () => {
       alignItems={"center"}
       justifyContent={"center"}
       bgcolor={"#262a2b"}
-      // padding={"0 1%"}
+      sx={{
+        "@media (max-width:450px)": {
+          display: "none",
+        },
+      }}
     >
-      <Box width={"98%"} display={"flex"} justifyContent={"space-between"}>
-        <Box display={"flex"} gap={"28px"}>
+      <Box
+        width={"98%"}
+        display={"flex"}
+        justifyContent={"space-between"}
+        overflow="hidden"
+      >
+        <Box display={"flex"} gap={"28px"} className="slider">
           <Typography
             display={"flex"}
             gap={"8px"}
@@ -34,16 +43,16 @@ const miniheader = () => {
               },
             }}
           >
-            {" "}
             <PhoneEnabledIcon
               className="icon"
               sx={{
-                fill: "#3644af",
+                fill: "#fff",
                 fontSize: "16px",
               }}
             />
             +1 (972) 693-8786 - 2180 Nottoway Dr Hanover, MD 21076
           </Typography>
+          {/* Uncomment this section if you want to include it */}
           {/* <Typography
             display={"flex"}
             gap={"10px"}
@@ -53,7 +62,6 @@ const miniheader = () => {
             color={"#ffffff"}
             sx={{
               cursor: "pointer",
-
               "&:hover": {
                 "& .icon": {
                   fill: "#fff",
@@ -62,7 +70,6 @@ const miniheader = () => {
               },
             }}
           >
-            {" "}
             <PhoneEnabledIcon
               className="icon"
               sx={{ color: "#3644af", fontSize: "16px" }}
@@ -77,7 +84,6 @@ const miniheader = () => {
             display={"flex"}
             alignItems={"center"}
             justifyContent={"center"}
-            // bgcolor={"green"}
             sx={{
               cursor: "pointer",
               "&:hover": {
@@ -88,7 +94,7 @@ const miniheader = () => {
               },
             }}
           >
-            <FaFacebookF className="icon" style={{ color: "#3644af" }} />
+            <FaFacebookF className="icon" style={{ color: "#fff" }} />
           </Box>
           <Box
             height={"44.8px"}
@@ -96,7 +102,6 @@ const miniheader = () => {
             display={"flex"}
             alignItems={"center"}
             justifyContent={"center"}
-            // bgcolor={"green"}
             sx={{
               cursor: "pointer",
               "&:hover": {
@@ -107,11 +112,26 @@ const miniheader = () => {
               },
             }}
           >
-            {" "}
-            <FaTwitter className="icon" style={{ color: "#3644af" }} />{" "}
+            <FaTwitter className="icon" style={{ color: "#fff" }} />
           </Box>
         </Box>
       </Box>
+      <style jsx>{`
+        .slider {
+          display: flex;
+          flex-direction: row;
+          animation: marquee 10s linear infinite;
+        }
+
+        @keyframes marquee {
+          0% {
+            transform: translateX(100%);
+          }
+          100% {
+            transform: translateX(-100%);
+          }
+        }
+      `}</style>
     </Box>
   );
 };

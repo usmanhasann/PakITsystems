@@ -118,7 +118,12 @@ export const ContactUsform = () => {
             Call us now!{" "}
           </Typography>
 
-          <Typography fontSize={"22px"} color={"#000000"} fontWeight={"bold"}>
+          <Typography
+            fontSize={"22px"}
+            color={"#000000"}
+            fontWeight={"bold"}
+            textAlign={"center"}
+          >
             Otherwise, fill in the form below and we will get back to you right
             away.
           </Typography>
@@ -196,11 +201,25 @@ export const ContactUsform = () => {
             gap={"20px"}
             display={"flex"}
             flexDirection={"column"}
+            sx={{
+              "@media (max-width:1424px)": {
+                width: "80%",
+              },
+            }}
           >
-            <Box width={"100%"} display={"flex"} gap={"10px"}>
+            <Box
+              width={"100%"}
+              display={"flex"}
+              gap={"10px"}
+              sx={{
+                "@media (max-width:768px)": {
+                  flexDirection: "column",
+                },
+              }}
+            >
               <TextField
                 fullWidth
-                placeholder="Phone Number"
+                placeholder="Name*"
                 autoComplete="off"
                 margin="normal"
                 type="text"
@@ -241,7 +260,7 @@ export const ContactUsform = () => {
               />
               <TextField
                 fullWidth
-                placeholder="Phone Number"
+                placeholder="Email*"
                 autoComplete="off"
                 margin="normal"
                 type="text"
@@ -324,7 +343,7 @@ export const ContactUsform = () => {
             </Box>
             <TextField
               fullWidth
-              placeholder="Phone Number"
+              placeholder="Company Name"
               autoComplete="off"
               margin="normal"
               type="text"
@@ -364,7 +383,7 @@ export const ContactUsform = () => {
             />
             <TextField
               fullWidth
-              placeholder="Phone Number"
+              placeholder="Address"
               autoComplete="off"
               margin="normal"
               type="text"
@@ -402,10 +421,19 @@ export const ContactUsform = () => {
                 },
               }}
             />
-            <Box width={"100%"} display={"flex"} gap={"10px"}>
+            <Box
+              width={"100%"}
+              display={"flex"}
+              gap={"10px"}
+              sx={{
+                "@media (max-width:768px)": {
+                  flexDirection: "column",
+                },
+              }}
+            >
               <TextField
                 fullWidth
-                placeholder="Phone Number"
+                placeholder="City"
                 autoComplete="off"
                 margin="normal"
                 type="text"
@@ -446,7 +474,7 @@ export const ContactUsform = () => {
               />
               <TextField
                 fullWidth
-                placeholder="Phone Number"
+                placeholder="State"
                 autoComplete="off"
                 margin="normal"
                 type="text"
@@ -487,7 +515,7 @@ export const ContactUsform = () => {
               />
               <TextField
                 fullWidth
-                placeholder="Phone Number"
+                placeholder="Zip Code"
                 autoComplete="off"
                 margin="normal"
                 type="text"
@@ -531,7 +559,7 @@ export const ContactUsform = () => {
               fullWidth
               multiline
               minRows={7} // Start with 3 rows
-              placeholder="Write your explanation here..."
+              placeholder="Message*"
               InputProps={{
                 sx: {
                   "& textarea": {
@@ -577,6 +605,11 @@ export const ContactUsform = () => {
             display={"flex"}
             alignItems={"center"}
             justifyContent={"flex-end"}
+            sx={{
+              "@media (max-width:1424px)": {
+                width: "80%",
+              },
+            }}
           >
             <Button
               sx={{
