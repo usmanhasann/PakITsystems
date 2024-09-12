@@ -228,7 +228,8 @@ export const ContactUsform = () => {
                   border: "1px solid #f2f2f2",
                   borderRadius: "5px",
                   fontWeight: "500",
-                  fontSize: "20px",
+                  fontSize: "16px",
+
                   lineHeight: "30px",
                   letterSpacing: "-1.1%",
                   color: "#1E1E1E",
@@ -246,7 +247,8 @@ export const ContactUsform = () => {
                       padding: "0 16px",
 
                       fontWeight: "500",
-                      fontSize: "20px",
+                      fontSize: "16px",
+
                       lineHeight: "30px",
                       letterSpacing: "-1.1%",
                       color: "#1E1E1E",
@@ -269,7 +271,8 @@ export const ContactUsform = () => {
                   border: "1px solid #f2f2f2",
                   borderRadius: "5px",
                   fontWeight: "500",
-                  fontSize: "20px",
+                  fontSize: "16px",
+
                   lineHeight: "30px",
                   letterSpacing: "-1.1%",
                   color: "#1E1E1E",
@@ -287,7 +290,8 @@ export const ContactUsform = () => {
                       padding: "0 16px",
 
                       fontWeight: "500",
-                      fontSize: "20px",
+                      fontSize: "16px",
+
                       lineHeight: "30px",
                       letterSpacing: "-1.1%",
                       color: "#1E1E1E",
@@ -310,7 +314,8 @@ export const ContactUsform = () => {
                   border: "1px solid #f2f2f2",
                   borderRadius: "5px",
                   fontWeight: "500",
-                  fontSize: "20px",
+                  fontSize: "16px",
+
                   lineHeight: "30px",
                   letterSpacing: "-1.1%",
                   color: "#1E1E1E",
@@ -328,7 +333,8 @@ export const ContactUsform = () => {
                       padding: "0 16px",
 
                       fontWeight: "500",
-                      fontSize: "20px",
+                      fontSize: "16px",
+
                       lineHeight: "30px",
                       letterSpacing: "-1.1%",
                       color: "#1E1E1E",
@@ -351,7 +357,8 @@ export const ContactUsform = () => {
                 border: "1px solid #f2f2f2",
                 borderRadius: "5px",
                 fontWeight: "500",
-                fontSize: "20px",
+                fontSize: "16px",
+
                 lineHeight: "30px",
                 letterSpacing: "-1.1%",
                 color: "#1E1E1E",
@@ -369,7 +376,8 @@ export const ContactUsform = () => {
                     padding: "0 16px",
 
                     fontWeight: "500",
-                    fontSize: "20px",
+                    fontSize: "16px",
+
                     lineHeight: "30px",
                     letterSpacing: "-1.1%",
                     color: "#1E1E1E",
@@ -392,7 +400,7 @@ export const ContactUsform = () => {
                 border: "1px solid #f2f2f2",
                 borderRadius: "5px",
                 fontWeight: "500",
-                fontSize: "20px",
+                fontSize: "16px",
                 lineHeight: "30px",
                 letterSpacing: "-1.1%",
                 color: "#1E1E1E",
@@ -409,7 +417,7 @@ export const ContactUsform = () => {
                     padding: "0 16px",
 
                     fontWeight: "500",
-                    fontSize: "20px",
+                    fontSize: "16px",
                     lineHeight: "30px",
                     letterSpacing: "-1.1%",
                     color: "#1E1E1E",
@@ -442,7 +450,7 @@ export const ContactUsform = () => {
                   border: "1px solid #f2f2f2",
                   borderRadius: "5px",
                   fontWeight: "500",
-                  fontSize: "20px",
+                  fontSize: "16px",
                   lineHeight: "30px",
                   letterSpacing: "-1.1%",
                   color: "#1E1E1E",
@@ -460,7 +468,7 @@ export const ContactUsform = () => {
                       padding: "0 16px",
 
                       fontWeight: "500",
-                      fontSize: "20px",
+                      fontSize: "16px",
                       lineHeight: "30px",
                       letterSpacing: "-1.1%",
                       color: "#1E1E1E",
@@ -483,7 +491,7 @@ export const ContactUsform = () => {
                   border: "1px solid #f2f2f2",
                   borderRadius: "5px",
                   fontWeight: "500",
-                  fontSize: "20px",
+                  fontSize: "16px",
                   lineHeight: "30px",
                   letterSpacing: "-1.1%",
                   color: "#1E1E1E",
@@ -501,7 +509,7 @@ export const ContactUsform = () => {
                       padding: "0 16px",
 
                       fontWeight: "500",
-                      fontSize: "20px",
+                      fontSize: "16px",
                       lineHeight: "30px",
                       letterSpacing: "-1.1%",
                       color: "#1E1E1E",
@@ -542,7 +550,7 @@ export const ContactUsform = () => {
                       padding: "0 16px",
 
                       fontWeight: "500",
-                      fontSize: "20px",
+                      fontSize: "16px",
                       lineHeight: "30px",
                       letterSpacing: "-1.1%",
                       color: "#1E1E1E",
@@ -575,7 +583,7 @@ export const ContactUsform = () => {
                 "& .MuiOutlinedInput-root": {
                   padding: "14px 8px 8px 14px",
 
-                  fontSize: "14px",
+                  fontSize: "16px",
                   fontWeight: "400",
                   // lineHeight: '24px',
                   color: "#000000",
@@ -631,6 +639,20 @@ export const ContactUsform = () => {
             >
               <TelegramIcon sx={{ fontSize: "20px" }} /> SUBMIT
             </Button>
+          </Box>
+          <Box width={"76%"}>
+            <Typography
+              color="#7A7A7A"
+              fontSize="10px"
+              margin="0px 42px 17.5px 0px"
+            >
+              By clicking ‘Submit’, you agree to HMBTECH’s Terms of Use and
+              Privacy Policy. You consent to receive phone calls and SMS
+              messages from HMBTECH to provide updates and information regarding
+              your business with HMBTECH. Message frequency may vary. Message &
+              data rates may apply. Reply STOP to opt-out of further messaging.
+              Reply HELP for more information. See our Privacy Policy”.
+            </Typography>
           </Box>
         </Box>
       </Box>

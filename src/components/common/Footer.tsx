@@ -337,21 +337,23 @@ export const Footer = () => {
             <FaTwitter style={{ color: "#ffffff63" }} />
           </Box>
           <Box height={"auto"}>
-            <Button
-              sx={{
-                fontSize: "12px",
-                fontWeight: "bold",
-                bgcolor: "#61ce7000",
-                borderStyle: "solid",
-                borderWidth: "1px",
-                borderColor: "#fff",
-                padding: "7px",
-                color: "#ffffff",
-                fontStyle: "italic",
-              }}
-            >
-              Privacy policy
-            </Button>
+            <Link href="/PrivacyPolicy">
+              <Button
+                sx={{
+                  fontSize: "12px",
+                  fontWeight: "bold",
+                  bgcolor: "#61ce7000",
+                  borderStyle: "solid",
+                  borderWidth: "1px",
+                  borderColor: "#fff",
+                  padding: "7px",
+                  color: "#ffffff",
+                  fontStyle: "italic",
+                }}
+              >
+                Privacy policy
+              </Button>
+            </Link>
           </Box>
         </Box>
       </Box>

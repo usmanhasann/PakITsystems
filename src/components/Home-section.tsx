@@ -7,7 +7,8 @@ import OurServicesImage from "@/assets/OurServicesImage.jpeg";
 import AboutImage from "@/assets/AboutMainImage.jpeg";
 import ContactImage from "@/assets/ContactMainImage.jpeg";
 import { usePathname } from "next/navigation";
-
+import BreakFiximage from "@/assets/BreakFixMainImage.jpeg";
+import HelpDeskimage from "@/assets/HelpDeskMainImage.jpeg";
 const Homesection: React.FC = () => {
   const pathname = usePathname();
 
@@ -26,6 +27,14 @@ const Homesection: React.FC = () => {
     },
     "/contact": {
       image: ContactImage.src,
+      text: "",
+    },
+    "/BreakFix": {
+      image: BreakFiximage.src,
+      text: "",
+    },
+    "/HelpDesk": {
+      image: HelpDeskimage.src,
       text: "",
     },
   };
