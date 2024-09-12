@@ -15,10 +15,8 @@ export default function Services() {
       <Miniheader />
       <Header />
       <Homesection />
-      {/* <ITOutsourcingBreakFix /> */}
       <OurServices />
       <FreeItAssessment />
-      {/* <OurClientsSays /> */}
       <Companyimages />
       <Footer />
     </ClientLayout>

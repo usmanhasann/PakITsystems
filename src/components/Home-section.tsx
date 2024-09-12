@@ -6,6 +6,9 @@ import HomeMainImage from "../assets/HomePageMainImage.jpeg";
 import OurServicesImage from "@/assets/OurServicesImage.jpeg";
 import AboutImage from "@/assets/AboutMainImage.jpeg";
 import ContactImage from "@/assets/ContactMainImage.jpeg";
+import OutsourcingImage from "@/assets/ITOutsourcingMainImage.jpeg";
+import WhyUsImage from "@/assets/WhyUsMainPage.jpeg";
+import TestimonalsImage from "@/assets/TestimonialsMainImage.jpeg";
 import { usePathname } from "next/navigation";
 
 const Homesection: React.FC = () => {
@@ -26,6 +29,18 @@ const Homesection: React.FC = () => {
     },
     "/contact": {
       image: ContactImage.src,
+      text: "",
+    },
+    "/OutSourcing": {
+      image: OutsourcingImage.src,
+      text: "",
+    },
+    "/whyUs": {
+      image: WhyUsImage.src,
+      text: "",
+    },
+    "/testimonals": {
+      image: TestimonalsImage.src,
       text: "",
     },
   };

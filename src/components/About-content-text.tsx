@@ -32,12 +32,8 @@ const Aboutcontenttext = () => {
           100% satisfied, we will make it right or give you your money back.
         </Typography>
         <Typography color="#a3a3a3" display={"flex"}>
-          Don’t hesitate to &nbsp;
-          <Typography color="#3444af" sx={{ cursor: "pointer" }}>
-            Contact
-          </Typography>{" "}
-          &nbsp; us today for a free IT assessment. In most cases, we can visit
-          you on the same day you call
+          Don’t hesitate to Contactus today for a free IT assessment. In most
+          cases, we can visit you on the same day you call
         </Typography>
       </Box>
     </Box>

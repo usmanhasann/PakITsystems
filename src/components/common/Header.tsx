@@ -121,19 +121,21 @@ const Header: React.FC = () => {
           sx={{
             display: isMobile && !isNavOpen ? "none" : "flex",
             alignItems: "center",
-            gap: "20px",
+            // gap: "20px",
             height: "100%",
+            // bgcolor: "red",
+            backgroundColor: "#ffffff",
+
             "@media (max-width: 800px)": {
               display: isNavOpen ? "flex" : "none", // Nav menu shows as a block on mobile when open
               flexDirection: "column",
               position: "absolute",
               top: "100%",
               right: 0,
-              backgroundColor: "#ffffff",
               height: "auto",
               width: "100%",
               zIndex: 999,
-              padding: "20px",
+              padding: "20px 0px",
               boxShadow: "0px 4px 12px rgba(0, 0, 0, 0.1)",
               gap: "20px",
               alignItems: "flex-start",
@@ -184,23 +186,26 @@ const Header: React.FC = () => {
                   minWidth: "150px",
                 }}
               >
-                <MenuItem
-                  sx={{
-                    fontWeight: "500",
-                    textDecoration: "none",
-                    cursor: "pointer",
-                    color: "#3644af",
-                    fontSize: "13px",
-                    padding: "13px 20px",
-                    "&:hover": {
-                      bgcolor: "#3644af",
-                      color: "#fff",
-                      transition: "0.5s",
-                    },
-                  }}
-                >
-                  IT OUTSOURCING
-                </MenuItem>
+                <Link href="/OutSourcing">
+                  {" "}
+                  <MenuItem
+                    sx={{
+                      fontWeight: "500",
+                      textDecoration: "none",
+                      cursor: "pointer",
+                      color: "#3644af",
+                      fontSize: "13px",
+                      padding: "13px 20px",
+                      "&:hover": {
+                        bgcolor: "#3644af",
+                        color: "#fff",
+                        transition: "0.5s",
+                      },
+                    }}
+                  >
+                    IT OUTSOURCING
+                  </MenuItem>
+                </Link>
                 <MenuItem
                   sx={{
                     fontWeight: "500",
@@ -310,12 +315,14 @@ const Header: React.FC = () => {
           {/* ABOUT */}
           <Box
             sx={{
+              // bgcolor: "green",
               position: "relative",
               display: "flex",
               alignItems: "center",
               height: "100%",
               borderBottom: "1px solid #ffffff",
               padding: "0 20px",
+
               "&:hover": {
                 borderBottom: "1px solid #3644af",
               },
@@ -350,57 +357,68 @@ const Header: React.FC = () => {
                   minWidth: "150px",
                 }}
               >
-                <MenuItem
-                  sx={{
-                    fontWeight: "500",
-                    textDecoration: "none",
-                    cursor: "pointer",
-                    color: "#3644af",
-                    fontSize: "13px",
-                    padding: "13px 20px",
-                    "&:hover": {
-                      bgcolor: "#3644af",
-                      color: "#fff",
-                      transition: "0.5s",
-                    },
-                  }}
+                <Link href="/about" passHref style={{ textDecoration: "none" }}>
+                  <MenuItem
+                    sx={{
+                      fontWeight: "500",
+                      textDecoration: "none",
+                      cursor: "pointer",
+                      color: "#3644af",
+                      fontSize: "13px",
+                      padding: "13px 20px",
+                      "&:hover": {
+                        bgcolor: "#3644af",
+                        color: "#fff",
+                        transition: "0.5s",
+                      },
+                    }}
+                  >
+                    ABOUT
+                  </MenuItem>
+                </Link>
+                <Link href="/whyUs" passHref style={{ textDecoration: "none" }}>
+                  <MenuItem
+                    sx={{
+                      fontWeight: "500",
+                      textDecoration: "none",
+                      cursor: "pointer",
+                      color: "#3644af",
+                      fontSize: "13px",
+                      padding: "13px 20px",
+                      "&:hover": {
+                        bgcolor: "#3644af",
+                        color: "#fff",
+                        transition: "0.5s",
+                      },
+                    }}
+                  >
+                    WHY US
+                  </MenuItem>
+                </Link>
+
+                <Link
+                  href="/testimonals"
+                  passHref
+                  style={{ textDecoration: "none" }}
                 >
-                  ABOUT
-                </MenuItem>
-                <MenuItem
-                  sx={{
-                    fontWeight: "500",
-                    textDecoration: "none",
-                    cursor: "pointer",
-                    color: "#3644af",
-                    fontSize: "13px",
-                    padding: "13px 20px",
-                    "&:hover": {
-                      bgcolor: "#3644af",
-                      color: "#fff",
-                      transition: "0.5s",
-                    },
-                  }}
-                >
-                  WHY US
-                </MenuItem>
-                <MenuItem
-                  sx={{
-                    fontWeight: "500",
-                    textDecoration: "none",
-                    cursor: "pointer",
-                    color: "#3644af",
-                    fontSize: "13px",
-                    padding: "13px 20px",
-                    "&:hover": {
-                      bgcolor: "#3644af",
-                      color: "#fff",
-                      transition: "0.5s",
-                    },
-                  }}
-                >
-                  TESTIMONIALS
-                </MenuItem>
+                  <MenuItem
+                    sx={{
+                      fontWeight: "500",
+                      textDecoration: "none",
+                      cursor: "pointer",
+                      color: "#3644af",
+                      fontSize: "13px",
+                      padding: "13px 20px",
+                      "&:hover": {
+                        bgcolor: "#3644af",
+                        color: "#fff",
+                        transition: "0.5s",
+                      },
+                    }}
+                  >
+                    TESTIMONIALS
+                  </MenuItem>
+                </Link>
               </Box>
             )}
           </Box>
