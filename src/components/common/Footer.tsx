@@ -1,6 +1,6 @@
 "use client";
 import { Box, Button, Typography } from "@mui/material";
-import React from "react";
+import React, { useState } from "react";
 import Logo from "@/assets/pakitsystem-main-Logo.svg";
 
 import Image from "next/image";
@@ -19,13 +19,9 @@ const serviceData = [
   { ServiceName: "Free IT Assessment" },
 ];
 const aboutData = [
-  { aboutName: "About" },
-  { aboutName: "Why Us" },
-  { aboutName: "Testimonals" },
-];
-const supportData = [
-  { suportName: "Customer Login" },
-  { suportName: "Remote Support" },
+  { aboutName: "About", Link: "/about" },
+  { aboutName: "Why Us", Link: "/whyUs" },
+  { aboutName: "Testimonals", Link: "/testimonals" },
 ];
 
 export const Footer = () => {
@@ -153,12 +149,40 @@ export const Footer = () => {
                 gap={"10px"}
                 alignItems={"center"}
                 justifyContent={"flex-start"}
+                sx={{
+                  cursor: "pointer",
+                  transition: "transform 0.3s ease",
+                  "&:hover": {
+                    transform: "scale(1.05)",
+                    "& .icon-svg": {
+                      fill: "#3444af",
+                    },
+                  },
+                }}
               >
-                <ChevronRightIcon sx={{ height: "18px", width: "18px" }} />
+                <ChevronRightIcon
+                  className="icon-svg"
+                  sx={{
+                    height: "18px",
+                    width: "18px",
+                    color: "#ffffff99",
+                    transition: "color 0.3s ease, ",
+                    "&:hover": {
+                      color: "#3444af",
+                    },
+                  }}
+                />
                 <Typography
                   color="#ffffff99"
                   fontSize={"13px"}
                   fontWeight={"300"}
+                  sx={{
+                    cursor: "pointer",
+                    transition: "color 0.3s ease",
+                    "&:hover": {
+                      color: "#3444af",
+                    },
+                  }}
                 >
                   {serviceData.ServiceName}
                 </Typography>
@@ -195,56 +219,42 @@ export const Footer = () => {
                 gap={"10px"}
                 alignItems={"center"}
                 justifyContent={"flex-start"}
+                sx={{
+                  cursor: "pointer",
+
+                  transition: "transform 0.3s ease",
+                  "&:hover": {
+                    transform: "scale(1.05)",
+                    "& .icon-svg": {
+                      fill: "#3444af",
+                    },
+                  },
+                }}
               >
-                <ChevronRightIcon sx={{ height: "18px", width: "18px" }} />
+                <ChevronRightIcon
+                  className="icon-svg"
+                  sx={{
+                    height: "18px",
+                    width: "18px",
+                    color: "#ffffff99",
+                    transition: "color 0.3s ease",
+                    "&:hover": {
+                      fill: "#3444af",
+                    },
+                  }}
+                />
                 <Typography
                   color="#ffffff99"
                   fontSize={"13px"}
                   fontWeight={"300"}
+                  sx={{
+                    cursor: "pointer",
+                    "&:hover": {
+                      color: "#3444af",
+                    },
+                  }}
                 >
                   {aboutData.aboutName}
-                </Typography>
-              </Box>
-            ))}
-          </Box>
-          <Box
-            display={"flex"}
-            flexDirection={"column"}
-            gap={"10px"}
-            width={"275px"}
-            // bgcolor={"green"}
-            sx={{
-              "@media (max-width:1024px)": {
-                width: "auto",
-              },
-              "@media (max-width:768px)": {
-                width: "200px",
-              },
-            }}
-          >
-            <Typography
-              paddingLeft={"5px"}
-              fontSize={"18px"}
-              color="#ffffff"
-              fontWeight={"500"}
-            >
-              Support
-            </Typography>
-            {supportData.map((supportData, index) => (
-              <Box
-                key={index}
-                display={"flex"}
-                gap={"10px"}
-                alignItems={"center"}
-                justifyContent={"flex-start"}
-              >
-                <ChevronRightIcon sx={{ height: "18px", width: "18px" }} />
-                <Typography
-                  color="#ffffff99"
-                  fontSize={"13px"}
-                  fontWeight={"300"}
-                >
-                  {supportData.suportName}
                 </Typography>
               </Box>
             ))}
@@ -337,21 +347,23 @@ export const Footer = () => {
             <FaTwitter style={{ color: "#ffffff63" }} />
           </Box>
           <Box height={"auto"}>
-            <Button
-              sx={{
-                fontSize: "12px",
-                fontWeight: "bold",
-                bgcolor: "#61ce7000",
-                borderStyle: "solid",
-                borderWidth: "1px",
-                borderColor: "#fff",
-                padding: "7px",
-                color: "#ffffff",
-                fontStyle: "italic",
-              }}
-            >
-              Privacy policy
-            </Button>
+            <Link href="/PrivacyPolicy">
+              <Button
+                sx={{
+                  fontSize: "12px",
+                  fontWeight: "bold",
+                  bgcolor: "#61ce7000",
+                  borderStyle: "solid",
+                  borderWidth: "1px",
+                  borderColor: "#fff",
+                  padding: "7px",
+                  color: "#ffffff",
+                  fontStyle: "italic",
+                }}
+              >
+                Privacy policy
+              </Button>
+            </Link>
           </Box>
         </Box>
       </Box>

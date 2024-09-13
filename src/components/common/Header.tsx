@@ -1,5 +1,9 @@
 "use client";
-import React, { useState, MouseEvent, useEffect } from "react";
+import React, {
+  useState,
+  // MouseEvent,
+  useEffect,
+} from "react";
 import {
   Box,
   Typography,
@@ -187,7 +191,6 @@ const Header: React.FC = () => {
                 }}
               >
                 <Link href="/OutSourcing">
-                  {" "}
                   <MenuItem
                     sx={{
                       fontWeight: "500",
@@ -206,40 +209,45 @@ const Header: React.FC = () => {
                     IT OUTSOURCING
                   </MenuItem>
                 </Link>
-                <MenuItem
-                  sx={{
-                    fontWeight: "500",
-                    textDecoration: "none",
-                    cursor: "pointer",
-                    color: "#3644af",
-                    fontSize: "13px",
-                    padding: "13px 20px",
-                    "&:hover": {
-                      bgcolor: "#3644af",
-                      color: "#fff",
-                      transition: "0.5s",
-                    },
-                  }}
-                >
-                  BREAK / FIX
-                </MenuItem>
-                <MenuItem
-                  sx={{
-                    fontWeight: "500",
-                    textDecoration: "none",
-                    cursor: "pointer",
-                    color: "#3644af",
-                    fontSize: "13px",
-                    padding: "13px 20px",
-                    "&:hover": {
-                      bgcolor: "#3644af",
-                      color: "#fff",
-                      transition: "0.5s",
-                    },
-                  }}
-                >
-                  HELP DESK
-                </MenuItem>
+                <Link href="/BreakFix">
+                  {" "}
+                  <MenuItem
+                    sx={{
+                      fontWeight: "500",
+                      textDecoration: "none",
+                      cursor: "pointer",
+                      color: "#3644af",
+                      fontSize: "13px",
+                      padding: "13px 20px",
+                      "&:hover": {
+                        bgcolor: "#3644af",
+                        color: "#fff",
+                        transition: "0.5s",
+                      },
+                    }}
+                  >
+                    BREAK / FIX
+                  </MenuItem>
+                </Link>
+                <Link href="/HelpDesk">
+                  <MenuItem
+                    sx={{
+                      fontWeight: "500",
+                      textDecoration: "none",
+                      cursor: "pointer",
+                      color: "#3644af",
+                      fontSize: "13px",
+                      padding: "13px 20px",
+                      "&:hover": {
+                        bgcolor: "#3644af",
+                        color: "#fff",
+                        transition: "0.5s",
+                      },
+                    }}
+                  >
+                    HELP DESK
+                  </MenuItem>
+                </Link>
                 <MenuItem
                   sx={{
                     fontWeight: "500",

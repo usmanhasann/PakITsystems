@@ -9,6 +9,8 @@ import ContactImage from "@/assets/ContactMainImage.jpeg";
 import OutsourcingImage from "@/assets/ITOutsourcingMainImage.jpeg";
 import WhyUsImage from "@/assets/WhyUsMainPage.jpeg";
 import TestimonalsImage from "@/assets/TestimonialsMainImage.jpeg";
+import BreakFiximage from "@/assets/BreakFixMainImage.jpeg";
+import HelpDeskimage from "@/assets/HelpDeskMainImage.jpeg";
 import { usePathname } from "next/navigation";
 
 const Homesection: React.FC = () => {
@@ -25,30 +27,40 @@ const Homesection: React.FC = () => {
     },
     "/about": {
       image: AboutImage.src,
-      text: " ",
+      text: "About us",
     },
     "/contact": {
       image: ContactImage.src,
-      text: "",
+      text: "Contact us",
     },
-    "/OutSourcing": {
+    "/outsourcing": {
       image: OutsourcingImage.src,
-      text: "",
+      text: "IT Outsourcing",
     },
-    "/whyUs": {
+    "/whyus": {
       image: WhyUsImage.src,
-      text: "",
+      text: "Why Us",
     },
-    "/testimonals": {
+    "/testimonials": {
       image: TestimonalsImage.src,
-      text: "",
+      text: "Testimonials",
+    },
+    "/breakfix": {
+      image: BreakFiximage.src,
+      text: "Break/Fix",
+    },
+    "/helpdesk": {
+      image: HelpDeskimage.src,
+      text: "Help Desk",
     },
   };
-  const currentContent = content[pathname] || content["/"];
+
+  const currentContent =
+    content[pathname as keyof typeof content] || content["/"];
+
   return (
     <Box width="100%" height="58vh" position={"relative"}>
       <Box
-        // position={"fixed"}
         width="100%"
         height="60vh"
         display="flex"
@@ -89,12 +101,10 @@ const Homesection: React.FC = () => {
             alignItems: "center",
             justifyContent: "center",
             gap: "10px",
-            // bgcolor: "red",
             width: "90%",
           }}
         >
           {/* Static Text */}
-
           <Typography
             component="span"
             sx={{
