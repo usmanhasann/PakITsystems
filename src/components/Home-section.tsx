@@ -6,9 +6,13 @@ import HomeMainImage from "../assets/HomePageMainImage.jpeg";
 import OurServicesImage from "@/assets/OurServicesImage.jpeg";
 import AboutImage from "@/assets/AboutMainImage.jpeg";
 import ContactImage from "@/assets/ContactMainImage.jpeg";
-import { usePathname } from "next/navigation";
+import OutsourcingImage from "@/assets/ITOutsourcingMainImage.jpeg";
+import WhyUsImage from "@/assets/WhyUsMainPage.jpeg";
+import TestimonalsImage from "@/assets/TestimonialsMainImage.jpeg";
 import BreakFiximage from "@/assets/BreakFixMainImage.jpeg";
 import HelpDeskimage from "@/assets/HelpDeskMainImage.jpeg";
+import { usePathname } from "next/navigation";
+
 const Homesection: React.FC = () => {
   const pathname = usePathname();
 
@@ -23,27 +27,40 @@ const Homesection: React.FC = () => {
     },
     "/about": {
       image: AboutImage.src,
-      text: " ",
+      text: "About us",
     },
     "/contact": {
       image: ContactImage.src,
-      text: "",
+      text: "Contact us",
     },
-    "/BreakFix": {
+    "/outsourcing": {
+      image: OutsourcingImage.src,
+      text: "IT Outsourcing",
+    },
+    "/whyus": {
+      image: WhyUsImage.src,
+      text: "Why Us",
+    },
+    "/testimonials": {
+      image: TestimonalsImage.src,
+      text: "Testimonials",
+    },
+    "/breakfix": {
       image: BreakFiximage.src,
-      text: "",
+      text: "Break/Fix",
     },
-    "/HelpDesk": {
+    "/helpdesk": {
       image: HelpDeskimage.src,
-      text: "",
+      text: "Help Desk",
     },
   };
+
   const currentContent =
     content[pathname as keyof typeof content] || content["/"];
+
   return (
     <Box width="100%" height="58vh" position={"relative"}>
       <Box
-        // position={"fixed"}
         width="100%"
         height="60vh"
         display="flex"
@@ -84,12 +101,10 @@ const Homesection: React.FC = () => {
             alignItems: "center",
             justifyContent: "center",
             gap: "10px",
-            // bgcolor: "red",
             width: "90%",
           }}
         >
           {/* Static Text */}
-
           <Typography
             component="span"
             sx={{
