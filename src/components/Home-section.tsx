@@ -12,6 +12,8 @@ import TestimonalsImage from "@/assets/TestimonialsMainImage.jpeg";
 import BreakFiximage from "@/assets/BreakFixMainImage.jpeg";
 import HelpDeskimage from "@/assets/HelpDeskMainImage.jpeg";
 import { usePathname } from "next/navigation";
+import cloudServicesimage from "@/assets/CloudServicesMainImage.png";
+import managedSecurityimage from "@/assets/ManagedSecurityMainPage.jpeg";
 
 const Homesection: React.FC = () => {
   const pathname = usePathname();
@@ -52,6 +54,14 @@ const Homesection: React.FC = () => {
     "/helpdesk": {
       image: HelpDeskimage.src,
       text: "Help Desk",
+    },
+    "/cloudServices": {
+      image: cloudServicesimage.src,
+      text: "",
+    },
+    "/managedSecurity": {
+      image: managedSecurityimage.src,
+      text: "",
     },
   };
 

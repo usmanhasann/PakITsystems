@@ -248,40 +248,44 @@ const Header: React.FC = () => {
                     HELP DESK
                   </MenuItem>
                 </Link>
-                <MenuItem
-                  sx={{
-                    fontWeight: "500",
-                    textDecoration: "none",
-                    cursor: "pointer",
-                    color: "#3644af",
-                    fontSize: "13px",
-                    padding: "13px 20px",
-                    "&:hover": {
-                      bgcolor: "#3644af",
-                      color: "#fff",
-                      transition: "0.5s",
-                    },
-                  }}
-                >
-                  CLOUD SERVICES
-                </MenuItem>
-                <MenuItem
-                  sx={{
-                    fontWeight: "500",
-                    textDecoration: "none",
-                    cursor: "pointer",
-                    color: "#3644af",
-                    fontSize: "13px",
-                    padding: "13px 20px",
-                    "&:hover": {
-                      bgcolor: "#3644af",
-                      color: "#fff",
-                      transition: "0.5s",
-                    },
-                  }}
-                >
-                  MANAGED SECURITY
-                </MenuItem>
+                <Link href="/cloudServices">
+                  <MenuItem
+                    sx={{
+                      fontWeight: "500",
+                      textDecoration: "none",
+                      cursor: "pointer",
+                      color: "#3644af",
+                      fontSize: "13px",
+                      padding: "13px 20px",
+                      "&:hover": {
+                        bgcolor: "#3644af",
+                        color: "#fff",
+                        transition: "0.5s",
+                      },
+                    }}
+                  >
+                    CLOUD SERVICES
+                  </MenuItem>
+                </Link>{" "}
+                <Link href="/managedSecurity">
+                  <MenuItem
+                    sx={{
+                      fontWeight: "500",
+                      textDecoration: "none",
+                      cursor: "pointer",
+                      color: "#3644af",
+                      fontSize: "13px",
+                      padding: "13px 20px",
+                      "&:hover": {
+                        bgcolor: "#3644af",
+                        color: "#fff",
+                        transition: "0.5s",
+                      },
+                    }}
+                  >
+                    MANAGED SECURITY
+                  </MenuItem>
+                </Link>
                 <MenuItem
                   sx={{
                     fontWeight: "500",

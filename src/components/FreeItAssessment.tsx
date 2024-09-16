@@ -35,7 +35,7 @@ const FreeItAssessment = () => {
       >
         <Image
           src={WhiteShirt}
-          alt="White Shirt Image"
+          alt="cloudServices"
           style={{ width: "100%", height: "auto" }}
         />
       </Box>
