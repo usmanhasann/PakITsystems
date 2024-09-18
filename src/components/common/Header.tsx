@@ -79,9 +79,9 @@ const Header: React.FC = () => {
         justifyContent: "center",
         boxShadow: "0px 4px 12px rgba(0, 0, 0, 0.1)",
         borderBottom: "1px solid #d8d8d8",
-        "@media (max-width:450px)": {
-          position: "fixed",
-        },
+        // "@media (max-width:450px)": {
+        //   position: "fixed",
+        // },
       }}
     >
       <Toolbar
@@ -146,7 +146,36 @@ const Header: React.FC = () => {
             },
           }}
         >
+          <Box
+            sx={{
+              position: "relative",
+              display: "flex",
+              alignItems: "center",
+              height: "100%",
+              borderBottom: "1px solid #ffffff",
+              padding: "0 20px",
+              "&:hover": {
+                borderBottom: "1px solid #3644af",
+              },
+            }}
+          >
+            <Link href="/" passHref style={{ textDecoration: "none" }}>
+              <Typography
+                sx={{
+                  cursor: "pointer",
+                  fontSize: "12px",
+                  display: "flex",
+                  fontWeight: "bold",
+                  alignItems: "center",
+                  color: "#262A2B",
+                }}
+              >
+                HOME
+              </Typography>
+            </Link>
+          </Box>
           {/* OUR SERVICES */}
+
           <Box
             sx={{
               position: "relative",
@@ -462,83 +491,6 @@ const Header: React.FC = () => {
           </Box>
 
           {/* SUPPORT */}
-          <Box
-            sx={{
-              position: "relative",
-              display: "flex",
-              alignItems: "center",
-              height: "100%",
-              borderBottom: "1px solid #ffffff",
-              padding: "0 20px",
-              "&:hover": {
-                borderBottom: "1px solid #3644af",
-              },
-            }}
-            onMouseEnter={() => handleMouseEnter("support")}
-            onMouseLeave={handleMouseLeave}
-          >
-            <Typography
-              sx={{
-                cursor: "pointer",
-                fontSize: "12px",
-                display: "flex",
-                fontWeight: "bold",
-                alignItems: "center",
-                color: "#262A2B",
-              }}
-            >
-              SUPPORT
-              <ArrowDropDownIcon />
-            </Typography>
-            {hoveredMenu === "support" && (
-              <Box
-                sx={{
-                  position: "absolute",
-                  top: "101%",
-                  left: 0,
-                  backgroundColor: "#e2e2e2",
-                  boxShadow: "0px 4px 12px rgba(0, 0, 0, 0.1)",
-                  zIndex: 10,
-                  minWidth: "150px",
-                }}
-              >
-                <MenuItem
-                  sx={{
-                    fontWeight: "500",
-                    textDecoration: "none",
-                    cursor: "pointer",
-                    color: "#3644af",
-                    fontSize: "13px",
-                    padding: "13px 20px",
-                    "&:hover": {
-                      bgcolor: "#3644af",
-                      color: "#fff",
-                      transition: "0.5s",
-                    },
-                  }}
-                >
-                  CUSTOMER LOGIN
-                </MenuItem>
-                <MenuItem
-                  sx={{
-                    fontWeight: "500",
-                    textDecoration: "none",
-                    cursor: "pointer",
-                    color: "#3644af",
-                    fontSize: "13px",
-                    padding: "13px 20px",
-                    "&:hover": {
-                      bgcolor: "#3644af",
-                      color: "#fff",
-                      transition: "0.5s",
-                    },
-                  }}
-                >
-                  REMOTE SUPPORT
-                </MenuItem>
-              </Box>
-            )}
-          </Box>
         </Box>
         {isMobile && (
           <IconButton
@@ -546,9 +498,9 @@ const Header: React.FC = () => {
             sx={{ width: "30px", height: "30px" }}
           >
             {isNavOpen ? (
-              <CloseIcon sx={{ width: "30px", height: "30px" }} />
+              <CloseIcon sx={{ width: "30px", height: "30px", fill: "#000" }} />
             ) : (
-              <MenuIcon sx={{ width: "30px", height: "30px" }} />
+              <MenuIcon sx={{ width: "30px", height: "30px", fill: "#000" }} />
             )}
           </IconButton>
         )}

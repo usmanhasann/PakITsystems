@@ -7,7 +7,7 @@ import "../globals.css";
 // Initialize the Montserrat font
 const montserrat = Montserrat({
   subsets: ["latin"],
-  weight: ["300", "700"], // Specify the weights you need
+  weight: ["300", "400", "500", "600", "700", "800", "900"], // Specify the weights you need
 });
 
 export const metadata: Metadata = {
