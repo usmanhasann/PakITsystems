@@ -28,7 +28,7 @@ export const Footer = () => {
   return (
     <Box
       position={"relative"}
-      zIndex={"1280"}
+      zIndex={"120"}
       bgcolor={"#000000"}
       display={"flex"}
       flexDirection={"column"}

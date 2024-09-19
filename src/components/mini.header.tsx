@@ -14,8 +14,8 @@ const miniheader = () => {
       justifyContent={"center"}
       bgcolor={"#262a2b"}
       sx={{
-        "@media (max-width:450px)": {
-          display: "none",
+        "@media (max-width:325px)": {
+          height: "60px",
         },
       }}
     >
@@ -50,34 +50,17 @@ const miniheader = () => {
                 fontSize: "16px",
               }}
             />
-            +1 (972) 693-8786 - 2180 Nottoway Dr Hanover, MD 21076
+            +1 (972) 693-8786 - 2180 - Nottoway Dr Hanover, MD 21076
           </Typography>
-          {/* Uncomment this section if you want to include it */}
-          {/* <Typography
-            display={"flex"}
-            gap={"10px"}
-            alignItems={"center"}
-            fontSize={"12px"}
-            fontWeight={"300"}
-            color={"#ffffff"}
-            sx={{
-              cursor: "pointer",
-              "&:hover": {
-                "& .icon": {
-                  fill: "#fff",
-                  fontSize: "16px",
-                },
-              },
-            }}
-          >
-            <PhoneEnabledIcon
-              className="icon"
-              sx={{ color: "#3644af", fontSize: "16px" }}
-            />
-            (407) 537-9425 - Florida
-          </Typography> */}
         </Box>
-        <Box display={"flex"}>
+        <Box
+          display={"flex"}
+          sx={{
+            "@media (max-width:768px)": {
+              display: "none",
+            },
+          }}
+        >
           <Box
             height={"44.8px"}
             width={"44.8px"}

@@ -9,6 +9,7 @@ import Footer from "@/components/common/Footer";
 import Breakfix from "@/components/Break_fix";
 import FreeItAssessment from "@/components/FreeItAssessment";
 import Companyimages from "@/components/Company-images";
+import SLiderImages from "@/components/imagesSlider";
 import ClientLayout from "./ClientLayout";
 
 export default function Home() {
@@ -23,6 +24,7 @@ export default function Home() {
       <OurServices />
       <OurClientsSays />
       <Companyimages />
+      <SLiderImages />
       <Footer />
     </ClientLayout>
   );

@@ -13,18 +13,18 @@ const clientsData = [
   {
     textComa: " ❞ ",
     description:
-      "2019 was an incredibly pivotal year fro Manna. You and your team are key reasons we are thrivin. Here to more Progress together.",
-    clientName: "JACKIE DECARLO",
-    jobTitle: "CEO",
-    placeName: "Manna Food Center",
+      "We want you to know that we are very pleased with the quality of service your company provides. We sincerely appreciate your responsiveness and the way you conduct business. AMAZING SERVICE and a GREAT TEAM!",
+    clientName: "mELVIN BODMER, JR.",
+    jobTitle: "Office Manager",
+    placeName: "Public Risk Management Association",
   },
   {
     textComa: " ❞ ",
     description:
-      "2019 was an incredibly pivotal year fro Manna. You and your team are key reasons we are thrivin. Here to more Progress together.",
-    clientName: "JACKIE DECARLO",
-    jobTitle: "CEO",
-    placeName: "Manna Food Center",
+      "You do a great job communicating with everyone. Thanks for always being one step ahead.",
+    clientName: "Julie Obenauer",
+    jobTitle: "Controller",
+    placeName: "Foster and Associates",
   },
 ];
 const OurClientsSays = () => {
@@ -104,31 +104,31 @@ const OurClientsSays = () => {
           <Box
             display={"flex"}
             gap={"20px"}
-            width={"55%"}
+            width={"1100px"}
             // bgcolor={"red"}
-            sx={{
-              "@media (max-width:1420px)": {
-                width: "70%",
-              },
-              "@media (max-width:1024px)": {
-                width: "80%",
-              },
-              "@media (max-width:924px)": {
-                width: "95%",
-              },
-              "@media (max-width:768px)": {
-                flexWrap: "wrap",
-                alignItems: "center",
-                justifyContent: "center",
-              },
-            }}
+            // sx={{
+            //   "@media (max-width:1420px)": {
+            //     width: "70%",
+            //   },
+            //   "@media (max-width:1024px)": {
+            //     width: "80%",
+            //   },
+            //   "@media (max-width:924px)": {
+            //     width: "95%",
+            //   },
+            //   "@media (max-width:768px)": {
+            //     flexWrap: "wrap",
+            //     alignItems: "center",
+            //     justifyContent: "center",
+            //   },
+            // }}
           >
             {clientsData.map((clientsData, index) => (
               <Box
                 boxShadow={"0px 0px 10px 0px #c1c1c1"}
                 // bgcolor={"green"}
                 key={index}
-                width={"33.333%"}
+                width={"366.66px"}
                 display={"flex"}
                 flexDirection={"column"}
                 gap={"20px"}
@@ -151,7 +151,7 @@ const OurClientsSays = () => {
               >
                 <Typography
                   color={"#3644af"}
-                  fontSize={"80px"}
+                  fontSize={"30px"}
                   textAlign={"center"}
                   margin={"0"}
                   lineHeight={"1em"}
@@ -161,9 +161,10 @@ const OurClientsSays = () => {
                 <Typography
                   color={"#7a7a7a"}
                   fontSize={"17px"}
+                  fontFamily={"Montserrat"}
                   fontWeight={"400"}
                   fontStyle={"italic"}
-                  lineHeight={"1.2em"}
+                  lineHeight={"20px"}
                   textAlign={"center"}
                 >
                   {clientsData.description}
@@ -174,6 +175,7 @@ const OurClientsSays = () => {
                   fontSize={"18px"}
                   textTransform={"uppercase"}
                   fontStyle={"normal"}
+                  fontWeight={"600"}
                 >
                   {clientsData.clientName}
                 </Typography>
@@ -181,7 +183,8 @@ const OurClientsSays = () => {
                   <Typography
                     color={"#7a7a7a"}
                     fontSize={"13px"}
-                    lineHeight={"1.3em"}
+                    lineHeight={"17px"}
+                    fontWeight={"600"}
                     fontStyle={"normal"}
                     textAlign={"center"}
                   >
@@ -190,7 +193,8 @@ const OurClientsSays = () => {
                   <Typography
                     color={"#7a7a7a"}
                     fontSize={"13px"}
-                    lineHeight={"1.3em"}
+                    lineHeight={"17px"}
+                    fontWeight={"600"}
                     fontStyle={"normal"}
                     textAlign={"center"}
                   >
