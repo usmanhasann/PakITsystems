@@ -1,8 +1,6 @@
 "use client";
 import { Box, Button, Typography } from "@mui/material";
-import React, { useState } from "react";
-import Logo from "@/assets/pakitsystem-main-Logo.svg";
-
+import React from "react";
 import Image from "next/image";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import { FaFacebookF } from "react-icons/fa";
@@ -73,7 +71,7 @@ export const Footer = () => {
             fontFamily={"sans-serif"}
           >
             <Image
-              src={Logo}
+              src="@/assets/pakitsystem-main-Logo.svg"
               alt="webLogo"
               style={{ width: "100%", height: "auto" }}
             />
