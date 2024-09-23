@@ -42,12 +42,13 @@ export const CloudServices = () => {
           display={"flex"}
           flexDirection={"column"}
           gap={"60px"}
+          paddingBottom={"12%"}
         >
           <Typography
             color="#000000"
             fontSize={"52px"}
             fontWeight={"bold"}
-            padding={"60px 0px 32px 11px"}
+            padding={"19px 0px 32px 30px"}
           >
             Cloud Services
           </Typography>
@@ -62,6 +63,7 @@ export const CloudServices = () => {
                 <Typography
                   variant="h5"
                   component="h2"
+                  paddingLeft={"6%"}
                   sx={{
                     color: "#000000DB",
                     fontSize: "24px",
@@ -74,8 +76,10 @@ export const CloudServices = () => {
                 <Typography
                   variant="h5"
                   component="h2"
+                  lineHeight={"30px"}
+                  paddingLeft={"6%"}
                   sx={{
-                    color: "#000000DB",
+                    color: "rgb(122,122,122)",
                     fontSize: "16px",
                     fontWeight: "400",
                     // padding: "60px 0px 32px 11px",

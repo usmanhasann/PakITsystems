@@ -6,7 +6,7 @@ import Outsourcingservices from "@/components/outsourcing.services";
 import FreeItAssessment from "@/components/FreeItAssessment";
 import Companyimages from "@/components/Company-images";
 import Footer from "@/components/common/Footer";
-import ITOutsourcingBreakFix from "@/components/ITOutsourcing_BreakFix";
+import ItOutSourcingDropD from "@/components/ItOutSourcing-DropD";
 
 export default function OutSourcing() {
   return (
@@ -14,7 +14,7 @@ export default function OutSourcing() {
       <MiniHeader />
       <Header />
       <Homesection />
-      <ITOutsourcingBreakFix />
+      <ItOutSourcingDropD />
       <Outsourcingservices />
       <FreeItAssessment />
       <Companyimages />

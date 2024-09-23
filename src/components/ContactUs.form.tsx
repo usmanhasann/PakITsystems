@@ -1,20 +1,10 @@
 "use client";
-// import dynamic from "next/dynamic";
-
 import { FaFacebookF } from "react-icons/fa";
 import TwitterIcon from "@mui/icons-material/Twitter";
-//chatgpt
 import { Box, TextField, Button, Typography } from "@mui/material";
 import TelegramIcon from "@mui/icons-material/Telegram";
 
-// Dynamically import ReCAPTCHA
-// const ReCAPTCHA = dynamic(() => import("react-google-recaptcha"), {
-//   ssr: false,
-// });
 export const ContactUsform = () => {
-  // const handleCaptchaChange = (value: string | null) => {
-  //   console.log("Captcha value:", value);
-  // };
   return (
     <Box
       width={"100%"}
@@ -27,12 +17,12 @@ export const ContactUsform = () => {
       <Box
         padding={"100px 0"}
         width={"100%"}
+        bgcolor={"#d6d6d6"}
         display={"flex"}
         flexDirection={"column"}
         alignItems={"center"}
         justifyContent={"center"}
         gap={"20px"}
-        // bgcolor={"#f7f7f7"}
       >
         <Typography
           textAlign={"center"}
@@ -53,7 +43,6 @@ export const ContactUsform = () => {
           Our Service Areas
         </Typography>
         <Box
-          //   bgcolor={"green"}
           borderBottom={"1px dotted #3444af"}
           paddingBottom={"20px"}
           width={"30%"}
@@ -190,7 +179,7 @@ export const ContactUsform = () => {
           <Typography
             fontSize={"22px"}
             color={"#000000"}
-            fontWeight={"bold"}
+            fontWeight={600}
             textAlign={"center"}
             sx={{
               "@media (max-width:1024px)": {
@@ -267,7 +256,6 @@ export const ContactUsform = () => {
 
         <Box
           width={"100%"}
-          //   bgcolor={"#f5f5f5"}
           padding={"40px 0"}
           display={"flex"}
           flexDirection={"column"}
@@ -277,7 +265,6 @@ export const ContactUsform = () => {
           <Box
             width={"61%"}
             bgcolor={"white"}
-            // padding={"40px"}
             gap={"15px"}
             display={"flex"}
             flexDirection={"column"}
@@ -287,6 +274,16 @@ export const ContactUsform = () => {
               },
             }}
           >
+            <Typography
+              display={"flex"}
+              justifyContent={"flex-start"}
+              fontWeight={"800"}
+              lineHeight={"12px"}
+              fontSize={"12px"}
+              color={"rgb(0,0,0)"}
+            >
+              * REQUIRED FIELDS
+            </Typography>
             <Box
               width={"100%"}
               display={"flex"}
@@ -350,10 +347,10 @@ export const ContactUsform = () => {
                   bgcolor: "#f2f2f2",
                   border: "1px solid #f2f2f2",
                   borderRadius: "5px",
-                  fontWeight: "500",
-                  fontSize: "16px",
+                  fontWeight: "800",
+                  fontSize: "14px",
 
-                  lineHeight: "30px",
+                  lineHeight: "20px",
                   letterSpacing: "-1.1%",
                   color: "#1E1E1E",
                   marginTop: "0px",
@@ -391,14 +388,13 @@ export const ContactUsform = () => {
                 type="number"
                 sx={{
                   bgcolor: "#f2f2f2",
-                  border: "1px solid #f2f2f2",
+                  border: "1px solid #7a7a7a",
                   borderRadius: "5px",
                   fontWeight: "500",
                   fontSize: "16px",
 
                   lineHeight: "30px",
                   letterSpacing: "-1.1%",
-                  color: "#1E1E1E",
                   marginTop: "0px",
                   width: "100%",
 
@@ -417,10 +413,10 @@ export const ContactUsform = () => {
 
                       lineHeight: "30px",
                       letterSpacing: "-1.1%",
-                      color: "#1E1E1E",
+                      // color: "#7a7a7a",
                     },
                     "&.Mui-focused fieldset": {
-                      border: "1px solid #69727d",
+                      border: "1px solid #7a7a7a",
                       transition: "0.9s",
                     },
                   },
@@ -496,9 +492,9 @@ export const ContactUsform = () => {
                   "& .MuiOutlinedInput-input": {
                     padding: "0 16px",
 
-                    fontWeight: "500",
-                    fontSize: "16px",
-                    lineHeight: "30px",
+                    fontWeight: "800",
+                    fontSize: "14px",
+                    lineHeight: "20px",
                     letterSpacing: "-1.1%",
                     color: "#1E1E1E",
                   },
@@ -529,16 +525,16 @@ export const ContactUsform = () => {
                   bgcolor: "#f2f2f2",
                   border: "1px solid #f2f2f2",
                   borderRadius: "5px",
-                  fontWeight: "500",
-                  fontSize: "16px",
-                  lineHeight: "30px",
+                  fontWeight: "800",
+                  fontSize: "14px",
+
+                  lineHeight: "20px",
                   letterSpacing: "-1.1%",
-                  color: "#1E1E1E",
+                  color: "rgb(122,122,122)",
                   marginTop: "0px",
                   width: "100%",
 
                   "& .MuiOutlinedInput-root": {
-                    // padding: '12px 24px',
                     width: "100%",
                     height: "54px",
                     "& fieldset": {
@@ -570,16 +566,15 @@ export const ContactUsform = () => {
                   bgcolor: "#f2f2f2",
                   border: "1px solid #f2f2f2",
                   borderRadius: "5px",
-                  fontWeight: "500",
-                  fontSize: "16px",
-                  lineHeight: "30px",
+                  fontWeight: "800",
+                  fontSize: "14px",
+                  lineHeight: "20px",
                   letterSpacing: "-1.1%",
                   color: "#1E1E1E",
                   marginTop: "0px",
                   width: "100%",
 
                   "& .MuiOutlinedInput-root": {
-                    // padding: '12px 24px',
                     width: "100%",
                     height: "54px",
                     "& fieldset": {
@@ -620,7 +615,6 @@ export const ContactUsform = () => {
                   width: "100%",
 
                   "& .MuiOutlinedInput-root": {
-                    // padding: '12px 24px',
                     width: "100%",
                     height: "54px",
                     "& fieldset": {
@@ -646,12 +640,12 @@ export const ContactUsform = () => {
             <TextField
               fullWidth
               multiline
-              minRows={7} // Start with 3 rows
+              minRows={7}
               placeholder="Message*"
               InputProps={{
                 sx: {
                   "& textarea": {
-                    resize: "vertical", // Enables vertical resizing
+                    resize: "vertical",
                     overflow: "auto",
                   },
                 },
@@ -665,18 +659,15 @@ export const ContactUsform = () => {
 
                   fontSize: "16px",
                   fontWeight: "400",
-                  // lineHeight: '24px',
+
                   color: "#000000",
                   boxShadow: "0px 1px 2px 0px #1018280D",
                   "&:hover .MuiOutlinedInput-notchedOutline": {
                     borderColor: "#69727d",
                   },
 
-                  // "& .MuiOutlinedInput-notchedOutline": {
-                  //   borderColor: "#C2CCFF", // Initial border color
-                  // },
                   "& fieldset": {
-                    border: "none", // No border by default
+                    border: "none",
                   },
                   "&.Mui-focused fieldset": {
                     border: "1px solid #69727d",
@@ -687,7 +678,6 @@ export const ContactUsform = () => {
             />
           </Box>
           <Box
-            // bgcolor={"red"}
             width={"61%"}
             padding={"40px 0"}
             display={"flex"}
@@ -715,17 +705,16 @@ export const ContactUsform = () => {
                 display: "flex",
                 alignItems: "center",
                 gap: "5px",
+                "&:hover": {
+                  backgroundColor: "#29368C",
+                },
               }}
             >
               <TelegramIcon sx={{ fontSize: "20px" }} /> SUBMIT
             </Button>
           </Box>
           <Box width={"76%"}>
-            <Typography
-              color="#7A7A7A"
-              fontSize="10px"
-              margin="0px 42px 17.5px 0px"
-            >
+            <Typography color="#7A7A7A" fontSize="10px">
               By clicking ‘Submit’, you agree to HMBTECH’s Terms of Use and
               Privacy Policy. You consent to receive phone calls and SMS
               messages from HMBTECH to provide updates and information regarding

@@ -3,7 +3,7 @@ import React from "react";
 import Image from "next/image";
 import BlackLaptop from "@/assets/laptop-image.png";
 
-const Break_fix = () => {
+const BreakFixDropD = () => {
   return (
     <Box
       zIndex={"100"}
@@ -12,27 +12,14 @@ const Break_fix = () => {
       width={"100%"}
       height={"auto"}
       color={"black"}
-      padding={"170px 0 150px 0"}
       display={"flex"}
       marginTop={"-2px"}
-      sx={{
-        backgroundColor: "transparent",
-        backgroundImage: "linear-gradient(7deg, #d6d6d6 76%, #ffffff 76%)",
-
-        "@media (max-width:1150px)": {
-          padding: "150px 0 120px",
-        },
-        "@media (max-width:768px)": {
-          flexDirection: "column-reverse",
-          backgroundImage: "linear-gradient(7deg, #ffffff 76%, #ffffff 76%)",
-        },
-      }}
     >
       <Box
         width={"50%"}
-        padding={"100px 0 100px 200px"}
         display={"flex"}
         flexDirection={"column"}
+        bgcolor={"#d6d6d6"}
         justifyContent={"center"}
         gap={"20px"}
         alignItems={"flex-start"}
@@ -51,6 +38,8 @@ const Break_fix = () => {
           color="#000000"
           fontSize={"52px"}
           lineHeight={"70px"}
+          paddingTop={"5%"}
+          paddingLeft={"15%"}
           fontWeight={"bold"}
           sx={{
             "@media (max-width:768px)": {
@@ -62,42 +51,26 @@ const Break_fix = () => {
         </Typography>
         <Box>
           <Typography
-            color="#7a7a7a"
+            color={"rgb(122,122,122)"}
             fontSize={"16px"}
-            lineHeight={"1.2em"}
-            fontWeight={"700"}
-          >
-            Not ready to fully outsource your IT?
-          </Typography>
-          <Typography
-            color="#7a7a7a"
-            fontSize={"16px"}
-            lineHeight={"1.2em"}
+            lineHeight={"30px"}
+            width={"91%"}
+            paddingLeft={"15%"}
             fontWeight={"400"}
           >
-            No Problem! We can help as needed on issues and projects on a
-            Break/Fix arrangement.
+            If for some reason you don’t want to take advantage of our Managed
+            Services offering, we will be glad to help you on a Break/Fix
+            arrangement. In a Break/Fix arrangement, you just contact us any
+            time you need help with an IT issue or project and we will get right
+            on it. Our Break/Fix clients get our best in class support and
+            response times with a competitive hourly rate.
           </Typography>
         </Box>
-
-        <Button
-          sx={{
-            fontSize: "13px",
-            fontWeight: "400",
-            lineHeight: "1.4em",
-            letterSpacing: "1px",
-            boxShadow: " 0px 0px 20px 0px rgba(0, 0, 0, 0.5)",
-            padding: "15px",
-            bgcolor: "#3644af !important",
-            color: "#ffffff",
-          }}
-        >
-          LEARN WORK
-        </Button>
       </Box>
       <Box
         width={"50%"}
         height={"auto"}
+        bgcolor={"#d6d6d6"}
         sx={{
           "@media (max-width:950px)": {
             height: "400px",
@@ -119,10 +92,11 @@ const Break_fix = () => {
           sx={{
             width: "100%",
             height: "100%",
-            paddingTop: "9%",
             display: "block",
+            paddingTop: "8%",
+            paddingBottom: "6%",
             "@media (max-width:768px)": {
-              width: "384px", // Adjust width at 768px breakpoint
+              width: "384px",
             },
             "@media (max-width:400px)": {
               width: "100%",
@@ -142,4 +116,4 @@ const Break_fix = () => {
   );
 };
 
-export default Break_fix;
+export default BreakFixDropD;

@@ -8,14 +8,14 @@ import FreeItAssessment from "@/components/FreeItAssessment";
 import Companyimages from "@/components/Company-images";
 import ClientLayout from "./ClientLayout";
 import Break_fix from "@/components/Break_fix";
-
+import BreakFixDropD from "@/components/BreakFix-DropD";
 export default function BreakFix() {
   return (
     <ClientLayout>
       <Miniheader />
       <Header />
       <Homesection />
-      <Break_fix />
+      <BreakFixDropD />
       <FreeItAssessment />
       <Companyimages />
       <Footer />

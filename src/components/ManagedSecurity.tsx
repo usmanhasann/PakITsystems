@@ -9,10 +9,13 @@ type ManagedSecurity = {
 const managedSecurity: ManagedSecurity[] = [
   {
     content: [
-      "Do you have to check the same email messages on your desktop, laptop and mobile device? Do you send an email from your laptop and don’t have it on your desktop when you need it? What if you could see your mailbox the same way whether you are looking at it from the browser, desktop, laptop of mobile device? With Exchange email you can. Read a message, in one device it will be marked as read on all your devices. Deleted a message in one device and it will be deleted on all of your devices. No more doing the same work on multiple devices. Not only will you be able to sync your mailbox, but also your calendar and contacts. View all your important data the same way across all of your devices. Need to share your calendar with your staff? No problem. We can take care of that too.",
+      `Do all your devices have antivirus protection? Is the antivirus up to date? Are your computers scanned regularly? Do you have different antivirus subscriptions expiring at different times? Do you waste valuable time with antivirus renewals?`,
+      `Get peace of mind with our Managed Antivirus service. We will make sure all of your computers are properly protected and secured for you. Plus, your antivirus will never expire so you don’t have to worry or spend time with antivirus renewals.`,
+      `On top of all that, when the antivirus detects a presence of malware on your computers, we will be notified immediately and take the appropriate actions to keep your computers clean and your business safe.`,
     ],
   },
 ];
+
 export const ManagedSecurity = () => {
   return (
     <Box
@@ -20,39 +23,31 @@ export const ManagedSecurity = () => {
       width={"100%"}
       display={"flex"}
       justifyContent={"center"}
-      padding={"100px 0px 100px 0px"}
+      padding={{ xs: "50px 0px", md: "100px 0px 220px 0px" }}
       bgcolor={"white"}
     >
-      <Box width={"90%"} display={"flex"} alignItems={"flex-start"}>
-        <Box width={"50%"}>
+      <Box
+        width={{ xs: "95%", md: "90%" }}
+        display={"flex"}
+        flexDirection={{ xs: "column", md: "row" }}
+        alignItems={{ xs: "center", md: "flex-start" }}
+      >
+        <Box width={{ xs: "100%", md: "40%" }}>
           <Typography
             color="#000000"
-            fontSize={"52px"}
+            fontSize={{ xs: "32px", md: "52px" }}
+            lineHeight={"1.2"}
             fontWeight={"bold"}
-            padding={"60px 0px 32px 11px"}
+            padding={{ xs: "20px 0px", md: "25px 0px 32px 7%" }}
+            textAlign={{ xs: "center", md: "left" }}
           >
             Managed Security
           </Typography>
           {managedSecurity.map((section, index) => (
             <Box key={index} mb={4}>
-              {/* Section Heading */}
-              <Typography
-                variant="h5"
-                component="h2"
-                gutterBottom
-                sx={{
-                  color: "#000000DB",
-                  fontSize: "24px",
-                  fontWeight: "700",
-                  marginLeft: "20px",
-                }}
+              <List
+                sx={{ marginLeft: { xs: "0", md: "35px" }, marginTop: "-34px" }}
               >
-                {/* {index + 1}. */}
-                {/* {section.title} */}
-              </Typography>
-
-              {/* Section Content */}
-              <List sx={{ marginLeft: "40px" }}>
                 {section.content.map((item, idx) => (
                   <ListItem
                     key={idx}
@@ -71,39 +66,42 @@ export const ManagedSecurity = () => {
               </List>
             </Box>
           ))}
-          <Box width={"80%"}>
+          <Box width={"100%"}>
             <Typography
-              fontSize={"30px"}
+              fontSize={{ xs: "20px", md: "28px" }}
               color="#3444af"
-              padding={"0px 0px 0px 45px"}
-              fontWeight={"800"}
+              marginLeft={{ xs: "0", md: "7%" }}
+              textAlign={{ xs: "center", md: "left" }}
+              fontWeight={"bold"}
             >
-              Contact us today to find out more about how your business can
-              benefit from our cloud services.
+              Contact us today to learn more about how your business can benefit
+              from our Managed Security service.
             </Typography>
             <Button
               sx={{
                 padding: "15px",
+                marginTop: "5%",
+                marginLeft: { xs: "0", md: "9%" },
                 fontSize: "13px",
-
                 letterSpacing: "1px",
-                height: "",
                 fontWeight: "400",
                 color: "#000000",
                 backgroundColor: "#ffffff",
                 boxShadow: "0px 0px 20px 0px rgba(0,0,0,0.5)",
+                display: "block",
+                marginX: { xs: "auto", md: "initial" },
               }}
             >
               CLICK HERE
             </Button>
           </Box>
         </Box>
-        <Box width={"50%"}>
-          <Box width={"100%"}>
+        <Box width={{ xs: "100%", md: "60%" }} mt={{ xs: "20px", md: "0" }}>
+          <Box width={"100%"} textAlign={{ xs: "center", md: "left" }}>
             <Image
               src={manageSecurity}
               alt="Cloud Services Main"
-              style={{ width: "100%", height: "auto" }}
+              style={{ width: "90%", height: "auto", margin: "0 auto" }}
             />
           </Box>
         </Box>
@@ -111,4 +109,5 @@ export const ManagedSecurity = () => {
     </Box>
   );
 };
+
 export default ManagedSecurity;

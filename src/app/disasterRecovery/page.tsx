@@ -1,19 +1,20 @@
-"use client";
-import Miniheader from "@/components/mini.header";
 import Header from "@/components/common/Header";
+import ClientLayout from "./ClientLayout";
+import MiniHeader from "@/components/mini.header";
 import Homesection from "@/components/Home-section";
-import Footer from "@/components/common/Footer";
 import FreeItAssessment from "@/components/FreeItAssessment";
 import Companyimages from "@/components/Company-images";
-import ClientLayout from "./ClientLayout";
-import HelpDesk from "@/components/HelpDesk";
-export default function BreakFix() {
+import Footer from "@/components/common/Footer";
+import DisasterRecovery from "@/components/DisasterRecovery";
+
+export default function Contact() {
   return (
     <ClientLayout>
-      <Miniheader />
+      <MiniHeader />
       <Header />
       <Homesection />
-      <HelpDesk />
+      <DisasterRecovery />
+
       <FreeItAssessment />
       <Companyimages />
       <Footer />
