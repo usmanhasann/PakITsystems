@@ -1,4 +1,4 @@
-import { Box, Grid2, Typography } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import React from "react";
 import { FaRegHandPointer } from "react-icons/fa";
 import { IoDiamondOutline } from "react-icons/io5";
