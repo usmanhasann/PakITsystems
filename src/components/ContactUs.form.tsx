@@ -32,7 +32,7 @@ export const ContactUsform = () => {
 
   const handleSubmit = (e: { preventDefault: () => void }) => {
     e.preventDefault();
-    console.log("Sending email...");
+
     emailjs
       .send(
         "service_lv00akq", // Your Service ID
@@ -44,6 +44,17 @@ export const ContactUsform = () => {
         (response) => {
           console.log("SUCCESS!", response.status, response.text);
           alert("Message sent successfully!");
+          setFormData({
+            name: "",
+            email: "",
+            phone: "",
+            company: "",
+            address: "",
+            city: "",
+            state: "",
+            zip: "",
+            message: "",
+          });
         },
         (err) => {
           console.log("FAILED...", err);
@@ -343,43 +354,9 @@ export const ContactUsform = () => {
                   name="name"
                   value={formData.name}
                   onChange={handleChange}
-                  sx={{
-                    bgcolor: "#f2f2f2",
-                    border: "1px solid #f2f2f2",
-                    borderRadius: "5px",
-                    fontWeight: "500",
-                    fontSize: "16px",
-
-                    lineHeight: "30px",
-                    letterSpacing: "-1.1%",
-                    color: "#1E1E1E",
-                    marginTop: "0px",
-                    width: "100%",
-
-                    "& .MuiOutlinedInput-root": {
-                      // padding: '12px 24px',
-                      width: "100%",
-                      height: "54px",
-                      "& fieldset": {
-                        border: "none",
-                      },
-                      "& .MuiOutlinedInput-input": {
-                        padding: "0 16px",
-
-                        fontWeight: "500",
-                        fontSize: "16px",
-
-                        lineHeight: "30px",
-                        letterSpacing: "-1.1%",
-                        color: "#1E1E1E",
-                      },
-                      "&.Mui-focused fieldset": {
-                        border: "1px solid #797f86",
-                        transition: "0.9s",
-                      },
-                    },
-                  }}
+                  sx={textFieldStyles}
                 />
+
                 <TextField
                   fullWidth
                   placeholder="Email*"
@@ -389,42 +366,7 @@ export const ContactUsform = () => {
                   name="email"
                   value={formData.email}
                   onChange={handleChange}
-                  sx={{
-                    bgcolor: "#f2f2f2",
-                    border: "1px solid #f2f2f2",
-                    borderRadius: "5px",
-                    fontWeight: "500",
-                    fontSize: "16px",
-
-                    lineHeight: "30px",
-                    letterSpacing: "-1.1%",
-                    color: "#1E1E1E",
-                    marginTop: "0px",
-                    width: "100%",
-
-                    "& .MuiOutlinedInput-root": {
-                      // padding: '12px 24px',
-                      width: "100%",
-                      height: "54px",
-                      "& fieldset": {
-                        border: "none",
-                      },
-                      "& .MuiOutlinedInput-input": {
-                        padding: "0 16px",
-
-                        fontWeight: "500",
-                        fontSize: "16px",
-
-                        lineHeight: "30px",
-                        letterSpacing: "-1.1%",
-                        color: "#1E1E1E",
-                      },
-                      "&.Mui-focused fieldset": {
-                        border: "1px solid #69727d",
-                        transition: "0.9s",
-                      },
-                    },
-                  }}
+                  sx={textFieldStyles}
                 />
                 <TextField
                   fullWidth
@@ -435,42 +377,7 @@ export const ContactUsform = () => {
                   name="phone"
                   value={formData.phone}
                   onChange={handleChange}
-                  sx={{
-                    bgcolor: "#f2f2f2",
-                    border: "1px solid #f2f2f2",
-                    borderRadius: "5px",
-                    fontWeight: "500",
-                    fontSize: "16px",
-
-                    lineHeight: "30px",
-                    letterSpacing: "-1.1%",
-                    color: "#1E1E1E",
-                    marginTop: "0px",
-                    width: "100%",
-
-                    "& .MuiOutlinedInput-root": {
-                      // padding: '12px 24px',
-                      width: "100%",
-                      height: "54px",
-                      "& fieldset": {
-                        border: "none",
-                      },
-                      "& .MuiOutlinedInput-input": {
-                        padding: "0 16px",
-
-                        fontWeight: "500",
-                        fontSize: "16px",
-
-                        lineHeight: "30px",
-                        letterSpacing: "-1.1%",
-                        color: "#1E1E1E",
-                      },
-                      "&.Mui-focused fieldset": {
-                        border: "1px solid #69727d",
-                        transition: "0.9s",
-                      },
-                    },
-                  }}
+                  sx={textFieldStyles}
                 />
               </Box>
               <TextField
@@ -482,41 +389,7 @@ export const ContactUsform = () => {
                 name="company"
                 value={formData.company}
                 onChange={handleChange}
-                sx={{
-                  border: "1px solid #f2f2f2",
-                  borderRadius: "5px",
-                  fontWeight: "500",
-                  fontSize: "16px",
-
-                  lineHeight: "30px",
-                  letterSpacing: "-1.1%",
-                  color: "#1E1E1E",
-                  marginTop: "0px",
-                  bgcolor: "#f2f2f2",
-
-                  "& .MuiOutlinedInput-root": {
-                    // padding: '12px 24px',
-                    // width: "343px",
-                    height: "54px",
-                    "& fieldset": {
-                      border: "none",
-                    },
-                    "& .MuiOutlinedInput-input": {
-                      padding: "0 16px",
-
-                      fontWeight: "500",
-                      fontSize: "16px",
-
-                      lineHeight: "30px",
-                      letterSpacing: "-1.1%",
-                      color: "#1E1E1E",
-                    },
-                    "&.Mui-focused fieldset": {
-                      border: "1px solid #69727d",
-                      transition: "0.9s",
-                    },
-                  },
-                }}
+                sx={textFieldStyles}
               />
               <TextField
                 fullWidth
@@ -527,39 +400,7 @@ export const ContactUsform = () => {
                 name="address"
                 value={formData.address}
                 onChange={handleChange}
-                sx={{
-                  bgcolor: "#f2f2f2",
-                  border: "1px solid #f2f2f2",
-                  borderRadius: "5px",
-                  fontWeight: "500",
-                  fontSize: "16px",
-                  lineHeight: "30px",
-                  letterSpacing: "-1.1%",
-                  color: "#1E1E1E",
-                  marginTop: "0px",
-
-                  "& .MuiOutlinedInput-root": {
-                    // padding: '12px 24px',
-                    // width: "343px",
-                    height: "54px",
-                    "& fieldset": {
-                      border: "none",
-                    },
-                    "& .MuiOutlinedInput-input": {
-                      padding: "0 16px",
-
-                      fontWeight: "500",
-                      fontSize: "16px",
-                      lineHeight: "30px",
-                      letterSpacing: "-1.1%",
-                      color: "#1E1E1E",
-                    },
-                    "&.Mui-focused fieldset": {
-                      border: "1px solid #69727d",
-                      transition: "0.9s",
-                    },
-                  },
-                }}
+                sx={textFieldStyles}
               />
               <Box
                 width={"100%"}
@@ -580,40 +421,7 @@ export const ContactUsform = () => {
                   name="city"
                   value={formData.city}
                   onChange={handleChange}
-                  sx={{
-                    bgcolor: "#f2f2f2",
-                    border: "1px solid #f2f2f2",
-                    borderRadius: "5px",
-                    fontWeight: "500",
-                    fontSize: "16px",
-                    lineHeight: "30px",
-                    letterSpacing: "-1.1%",
-                    color: "#1E1E1E",
-                    marginTop: "0px",
-                    width: "100%",
-
-                    "& .MuiOutlinedInput-root": {
-                      // padding: '12px 24px',
-                      width: "100%",
-                      height: "54px",
-                      "& fieldset": {
-                        border: "none",
-                      },
-                      "& .MuiOutlinedInput-input": {
-                        padding: "0 16px",
-
-                        fontWeight: "500",
-                        fontSize: "16px",
-                        lineHeight: "30px",
-                        letterSpacing: "-1.1%",
-                        color: "#1E1E1E",
-                      },
-                      "&.Mui-focused fieldset": {
-                        border: "1px solid #69727d",
-                        transition: "0.9s",
-                      },
-                    },
-                  }}
+                  sx={textFieldStyles}
                 />
                 <TextField
                   fullWidth
@@ -624,40 +432,7 @@ export const ContactUsform = () => {
                   name="state"
                   value={formData.state}
                   onChange={handleChange}
-                  sx={{
-                    bgcolor: "#f2f2f2",
-                    border: "1px solid #f2f2f2",
-                    borderRadius: "5px",
-                    fontWeight: "500",
-                    fontSize: "16px",
-                    lineHeight: "30px",
-                    letterSpacing: "-1.1%",
-                    color: "#1E1E1E",
-                    marginTop: "0px",
-                    width: "100%",
-
-                    "& .MuiOutlinedInput-root": {
-                      // padding: '12px 24px',
-                      width: "100%",
-                      height: "54px",
-                      "& fieldset": {
-                        border: "none",
-                      },
-                      "& .MuiOutlinedInput-input": {
-                        padding: "0 16px",
-
-                        fontWeight: "500",
-                        fontSize: "16px",
-                        lineHeight: "30px",
-                        letterSpacing: "-1.1%",
-                        color: "#1E1E1E",
-                      },
-                      "&.Mui-focused fieldset": {
-                        border: "1px solid #69727d",
-                        transition: "0.9s",
-                      },
-                    },
-                  }}
+                  sx={textFieldStyles}
                 />
                 <TextField
                   fullWidth
@@ -668,42 +443,10 @@ export const ContactUsform = () => {
                   name="zip"
                   value={formData.zip}
                   onChange={handleChange}
-                  sx={{
-                    bgcolor: "#f2f2f2",
-                    border: "1px solid #f2f2f2",
-                    borderRadius: "5px",
-                    fontWeight: "500",
-                    fontSize: "20px",
-                    lineHeight: "30px",
-                    letterSpacing: "-1.1%",
-                    color: "#1E1E1E",
-                    marginTop: "0px",
-                    width: "100%",
-
-                    "& .MuiOutlinedInput-root": {
-                      // padding: '12px 24px',
-                      width: "100%",
-                      height: "54px",
-                      "& fieldset": {
-                        border: "none",
-                      },
-                      "& .MuiOutlinedInput-input": {
-                        padding: "0 16px",
-
-                        fontWeight: "500",
-                        fontSize: "16px",
-                        lineHeight: "30px",
-                        letterSpacing: "-1.1%",
-                        color: "#1E1E1E",
-                      },
-                      "&.Mui-focused fieldset": {
-                        border: "1px solid #69727d",
-                        transition: "0.9s",
-                      },
-                    },
-                  }}
+                  sx={textFieldStyles}
                 />
               </Box>
+
               <TextField
                 fullWidth
                 multiline
@@ -807,3 +550,34 @@ export const ContactUsform = () => {
   );
 };
 export default ContactUsform;
+const textFieldStyles = {
+  bgcolor: "#f2f2f2",
+  border: "1px solid #f2f2f2",
+  borderRadius: "5px",
+  fontWeight: "500",
+  fontSize: "16px",
+  lineHeight: "30px",
+  letterSpacing: "-1.1%",
+  color: "#1E1E1E",
+  marginTop: "0px",
+  width: "100%",
+  "& .MuiOutlinedInput-root": {
+    width: "100%",
+    height: "54px",
+    "& fieldset": {
+      border: "none",
+    },
+    "& .MuiOutlinedInput-input": {
+      padding: "0 16px",
+      fontWeight: "500",
+      fontSize: "16px",
+      lineHeight: "30px",
+      letterSpacing: "-1.1%",
+      color: "#1E1E1E",
+    },
+    "&.Mui-focused fieldset": {
+      border: "1px solid #797f86",
+      transition: "0.9s",
+    },
+  },
+};

@@ -104,10 +104,10 @@ const Homesection: React.FC = () => {
   //   (currentContent as { animatedText?: string }).animatedText ?? "";
 
   return (
-    <Box width="100%" height="70vh" position={"relative"}>
+    <Box width="100%" height="80vh" position={"relative"}>
       <Box
         width="100%"
-        height="70vh"
+        height="80vh"
         display="flex"
         alignItems="center"
         justifyContent="center"

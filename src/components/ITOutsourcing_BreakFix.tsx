@@ -92,6 +92,8 @@ const ITOutsourcingBreakFix = () => {
               boxShadow: " 0px 0px 20px 0px rgba(0, 0, 0, 0.5)",
               padding: "15px",
               bgcolor: "#3644af !important",
+              transition: "transform 0.3s ease",
+
               color: "#ffffff",
               "&:hover": {
                 transform: "scale(1.1)",
