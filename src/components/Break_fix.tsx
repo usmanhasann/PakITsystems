@@ -90,6 +90,11 @@ const Break_fix = () => {
             padding: "15px",
             bgcolor: "#3644af !important",
             color: "#ffffff",
+            transition: "transform 0.3s ease",
+
+            "&:hover": {
+              transform: "scale(1.1)",
+            },
           }}
         >
           LEARN WORK

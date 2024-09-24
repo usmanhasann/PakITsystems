@@ -103,7 +103,7 @@ const OurClientsSays = () => {
           <Box
             display={"flex"}
             gap={"20px"}
-            width={"55%"}
+            width={"100%"}
             sx={{
               "@media (max-width:1420px)": {
                 width: "70%",
@@ -125,14 +125,17 @@ const OurClientsSays = () => {
               <Box
                 boxShadow={"0px 0px 10px 0px #c1c1c1"}
                 key={index}
-                width={"366.66px"}
+                width={"346.66px"}
+                bgcolor={"#fff"}
+                height="411px"
                 display={"flex"}
                 flexDirection={"column"}
+                justifyContent="space-between"
                 gap={"20px"}
                 padding={"40px 20px"}
                 sx={{
                   "@media (max-width:1420px)": {
-                    padding: "40px 15px",
+                    padding: "35px 15px",
                     gap: "10px",
                   },
                   "@media (max-width:768px)": {
@@ -148,10 +151,11 @@ const OurClientsSays = () => {
               >
                 <Typography
                   color={"#3644af"}
-                  fontSize={"30px"}
+                  fontSize={"60px"}
                   textAlign={"center"}
+                  fontWeight="400"
                   margin={"0"}
-                  lineHeight={"1em"}
+                  lineHeight={"70px"}
                 >
                   {clientsData.textComa}
                 </Typography>
@@ -170,6 +174,7 @@ const OurClientsSays = () => {
                   color={"#000000"}
                   textAlign={"center"}
                   fontSize={"18px"}
+                  lineHeight={"25px"}
                   textTransform={"uppercase"}
                   fontStyle={"normal"}
                   fontWeight={"600"}
@@ -213,6 +218,7 @@ const OurClientsSays = () => {
                 boxShadow: "0px 0px 20px 0px rgba(0, 0, 0, 0.5)",
                 bgcolor: "#3644af !important",
                 color: "#fff",
+                transition: "transform 0.3s ease",
                 "&:hover": {
                   transform: "scale(1.1)",
                 },

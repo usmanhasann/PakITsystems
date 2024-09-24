@@ -71,11 +71,14 @@ export const Footer = () => {
             fontSize={"15px"}
             fontFamily={"sans-serif"}
           >
-            <Image
-              src={Logo}
-              alt="webLogo"
-              style={{ width: "100%", height: "auto" }}
-            />
+            <Link href={"/"}>
+              {" "}
+              <Image
+                src={Logo}
+                alt="webLogo"
+                style={{ width: "100%", height: "auto" }}
+              />
+            </Link>
           </Box>
           <Box padding={"10px"}>
             <Typography
@@ -281,16 +284,17 @@ export const Footer = () => {
                   textTransform: "uppercase",
 
                   color: "#ffffff",
-                  "&:hover": {
-                    backgroundColor: "white",
-                    color: "black",
-                  },
                   backgroundColor: "#3444af",
                   borderRadius: "5px",
                   display: "flex",
                   justifyContent: "center",
                   padding: "10px 30px 10px 30px",
+                  transition: "all .2s linear",
                   whiteSpace: "pre",
+                  "&:hover": {
+                    backgroundColor: "white",
+                    color: "black",
+                  },
                   "@media (max-width:420px)": {
                     fontSize: "12px",
                     padding: "12px 28px",
