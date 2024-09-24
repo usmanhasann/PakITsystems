@@ -7,6 +7,9 @@ import FreeItAssessment from "@/components/FreeItAssessment";
 import Companyimages from "@/components/Company-images";
 import ClientLayout from "./ClientLayout";
 import HelpDesk from "@/components/HelpDesk";
+import Break_fix from "@/components/Break_fix";
+
+
 export default function BreakFix() {
   return (
     <ClientLayout>

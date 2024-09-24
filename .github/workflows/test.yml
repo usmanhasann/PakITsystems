@@ -1,6 +1,5 @@
 # ---------------- Developed by MERN TL ---------------- #
-# This workflow is a Continuous Integration (CI) pipeline for testing a React.js application.
-
+# This workflow is a Continuous Integration (CI) pipeline for testing a Next.js application.
 name: "CI"
 
 on:
@@ -13,22 +12,25 @@ jobs:
     runs-on: self-hosted # Set this to 'ubuntu-latest' if you're not hosting your repo on falcon
 
     steps:
-      # The first step checks out the code from the repository.
       - name: Checkout code
         uses: actions/checkout@v2
 
-      # The second step sets up Node.js with version 16.
       - name: Setup Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: 16
+          node-version: 18 # Updated to Node.js 18
 
-      # The third step installs the dependencies.
       - name: Install dependencies
-        run: |
-          yarn install
+        run: yarn install
 
-      # The fourth step creates a build.
-      - name: Create build
-        run: |
-          CI= yarn run build
+      - name: Lint
+        run: yarn lint
+
+      - name: Type check
+        run: yarn type-check # Add this script to your package.json if using TypeScript
+
+      - name: Build
+        run: yarn build
+
+      - name: Test
+        run: yarn test # Add this if you have tests set up

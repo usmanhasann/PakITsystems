@@ -1,4 +1,4 @@
-"use client"; // Ensures it's a Client Component
+"use client";
 
 import React from "react";
 import { Box, Typography } from "@mui/material";
@@ -204,6 +204,8 @@ const Homesection: React.FC = () => {
               }}
             >
               {animatedText}
+
+              {content["/"]?.animatedText }
             </Typography>
 
             {/* Animated SVG Line under c"WORK" */}
