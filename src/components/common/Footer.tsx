@@ -19,7 +19,7 @@ const serviceData = [
 const aboutData = [
   { aboutName: "About", Link: "/about" },
   { aboutName: "Why Us", Link: "/whyUs" },
-  { aboutName: "Testimonals", Link: "/testimonals" },
+  { aboutName: "Testimonials", Link: "/testimonials" },
 ];
 
 export const Footer = () => {
@@ -278,10 +278,17 @@ export const Footer = () => {
                   fontSize: "14px",
                   fontWeight: "600",
                   textTransform: "uppercase",
+
                   color: "#ffffff",
+                  "&:hover": {
+                    backgroundColor: "white",
+                    color: "black",
+                  },
                   backgroundColor: "#3444af",
                   borderRadius: "5px",
-                  padding: "15px 35px",
+                  display: "flex",
+                  justifyContent: "center",
+                  padding: "10px 30px 10px 30px",
                   whiteSpace: "pre",
                   "@media (max-width:420px)": {
                     fontSize: "12px",
@@ -340,23 +347,45 @@ export const Footer = () => {
               PAKIT SYSTEM © 2024 All Rights Reserved{" "}
             </Typography>
           </Box>
-          <Box display={"flex"} alignItems={"center"} gap={"20px"}>
-            <FaFacebookF style={{ color: "#ffffff63" }} />
-            <FaTwitter style={{ color: "#ffffff63" }} />
+          <Box
+            display={"flex"}
+            alignItems={"center"}
+            gap={"20px"}
+            sx={{
+              ".icon": {
+                "&:hover": {
+                  fill: "white",
+                },
+              },
+            }}
+          >
+            <FaFacebookF
+              className="icon"
+              style={{ color: "#ffffff63", cursor: "pointer" }}
+            />
+            <FaTwitter
+              className="icon"
+              style={{ color: "#ffffff63", cursor: "pointer" }}
+            />
           </Box>
           <Box height={"auto"}>
             <Link href="/PrivacyPolicy">
               <Button
+                className="hoverrPolicy"
                 sx={{
-                  fontSize: "12px",
+                  fontSize: "11px",
                   fontWeight: "bold",
                   bgcolor: "#61ce7000",
                   borderStyle: "solid",
-                  borderWidth: "1px",
-                  borderColor: "#fff",
+                  borderWidth: "2px",
+                  borderColor: "#3444af",
                   padding: "7px",
                   color: "#ffffff",
                   fontStyle: "italic",
+                  "&:hover": {
+                    backgroundColor: "#3444af",
+                    color: "white",
+                  },
                 }}
               >
                 Privacy policy

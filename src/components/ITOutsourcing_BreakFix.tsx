@@ -12,7 +12,13 @@ const ITOutsourcingBreakFix = () => {
       zIndex={"100"}
       bgcolor={"#ffffff"}
       position={"relative"}
-      padding={"40px 0"}
+      padding={"50px 0"}
+      marginBottom={"-100px"}
+      sx={{
+        "@media(max-width:1000px)": {
+          width: "100%",
+        },
+      }}
     >
       <Box
         width={"100%"}
@@ -87,6 +93,14 @@ const ITOutsourcingBreakFix = () => {
               padding: "15px",
               bgcolor: "#3644af !important",
               color: "#ffffff",
+              "&:hover": {
+                transform: "scale(1.1)",
+              },
+              "@media (max-width:1024px)": {
+                fontSize: "12px",
+                display: "flex",
+                justifyContent: "center",
+              },
             }}
           >
             LEARN WORK

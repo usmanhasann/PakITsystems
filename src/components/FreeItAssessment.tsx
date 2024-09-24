@@ -1,3 +1,4 @@
+"use client";
 import { Box, Typography, Button } from "@mui/material";
 import React from "react";
 import Image from "next/image";
@@ -35,7 +36,7 @@ const FreeItAssessment = () => {
       >
         <Image
           src={WhiteShirt}
-          alt="White Shirt Image"
+          alt="cloudServices"
           style={{ width: "100%", height: "auto" }}
         />
       </Box>
@@ -91,8 +92,8 @@ const FreeItAssessment = () => {
           color="#ffffff"
           lineHeight={"1.3em"}
         >
-          Find out how your buisness IT is doing. Absolutly free and with no
-          commitment.
+          Click on the button below to request your FREE no-commitment IT
+          assessment.
         </Typography>
         <Button
           sx={{
@@ -101,9 +102,13 @@ const FreeItAssessment = () => {
             lineHeight: "1.4em",
             letterSpacing: "1px",
             boxShadow: " 0px 0px 20px 0px rgba(0, 0, 0, 0.5)",
+            transition: "transform 0.3s ease, box-shadow 0.3s ease",
             padding: "15px",
             bgcolor: "#ffffff !important",
             color: "#3644af",
+            "&:hover": {
+              transform: "scale(1.1)",
+            },
           }}
         >
           REQUEST NOW

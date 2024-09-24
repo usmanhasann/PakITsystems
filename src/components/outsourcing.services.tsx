@@ -47,10 +47,10 @@ const outsourcingservices = () => {
       alignItems={"center"}
       flexDirection={"column"}
       gap={"50px"}
-      padding={"50px 0 50px 0"}
+      padding={"19px 0 50px 0"}
     >
       <Box
-        width={"80%"}
+        width={"90%"}
         display={"flex"}
         flexWrap={"wrap"}
         // alignItems={"center"}

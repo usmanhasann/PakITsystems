@@ -1,6 +1,6 @@
+import React from "react";
 import { Box, Button, Typography } from "@mui/material";
 
-import React from "react";
 const clientsData = [
   {
     textComa: " ❞ ",
@@ -51,7 +51,6 @@ const OurClientsSays = () => {
           display={"flex"}
           flexDirection={"column"}
           gap={"40px"}
-          // bgcolor={"aqua"}
           alignItems={"center"}
           justifyContent={"center"}
           sx={{
@@ -104,29 +103,27 @@ const OurClientsSays = () => {
           <Box
             display={"flex"}
             gap={"20px"}
-            width={"1100px"}
-            // bgcolor={"red"}
-            // sx={{
-            //   "@media (max-width:1420px)": {
-            //     width: "70%",
-            //   },
-            //   "@media (max-width:1024px)": {
-            //     width: "80%",
-            //   },
-            //   "@media (max-width:924px)": {
-            //     width: "95%",
-            //   },
-            //   "@media (max-width:768px)": {
-            //     flexWrap: "wrap",
-            //     alignItems: "center",
-            //     justifyContent: "center",
-            //   },
-            // }}
+            width={"55%"}
+            sx={{
+              "@media (max-width:1420px)": {
+                width: "70%",
+              },
+              "@media (max-width:1024px)": {
+                width: "80%",
+              },
+              "@media (max-width:924px)": {
+                width: "95%",
+              },
+              "@media (max-width:768px)": {
+                flexWrap: "wrap",
+                alignItems: "center",
+                justifyContent: "center",
+              },
+            }}
           >
             {clientsData.map((clientsData, index) => (
               <Box
                 boxShadow={"0px 0px 10px 0px #c1c1c1"}
-                // bgcolor={"green"}
                 key={index}
                 width={"366.66px"}
                 display={"flex"}
@@ -216,6 +213,9 @@ const OurClientsSays = () => {
                 boxShadow: "0px 0px 20px 0px rgba(0, 0, 0, 0.5)",
                 bgcolor: "#3644af !important",
                 color: "#fff",
+                "&:hover": {
+                  transform: "scale(1.1)",
+                },
 
                 "@media (max-width:350px)": {
                   fontSize: "10px",

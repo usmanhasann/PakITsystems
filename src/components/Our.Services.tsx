@@ -18,42 +18,42 @@ const services = [
     icon: <SettingsSuggestIcon sx={{ fontSize: "50px", color: "#3644af" }} />,
     title: "IT OUTSOURCING",
     description:
-      "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quasi quis doloremque odit assumenda eos amet dolor at! Voluptas ab sapiente, dignissimos reiciendis eius ipsam sed cumque, rem et autem officiis?",
+      "With HMB TECH’s managed services you can enjoy the benefits of having a full IT department at your disposal without having to pay for one.",
   },
   {
     id: 2,
     icon: <FaWrench style={{ fontSize: "50px", color: "#3644af" }} />,
     title: "BREAK / FIX",
     description:
-      "Providing efficient maintenance services to keep your systems up and running at all times. Trust us with your infrastructure management.",
+      "Not ready to fully outsource your IT? No problem. We can help as needed on issues and projects on a Break/Fix arrangement.",
   },
   {
     id: 3,
     icon: <FaPhone style={{ fontSize: "50px", color: "#3644af" }} />,
     title: "HELPDESK",
     description:
-      "24/7 technical support to resolve any issues swiftly. Our expert team is always here to help whenever you need assistance.",
+      "Whether you contact our helpdesk by phone, email, customer portal or sms one of our highly trained techs will get back to you in no time and take care of your issue right away.",
   },
   {
     id: 4,
     icon: <FaCloud style={{ fontSize: "50px", color: "#3644af" }} />,
     title: "CLOUD SERVICES",
     description:
-      "Cloud storage and computing solutions tailored to your business needs. Secure and scalable options for modern businesses.",
+      "Do you have to check the same email messages on your desktop, laptop and mobile device? Do you send an email from your laptop and don’t have it on your desktop when you need it?",
   },
   {
     id: 5,
     icon: <FaCloudDownloadAlt style={{ fontSize: "50px", color: "#3644af" }} />,
     title: "DISASTER RECOVERY",
     description:
-      "Effortless deployment of software solutions, ensuring that everything works smoothly across all devices and platforms.",
+      "If something happened and your valuable business data was lost, what would you do? Would you be able to recover or would you go out of business? How fast would you be able to recover?",
   },
   {
     id: 6,
     icon: <FaLock style={{ fontSize: "50px", color: "#3644af" }} />,
     title: "MANAGED SECURITY",
     description:
-      "Advanced security measures to safeguard your data and systems. Protect your business from emerging threats.",
+      "Do all your devices have antivirus protection? Is the antivirus up to date? Are your computers scanned regularly? Do you have different antivirus subscriptions expiring at different times?",
   },
 ];
 
@@ -76,11 +76,11 @@ const OurServices = () => {
         display={"flex"}
         alignItems={"center"}
         justifyContent={"center"}
-        // bgcolor={"green"}
       >
         <Typography
           fontSize={"52px"}
           color="#000000"
+          paddingTop={"3%"}
           fontWeight={"bold"}
           lineHeight={"1.4em"}
         >
@@ -91,9 +91,7 @@ const OurServices = () => {
         width={"1100px"}
         display={"flex"}
         flexWrap={"wrap"}
-        // alignItems={"center"}
         justifyContent={"center"}
-        // bgcolor={"aqua"}
         gap={"10px"}
         sx={{
           "@media (max-width:1120px)": {
@@ -105,12 +103,10 @@ const OurServices = () => {
           <Box
             key={service.id}
             width={"320px"}
-            // height={"357px"}
             display={"flex"}
             flexDirection={"column"}
             gap={"20px"}
             padding={"40px"}
-            // bgcolor={"yellow"}
             sx={{
               "@media (max-width:684px)": {
                 width: "340px",

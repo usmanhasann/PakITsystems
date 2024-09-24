@@ -12,7 +12,7 @@ const Break_fix = () => {
       width={"100%"}
       height={"auto"}
       color={"black"}
-      padding={"250px 0 160px 0"}
+      padding={"170px 0 150px 0"}
       display={"flex"}
       marginTop={"-2px"}
       sx={{
@@ -119,6 +119,7 @@ const Break_fix = () => {
           sx={{
             width: "100%",
             height: "100%",
+            paddingTop: "9%",
             display: "block",
             "@media (max-width:768px)": {
               width: "384px", // Adjust width at 768px breakpoint
@@ -133,7 +134,7 @@ const Break_fix = () => {
             src={BlackLaptop}
             alt="Black Laptop Image"
             className="Laptop-image"
-            style={{ width: "100%", height: "100%" }}
+            style={{ width: "100%", height: "90%" }}
           />
         </Box>
       </Box>

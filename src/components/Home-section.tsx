@@ -12,6 +12,8 @@ import TestimonalsImage from "@/assets/TestimonialsMainImage.jpeg";
 import BreakFiximage from "@/assets/BreakFixMainImage.jpeg";
 import HelpDeskimage from "@/assets/HelpDeskMainImage.jpeg";
 import { usePathname } from "next/navigation";
+import cloudServicesimage from "@/assets/CloudServicesMainImage.png";
+import managedSecurityimage from "@/assets/ManagedSecurityMainPage.jpeg";
 import { keyframes } from "@mui/system";
 
 const slideIn = keyframes`
@@ -34,8 +36,13 @@ const visibilityToggle = keyframes`
   }
 `;
 
+import FreeItAssessmentImage from "@/assets/FreeITAssessmentMainImage.jpeg";
 const Homesection: React.FC = () => {
   const pathname = usePathname();
+
+  type ContentType =
+    | { image: string; text: string; animatedText: string }
+    | { image: string; text: string };
 
   const content = {
     "/": {
@@ -53,11 +60,11 @@ const Homesection: React.FC = () => {
     },
     "/contact": {
       image: ContactImage.src,
-      text: "Contact us",
+      text: "",
     },
-    "/outsourcing": {
+    "/OutSourcing": {
       image: OutsourcingImage.src,
-      text: "IT Outsourcing",
+      text: "",
     },
     "/whyus": {
       image: WhyUsImage.src,
@@ -67,18 +74,33 @@ const Homesection: React.FC = () => {
       image: TestimonalsImage.src,
       text: "Testimonials",
     },
-    "/breakfix": {
+    "/breakFix": {
       image: BreakFiximage.src,
-      text: "Break/Fix",
+      text: "",
     },
-    "/helpdesk": {
+    "/HelpDesk": {
       image: HelpDeskimage.src,
-      text: "Help Desk",
+      text: "",
+    },
+    "/cloudServices": {
+      image: cloudServicesimage.src,
+      text: "",
+    },
+    "/managedSecurity": {
+      image: managedSecurityimage.src,
+      text: "",
+    },
+    "/freeItAssessment": {
+      image: FreeItAssessmentImage.src,
+      text: "Free IT Assessment",
     },
   };
 
   const currentContent =
     content[pathname as keyof typeof content] || content["/"];
+
+  const animatedText =
+    (currentContent as { animatedText?: string }).animatedText ?? "";
 
   return (
     <Box width="100%" height="58vh" position={"relative"}>
@@ -125,7 +147,6 @@ const Homesection: React.FC = () => {
             justifyContent: "center",
             gap: "10px",
             width: "100%",
-            bgcolor: "red",
 
             "@media (max-width:1285px)": {
               flexDirection: "column",
@@ -182,10 +203,12 @@ const Homesection: React.FC = () => {
                 },
               }}
             >
+              {animatedText}
+
               {content["/"]?.animatedText }
             </Typography>
 
-            {/* Animated SVG Line under "WORK" */}
+            {/* Animated SVG Line under c"WORK" */}
             <Box
               component="svg"
               xmlns="http://www.w3.org/2000/svg"

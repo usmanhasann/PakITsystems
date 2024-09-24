@@ -20,7 +20,7 @@ import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 import Link from "next/link";
 
 const Header: React.FC = () => {
-  const [isSticky, setIsSticky] = useState(false);
+  // const [isSticky, setIsSticky] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
   const [isNavOpen, setIsNavOpen] = useState(false);
 
@@ -45,31 +45,31 @@ const Header: React.FC = () => {
     setHoveredMenu(null);
   };
 
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 45) {
-        setIsSticky(true);
-      } else {
-        setIsSticky(false);
-      }
-    };
+  // useEffect(() => {
+  //   const handleScroll = () => {
+  //     if (window.scrollY > 45) {
+  //       setIsSticky(true);
+  //     } else {
+  //       setIsSticky(false);
+  //     }
+  //   };
 
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
+  //   window.addEventListener("scroll", handleScroll);
+  //   return () => {
+  //     window.removeEventListener("scroll", handleScroll);
+  //   };
+  // }, []);
 
   const toggleNavMenu = () => {
     setIsNavOpen((prev) => !prev);
   };
 
   return (
-    <AppBar
+    <Box
       sx={{
-        position: isSticky ? "fixed" : "relative",
-        top: 0,
-        zIndex: 1000,
+        // position: "stcky",
+        // top: 0,
+        // zIndex: 1000,
         width: "100%",
         height: "141px",
         backgroundColor: "#ffffff",
@@ -238,7 +238,7 @@ const Header: React.FC = () => {
                     IT OUTSOURCING
                   </MenuItem>
                 </Link>
-                <Link href="/BreakFix">
+                <Link href="/breakFix">
                   {" "}
                   <MenuItem
                     sx={{
@@ -277,40 +277,44 @@ const Header: React.FC = () => {
                     HELP DESK
                   </MenuItem>
                 </Link>
-                <MenuItem
-                  sx={{
-                    fontWeight: "500",
-                    textDecoration: "none",
-                    cursor: "pointer",
-                    color: "#3644af",
-                    fontSize: "13px",
-                    padding: "13px 20px",
-                    "&:hover": {
-                      bgcolor: "#3644af",
-                      color: "#fff",
-                      transition: "0.5s",
-                    },
-                  }}
-                >
-                  CLOUD SERVICES
-                </MenuItem>
-                <MenuItem
-                  sx={{
-                    fontWeight: "500",
-                    textDecoration: "none",
-                    cursor: "pointer",
-                    color: "#3644af",
-                    fontSize: "13px",
-                    padding: "13px 20px",
-                    "&:hover": {
-                      bgcolor: "#3644af",
-                      color: "#fff",
-                      transition: "0.5s",
-                    },
-                  }}
-                >
-                  MANAGED SECURITY
-                </MenuItem>
+                <Link href="/cloudServices">
+                  <MenuItem
+                    sx={{
+                      fontWeight: "500",
+                      textDecoration: "none",
+                      cursor: "pointer",
+                      color: "#3644af",
+                      fontSize: "13px",
+                      padding: "13px 20px",
+                      "&:hover": {
+                        bgcolor: "#3644af",
+                        color: "#fff",
+                        transition: "0.5s",
+                      },
+                    }}
+                  >
+                    CLOUD SERVICES
+                  </MenuItem>
+                </Link>{" "}
+                <Link href="/managedSecurity">
+                  <MenuItem
+                    sx={{
+                      fontWeight: "500",
+                      textDecoration: "none",
+                      cursor: "pointer",
+                      color: "#3644af",
+                      fontSize: "13px",
+                      padding: "13px 20px",
+                      "&:hover": {
+                        bgcolor: "#3644af",
+                        color: "#fff",
+                        transition: "0.5s",
+                      },
+                    }}
+                  >
+                    MANAGED SECURITY
+                  </MenuItem>
+                </Link>
                 <MenuItem
                   sx={{
                     fontWeight: "500",
@@ -328,23 +332,25 @@ const Header: React.FC = () => {
                 >
                   DISASTER RECOVERY
                 </MenuItem>
-                <MenuItem
-                  sx={{
-                    fontWeight: "500",
-                    textDecoration: "none",
-                    cursor: "pointer",
-                    color: "#3644af",
-                    fontSize: "13px",
-                    padding: "13px 20px",
-                    "&:hover": {
-                      bgcolor: "#3644af",
-                      color: "#fff",
-                      transition: "0.5s",
-                    },
-                  }}
-                >
-                  FREE IT ASSESSMENT
-                </MenuItem>
+                <Link href="/freeItAssessment">
+                  <MenuItem
+                    sx={{
+                      fontWeight: "500",
+                      textDecoration: "none",
+                      cursor: "pointer",
+                      color: "#3644af",
+                      fontSize: "13px",
+                      padding: "13px 20px",
+                      "&:hover": {
+                        bgcolor: "#3644af",
+                        color: "#fff",
+                        transition: "0.5s",
+                      },
+                    }}
+                  >
+                    FREE IT ASSESSMENT
+                  </MenuItem>
+                </Link>
               </Box>
             )}
           </Box>
@@ -505,7 +511,7 @@ const Header: React.FC = () => {
           </IconButton>
         )}
       </Toolbar>
-    </AppBar>
+    </Box>
   );
 };
 

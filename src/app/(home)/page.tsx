@@ -11,21 +11,39 @@ import FreeItAssessment from "@/components/FreeItAssessment";
 import Companyimages from "@/components/Company-images";
 import SLiderImages from "@/components/imagesSlider";
 import ClientLayout from "./ClientLayout";
+import { Box } from "@mui/material";
 
 export default function Home() {
   return (
     <ClientLayout>
-      <Miniheader />
-      <Header />
-      <Homesection />
-      <ITOutsourcingBreakFix />
-      <Breakfix />
-      <FreeItAssessment />
-      <OurServices />
-      <OurClientsSays />
-      <Companyimages />
-      <SLiderImages />
-      <Footer />
+      <Box
+        sx={{
+          position: "relative",
+          overflow: "auto",
+          height: "100vh",
+        }}
+      >
+        <Miniheader />
+        <Box
+          sx={{
+            width: "100%",
+            position: "sticky",
+            top: "0px",
+            zIndex: 1100,
+          }}
+        >
+          <Header />
+        </Box>
+        <Homesection />
+        <ITOutsourcingBreakFix />
+        <Breakfix />
+        <FreeItAssessment />
+        <OurServices />
+        <OurClientsSays />
+        <Companyimages />
+        <SLiderImages />
+        <Footer />
+      </Box>
     </ClientLayout>
   );
 }
