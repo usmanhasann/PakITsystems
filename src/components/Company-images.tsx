@@ -6,7 +6,7 @@ const Companyimages = () => {
   return (
     <Box
       position={"relative"}
-      zIndex={"120"}
+      zIndex={"100"}
       bgcolor={"#ffffff"}
       width={"100%"}
       display={"flex"}

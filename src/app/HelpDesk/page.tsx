@@ -7,19 +7,24 @@ import FreeItAssessment from "@/components/FreeItAssessment";
 import Companyimages from "@/components/Company-images";
 import ClientLayout from "./ClientLayout";
 import HelpDesk from "@/components/HelpDesk";
-import Break_fix from "@/components/Break_fix";
-
+import { Box } from "@mui/material";
 
 export default function BreakFix() {
   return (
     <ClientLayout>
-      <Miniheader />
-      <Header />
-      <Homesection />
-      <HelpDesk />
-      <FreeItAssessment />
-      <Companyimages />
-      <Footer />
+      <Box sx={{ position: "absolute", zIndex: 200, width: "100%" }}>
+        <Miniheader />
+        <Header />
+      </Box>
+      <Box sx={{ position: "relative", zIndex: 0 }}>
+        <Homesection />
+      </Box>
+      <Box sx={{ position: "relative" }}>
+        <HelpDesk />
+        <FreeItAssessment />
+        <Companyimages />
+        <Footer />
+      </Box>
     </ClientLayout>
   );
 }

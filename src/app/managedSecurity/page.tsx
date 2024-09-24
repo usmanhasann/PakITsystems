@@ -7,19 +7,26 @@ import Footer from "@/components/common/Footer";
 import FreeItAssessment from "@/components/FreeItAssessment";
 import Companyimages from "@/components/Company-images";
 import ClientLayout from "./ClientLayout";
-import Aboutontenttext from "@/components/About-content-text";
 import Managedsecurity from "@/components/ManagedSecurity";
+import { Box } from "@mui/material";
+
 export default function managedSecurity() {
   return (
     <ClientLayout>
-      <Miniheader />
-      <Header />
-      <Homesection />
-      <Managedsecurity />
+      <Box sx={{ position: "absolute", zIndex: 200, width: "100%" }}>
+        <Miniheader />
+        <Header />
+      </Box>
+      <Box sx={{ position: "relative", zIndex: 0 }}>
+        <Homesection />
+      </Box>
+      <Box sx={{ position: "relative" }}>
+        <Managedsecurity />
 
-      <FreeItAssessment />
-      <Companyimages />
-      <Footer />
+        <FreeItAssessment />
+        <Companyimages />
+        <Footer />
+      </Box>
     </ClientLayout>
   );
 }

@@ -3,16 +3,18 @@
 import React from "react";
 import { Box } from "@mui/material";
 import Image from "next/image";
-import image1 from "@/assets/nextiva.svg";
-import image2 from "@/assets/google cloud platform.png";
-import image3 from "@/assets/Backupify-logo1.png";
-import image4 from "@/assets/Dell-partner.png";
-import image5 from "@/assets/cisco partner.png";
-import image6 from "@/assets/jamf msp.png";
-import image7 from "@/assets/microsoft partner.jpeg";
-import image8 from "@/assets/bitdefender.jpg";
-import image9 from "@/assets/carbonite authorized reseller.png";
-import image10 from "@/assets/meraki authorized reseller.gif";
+import image1 from "@/assets/slide-image-1.svg";
+import image2 from "@/assets/slide-image-2.svg";
+import image3 from "@/assets/slide-image-3.svg";
+import image4 from "@/assets/slide-image-4.svg";
+import image5 from "@/assets/slide-image-5.svg";
+import image6 from "@/assets/slide-image-6.svg";
+import image7 from "@/assets/slide-image-7.svg";
+import image8 from "@/assets/slide-image-8.svg";
+import image9 from "@/assets/slide-image-9.svg";
+import image10 from "@/assets/slide-image-10.svg";
+import image11 from "@/assets/slide-image-11.svg";
+import image12 from "@/assets/slide-image-12.svg";
 // import image11 from "@/assets/download.png";
 
 // Importing the image sources as an array
@@ -27,7 +29,8 @@ const imageUrls = [
   image8,
   image9,
   image10,
-  // image11,
+  image11,
+  image12,
 ];
 
 const ImagesSlider = () => {
@@ -36,7 +39,7 @@ const ImagesSlider = () => {
       width={"100%"}
       position={"relative"}
       bgcolor={"#ffffff"}
-      zIndex={"120px"}
+      zIndex={"120"}
       padding={"50px"}
       display={"flex"}
       justifyContent={"center"}
@@ -48,7 +51,7 @@ const ImagesSlider = () => {
           display="flex"
           //   bgcolor={"red"}
           alignItems={"center"}
-          gap={"10px"}
+          gap={"20px"}
           sx={{
             width: `${imageUrls.length * 100}px`,
             animation: `slide 40s linear infinite`, // Animation for continuous sliding
@@ -59,7 +62,7 @@ const ImagesSlider = () => {
             <Box
               key={index}
               sx={{
-                width: "auto",
+                width: "130px",
                 height: "auto",
                 flexShrink: 0,
               }}
@@ -69,7 +72,7 @@ const ImagesSlider = () => {
                 alt={`Image ${index + 1}`}
                 width={130}
                 height={100}
-                style={{ objectFit: "cover", width: "auto", height: "auto" }}
+                style={{ objectFit: "cover", width: "100%", height: "auto" }}
               />
             </Box>
           ))}

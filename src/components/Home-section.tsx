@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 "use client";
 
 import React from "react";
@@ -99,14 +100,14 @@ const Homesection: React.FC = () => {
   const currentContent =
     content[pathname as keyof typeof content] || content["/"];
 
-  const animatedText =
-    (currentContent as { animatedText?: string }).animatedText ?? "";
+  // const animatedText =
+  //   (currentContent as { animatedText?: string }).animatedText ?? "";
 
   return (
-    <Box width="100%" height="58vh" position={"relative"}>
+    <Box width="100%" height="70vh" position={"relative"}>
       <Box
         width="100%"
-        height="60vh"
+        height="70vh"
         display="flex"
         alignItems="center"
         justifyContent="center"
@@ -147,6 +148,7 @@ const Homesection: React.FC = () => {
             justifyContent: "center",
             gap: "10px",
             width: "100%",
+            marginTop: "12%",
 
             "@media (max-width:1285px)": {
               flexDirection: "column",
@@ -184,55 +186,55 @@ const Homesection: React.FC = () => {
           >
             {currentContent.text}
           </Typography>
-          <Box display={"flex"} flexDirection={"column"} width={"auto"}>
-            <Typography
-              component="span"
-              sx={{
-                fontSize: "55px",
-                color: "#3444af",
-                fontWeight: "600",
-                textAlign: "center",
-                "@media (max-width:1320px)": {
-                  fontSize: "50px",
-                },
-                "@media (max-width:1025px)": {
-                  fontSize: "37px",
-                },
-                "@media (max-width:768px)": {
-                  fontSize: "21px",
-                },
-              }}
-            >
-              {animatedText}
+          {pathname === "/" && (
+            <Box display={"flex"} flexDirection={"column"} width={"auto"}>
+              <Typography
+                component="span"
+                sx={{
+                  fontSize: "55px",
+                  color: "#3444af",
+                  fontWeight: "600",
+                  textAlign: "center",
+                  "@media (max-width:1320px)": {
+                    fontSize: "50px",
+                  },
+                  "@media (max-width:1025px)": {
+                    fontSize: "37px",
+                  },
+                  "@media (max-width:768px)": {
+                    fontSize: "21px",
+                  },
+                }}
+              >
+                {content["/"]?.animatedText}
+              </Typography>
 
-              {content["/"]?.animatedText }
-            </Typography>
-
-            {/* Animated SVG Line under c"WORK" */}
-            <Box
-              component="svg"
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 500 150"
-              preserveAspectRatio="none"
-              sx={{
-                width: "100%", // Adjust as needed
-                height: "50px",
-                marginTop: "-50px",
-                animation: `${visibilityToggle} 7s infinite`, // Visibility loop every 7 seconds (5s show, 2s hide)
-                "& path": {
-                  transition: "0.9s ",
-                  stroke: "#ffffff", // Ensure the stroke color is set
-                  strokeWidth: "13",
-                  fill: "none",
-                  strokeDasharray: 500, // Length of the path
-                  strokeDashoffset: 500, // Offset to start animation
-                  animation: `${slideIn} 2s ease-in-out forwards`, // Slide in from left and draw SVG
-                },
-              }}
-            >
-              <path d="M7.7,145.6C109,125,299.9,116.2,401,121.3c42.1,2.2,87.6,11.8,87.3,25.7" />
+              {/* Animated SVG Line under c"WORK" */}
+              <Box
+                component="svg"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 500 150"
+                preserveAspectRatio="none"
+                sx={{
+                  width: "100%", // Adjust as needed
+                  height: "50px",
+                  marginTop: "-50px",
+                  animation: `${visibilityToggle} 7s infinite`, // Visibility loop every 7 seconds (5s show, 2s hide)
+                  "& path": {
+                    transition: "0.9s ",
+                    stroke: "#ffffff", // Ensure the stroke color is set
+                    strokeWidth: "13",
+                    fill: "none",
+                    strokeDasharray: 500, // Length of the path
+                    strokeDashoffset: 500, // Offset to start animation
+                    animation: `${slideIn} 2s ease-in-out forwards`, // Slide in from left and draw SVG
+                  },
+                }}
+              >
+                <path d="M7.7,145.6C109,125,299.9,116.2,401,121.3c42.1,2.2,87.6,11.8,87.3,25.7" />
+              </Box>
             </Box>
-          </Box>
+          )}
         </Box>
       </Box>
     </Box>

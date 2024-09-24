@@ -9,16 +9,24 @@ import Footer from "@/components/common/Footer";
 import FreeItAssessment from "@/components/FreeItAssessment";
 import Companyimages from "@/components/Company-images";
 import ClientLayout from "./ClientLayout";
+import { Box } from "@mui/material";
+
 export default function Services() {
   return (
     <ClientLayout>
-      <Miniheader />
-      <Header />
-      <Homesection />
-      <OurServices />
-      <FreeItAssessment />
-      <Companyimages />
-      <Footer />
+      <Box sx={{ position: "absolute", zIndex: 200, width: "100%" }}>
+        <Miniheader />
+        <Header />
+      </Box>
+      <Box sx={{ position: "relative", zIndex: 0 }}>
+        <Homesection />
+      </Box>
+      <Box sx={{ position: "relative" }}>
+        <OurServices />
+        <FreeItAssessment />
+        <Companyimages />
+        <Footer />
+      </Box>
     </ClientLayout>
   );
 }
