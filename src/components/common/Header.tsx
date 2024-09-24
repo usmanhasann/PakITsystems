@@ -20,7 +20,7 @@ import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 import Link from "next/link";
 
 const Header: React.FC = () => {
-  // const [isSticky, setIsSticky] = useState(false);
+  const [isSticky, setIsSticky] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
   const [isNavOpen, setIsNavOpen] = useState(false);
 
@@ -45,20 +45,20 @@ const Header: React.FC = () => {
     setHoveredMenu(null);
   };
 
-  // useEffect(() => {
-  //   const handleScroll = () => {
-  //     if (window.scrollY > 45) {
-  //       setIsSticky(true);
-  //     } else {
-  //       setIsSticky(false);
-  //     }
-  //   };
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 45) {
+        setIsSticky(true);
+      } else {
+        setIsSticky(false);
+      }
+    };
 
-  //   window.addEventListener("scroll", handleScroll);
-  //   return () => {
-  //     window.removeEventListener("scroll", handleScroll);
-  //   };
-  // }, []);
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   const toggleNavMenu = () => {
     setIsNavOpen((prev) => !prev);
@@ -67,9 +67,9 @@ const Header: React.FC = () => {
   return (
     <Box
       sx={{
-        // position: "stcky",
-        // top: 0,
-        // zIndex: 1000,
+        position: isSticky ? "fixed" : "relative",
+        top: 0,
+        zIndex: 1000,
         width: "100%",
         height: "141px",
         backgroundColor: "#ffffff",
@@ -115,6 +115,7 @@ const Header: React.FC = () => {
             <Image
               src={HeaderLogo}
               alt="Logo"
+              width="100%"
               className="header-logo"
               style={{ width: "100%", height: "100%" }}
             />

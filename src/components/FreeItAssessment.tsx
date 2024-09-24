@@ -7,7 +7,7 @@ import WhiteShirt from "@/assets/whiteshirtpng_bg.png";
 const FreeItAssessment = () => {
   return (
     <Box
-      zIndex={"200"}
+      zIndex={"100"}
       bgcolor={"#ffffff"}
       position={"relative"}
       width={"100%"}

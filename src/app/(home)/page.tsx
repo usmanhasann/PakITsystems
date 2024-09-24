@@ -16,25 +16,14 @@ import { Box } from "@mui/material";
 export default function Home() {
   return (
     <ClientLayout>
-      <Box
-        sx={{
-          position: "relative",
-          overflow: "auto",
-          height: "100vh",
-        }}
-      >
+      <Box sx={{ position: "absolute", zIndex: 200, width: "100%" }}>
         <Miniheader />
-        <Box
-          sx={{
-            width: "100%",
-            position: "sticky",
-            top: "0px",
-            zIndex: 1100,
-          }}
-        >
-          <Header />
-        </Box>
+        <Header />
+      </Box>
+      <Box sx={{ position: "relative", zIndex: 0 }}>
         <Homesection />
+      </Box>
+      <Box sx={{ position: "relative" }}>
         <ITOutsourcingBreakFix />
         <Breakfix />
         <FreeItAssessment />

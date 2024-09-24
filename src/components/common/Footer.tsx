@@ -6,6 +6,7 @@ import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import { FaFacebookF } from "react-icons/fa";
 import { FaTwitter } from "react-icons/fa";
 import Link from "next/link";
+import Logo from "@/assets/pakitsystem-main-Logo.svg";
 
 const serviceData = [
   { ServiceName: "IT Outsourcing" },
@@ -26,7 +27,7 @@ export const Footer = () => {
   return (
     <Box
       position={"relative"}
-      zIndex={"120"}
+      zIndex={"100"}
       bgcolor={"#000000"}
       display={"flex"}
       flexDirection={"column"}
@@ -71,7 +72,7 @@ export const Footer = () => {
             fontFamily={"sans-serif"}
           >
             <Image
-              src="@/assets/pakitsystem-main-Logo.svg"
+              src={Logo}
               alt="webLogo"
               style={{ width: "100%", height: "auto" }}
             />

@@ -7,16 +7,23 @@ import FreeItAssessment from "@/components/FreeItAssessment";
 import Companyimages from "@/components/Company-images";
 import ClientLayout from "./ClientLayout";
 import Footer from "@/components/common/Footer";
+import { Box } from "@mui/material";
 export default function whyUs() {
   return (
     <ClientLayout>
-      <Miniheader />
-      <Header />
-      <Homesection />
-      <WhyusCards />
-      <FreeItAssessment />
-      <Companyimages />
-      <Footer />
+      <Box sx={{ position: "absolute", zIndex: 200, width: "100%" }}>
+        <Miniheader />
+        <Header />
+      </Box>
+      <Box sx={{ position: "relative", zIndex: 0 }}>
+        <Homesection />
+      </Box>
+      <Box sx={{ position: "relative" }}>
+        <WhyusCards />
+        <FreeItAssessment />
+        <Companyimages />
+        <Footer />
+      </Box>
     </ClientLayout>
   );
 }

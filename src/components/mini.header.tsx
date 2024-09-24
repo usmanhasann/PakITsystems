@@ -13,6 +13,7 @@ const miniheader = () => {
       alignItems={"center"}
       justifyContent={"center"}
       bgcolor={"#262a2b"}
+      // position="absolute"
       sx={{
         "@media (max-width:325px)": {
           height: "60px",

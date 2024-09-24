@@ -6,7 +6,7 @@ const Aboutcontenttext = () => {
       width={"100%"}
       padding={"60px 0"}
       position={"relative"}
-      zIndex={190}
+      zIndex={100}
       bgcolor={"#fff"}
       display={"flex"}
       justifyContent={"center"}
