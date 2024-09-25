@@ -39,7 +39,7 @@ export const HelpDesk = () => {
         }}
       >
         <Typography
-          paddingTop={"2%"}
+          paddingTop={"15%"}
           color="rgb(0,0,0)"
           fontWeight={"700"}
           fontSize={"52px"}
@@ -76,7 +76,7 @@ export const HelpDesk = () => {
         <Typography
           fontWeight={"700"}
           fontSize={"35px"}
-          paddingTop={"8%"}
+          paddingTop={"9%"}
           lineHeight={"35px"}
           color={"#3444af"}
           sx={{

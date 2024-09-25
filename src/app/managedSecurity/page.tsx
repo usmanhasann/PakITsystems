@@ -25,6 +25,7 @@ export default function managedSecurity() {
 
         <FreeItAssessment />
         <Companyimages />
+        <SLiderImages />
         <Footer />
       </Box>
     </ClientLayout>

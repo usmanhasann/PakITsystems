@@ -23,6 +23,7 @@ export default function about() {
         <Aboutcontenttext />
         <FreeItAssessment />
         <Companyimages />
+        <SLiderImages />
         <Footer />
       </Box>
     </ClientLayout>

@@ -23,6 +23,7 @@ export default function Contact() {
 
         <FreeItAssessment />
         <Companyimages />
+        <SLiderImages />
         <Footer />
       </Box>
     </ClientLayout>

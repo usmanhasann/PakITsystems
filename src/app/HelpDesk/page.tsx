@@ -24,6 +24,7 @@ export default function BreakFix() {
         <HelpDesk />
         <FreeItAssessment />
         <Companyimages />
+        <SLiderImages />
         <Footer />
       </Box>
     </ClientLayout>

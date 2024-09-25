@@ -26,6 +26,7 @@ export default function cloudServices() {
         <CloudServices />
         <FreeItAssessment />
         <Companyimages />
+        <SLiderImages />
         <Footer />
       </Box>
     </ClientLayout>

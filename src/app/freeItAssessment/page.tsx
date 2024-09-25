@@ -25,6 +25,7 @@ export default function freeItAssessment() {
         <FreeItAsssessmentReport />
         <RequiredFields />
         <Companyimages />
+        <SLiderImages />
         <Footer />
       </Box>
     </ClientLayout>

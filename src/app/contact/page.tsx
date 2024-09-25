@@ -22,6 +22,7 @@ export default function Contact() {
         <ContactUsform />
         <FreeItAssessment />
         <Companyimages />
+        <SLiderImages />
         <Footer />
       </Box>
     </ClientLayout>

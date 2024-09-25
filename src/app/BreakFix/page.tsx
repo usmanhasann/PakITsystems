@@ -23,6 +23,7 @@ export default function BreakFix() {
         <BreakFixDropD />
         <FreeItAssessment />
         <Companyimages />
+        <SLiderImages />
         <Footer />
       </Box>
     </ClientLayout>
