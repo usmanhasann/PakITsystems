@@ -5,6 +5,7 @@ import Homesection from "@/components/Home-section";
 import ContactUsform from "@/components/ContactUs.form";
 import FreeItAssessment from "@/components/FreeItAssessment";
 import Companyimages from "@/components/Company-images";
+import SLiderImages from "@/components/imagesSlider";
 import Footer from "@/components/common/Footer";
 import { Box } from "@mui/material";
 export default function Contact() {
