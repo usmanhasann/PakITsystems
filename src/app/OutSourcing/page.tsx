@@ -25,6 +25,7 @@ export default function OutSourcing() {
         <Outsourcingservices />
         <FreeItAssessment />
         <Companyimages />
+        <SLiderImages />
         <Footer />
       </Box>
     </ClientLayout>

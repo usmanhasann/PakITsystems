@@ -23,6 +23,7 @@ export default function Testimonals() {
         <Testimonalstext />
         <FreeItAssessment />
         <Companyimages />
+        <SLiderImages />
         <Footer />
       </Box>
     </ClientLayout>
