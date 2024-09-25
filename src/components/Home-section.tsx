@@ -63,13 +63,13 @@ const Homesection: React.FC = () => {
       image: OutsourcingImage.src,
       text: "",
     },
-    "/whyus": {
+    "/whyUs": {
       image: WhyUsImage.src,
-      text: "Why Us",
+      text: "",
     },
-    "/testimonials": {
+    "/testimonals": {
       image: TestimonalsImage.src,
-      text: "Testimonials",
+      text: "",
     },
     "/breakFix": {
       image: BreakFiximage.src,
