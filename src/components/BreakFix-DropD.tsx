@@ -17,6 +17,7 @@ const BreakFixDropD = () => {
     >
       <Box
         width={"50%"}
+        ///jhelllajndabdjkankd,mad
         display={"flex"}
         flexDirection={"column"}
         bgcolor={"#d6d6d6"}
