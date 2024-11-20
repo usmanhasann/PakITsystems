@@ -17,7 +17,6 @@ const BreakFixDropD = () => {
     >
       <Box
         width={"50%"}
-        ///jhelllajndabdjkankd,mad
         display={"flex"}
         flexDirection={"column"}
         bgcolor={"#d6d6d6"}
@@ -27,7 +26,6 @@ const BreakFixDropD = () => {
         sx={{
           "@media (max-width:1150px)": {
             padding: "0px  0 0 2.5%",
-            // alignItems: "center",
             justifyContent: "center",
           },
           "@media (max-width:768px)": {
